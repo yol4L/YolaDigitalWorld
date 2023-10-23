@@ -11,7 +11,12 @@ const config: Config = {
     extend: {
       fontFamily: {
         sans: ["Inter", ...defaultTheme.fontFamily.sans],
-        serif: ["Noto Serif", ...defaultTheme.fontFamily.serif],
+        serif: [
+          "Merriweather",
+          "Noto Serif",
+          "Times New Roman",
+          ...defaultTheme.fontFamily.serif,
+        ],
       },
       colors: {
         cerulean: {
