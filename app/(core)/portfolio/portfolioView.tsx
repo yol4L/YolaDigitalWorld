@@ -7,7 +7,9 @@ import CareerExperienceView from "./sectionViews/careerExperience";
 import ProjectsView from "./sectionViews/projects";
 import BlogsView from "./sectionViews/blogs";
 import EducationView from "./sectionViews/education";
-import { Section_Header_And_Desc_Items } from "./data";
+import { SECTION_HEADER_AND_DESC_ITEMS } from "./data";
+import ContactMeView from "../contact/contact";
+import FunFactView from "./sectionViews/funFacts";
 
 export default function PortfolioView() {
   return (
@@ -46,8 +48,8 @@ export default function PortfolioView() {
         {/* About me */}
         <section className="flex flex-col gap-4">
           {/* <SectionHeaderAndDesc index={0} /> */}
-          <SectionHeaderAndDesc {...Section_Header_And_Desc_Items[0]} />
-          {/* <SectionHeaderAndDesc name={Section_Header_And_Desc_Items[0].name} headerText={.headerText} desc={} /> */}
+          <SectionHeaderAndDesc {...SECTION_HEADER_AND_DESC_ITEMS[0]} />
+          {/* <SectionHeaderAndDesc name={SECTION_HEADER_AND_DESC_ITEMS[0].name} headerText={.headerText} desc={} /> */}
           <PersonalityView />
         </section>
         <div className="p-6 bg-[#F6C050]">
@@ -58,17 +60,17 @@ export default function PortfolioView() {
         </div>
         {/* SKills */}
         <section className="flex flex-col gap-4">
-          <SectionHeaderAndDesc {...Section_Header_And_Desc_Items[1]} />
+          <SectionHeaderAndDesc {...SECTION_HEADER_AND_DESC_ITEMS[1]} />
           <TechStacksView />
         </section>
         {/* Experience */}
         <section className="flex flex-col gap-4">
-          <SectionHeaderAndDesc {...Section_Header_And_Desc_Items[2]} />
+          <SectionHeaderAndDesc {...SECTION_HEADER_AND_DESC_ITEMS[2]} />
           <CareerExperienceView />
         </section>
         {/* Project */}
         <section className="flex flex-col gap-4">
-          <SectionHeaderAndDesc {...Section_Header_And_Desc_Items[3]} />
+          <SectionHeaderAndDesc {...SECTION_HEADER_AND_DESC_ITEMS[3]} />
           <ProjectsView />
         </section>
         <div className="p-6 bg-[#F6C050]">
@@ -79,21 +81,23 @@ export default function PortfolioView() {
         </div>
         {/* Blog */}
         <section className="flex flex-col gap-4">
-          <SectionHeaderAndDesc {...Section_Header_And_Desc_Items[4]} />
+          <SectionHeaderAndDesc {...SECTION_HEADER_AND_DESC_ITEMS[4]} />
           <BlogsView />
         </section>
         {/* Education */}
         <section className="flex flex-col gap-4">
-          <SectionHeaderAndDesc {...Section_Header_And_Desc_Items[5]} />
+          <SectionHeaderAndDesc {...SECTION_HEADER_AND_DESC_ITEMS[5]} />
           <EducationView />
         </section>
         {/* Fun points */}
         <section className="flex flex-col gap-4">
-          <SectionHeaderAndDesc {...Section_Header_And_Desc_Items[6]} />
+          <SectionHeaderAndDesc {...SECTION_HEADER_AND_DESC_ITEMS[6]} />
+          <FunFactView />
         </section>
         {/* Contact */}
         <section className="flex flex-col gap-4">
-          <SectionHeaderAndDesc {...Section_Header_And_Desc_Items[7]} />
+          <SectionHeaderAndDesc {...SECTION_HEADER_AND_DESC_ITEMS[7]} />
+          <ContactMeView />
         </section>
       </div>
     </div>

@@ -1,117 +1,46 @@
-import { NoteIcon } from "@/app/components/Icons/svg";
+import { BACKGROUND_COLORS, TECH_STACKS } from "../data";
+
+function getBgColor() {
+  const i = Math.floor(Math.random() * BACKGROUND_COLORS.length);
+  const bgColor = BACKGROUND_COLORS[i];
+  return bgColor;
+}
 
 export default function TechStacksView() {
   return (
-    <div className="flex flex-col gap-6">
-      <div className="flex gap-6">
-        <div className="w-1/2 p-4 shadow-md flex">
-          <div className="p-2 pr-4 flex items-center border-r border-cerulean-400">
-            <NoteIcon
-              fontSize="large"
-              className="w-16 h-16 text-cerulean-500"
-            />
-          </div>
-          <div className="p-2 pl-4 flex flex-col gap-2">
-            <h3 className="font-serif text-sm tracking-widest">FRAMEWORK</h3>
-            <div className="flex flex-wrap gap-2">
-              <div className="px-3 py-0.5 flex items-center justify-start rounded-md bg-cerulean-400">
-                <span className="text-xs text-white tracking-wider">React</span>
+    <div className="mx-[-0.75rem] flex flex-wrap items-stretch">
+      {TECH_STACKS.map(({ id, name, icon: Icon, stacks }) => {
+        return (
+          <div key={id} className="w-1/2 p-3">
+            <div className="w-full h-full shadow-md flex p-6">
+              <div className="p-2 pr-4 flex items-center border-r border-cerulean-400">
+                <Icon
+                  fontSize="large"
+                  className="w-16 h-16 text-cerulean-500"
+                />
               </div>
-              <div className="px-3 py-0.5 flex items-center justify-start rounded-md bg-[#F3B4BB]">
-                <span className="text-xs text-white tracking-wider">
-                  Next.js
-                </span>
-              </div>
-              <div className="px-3 py-0.5 flex items-center justify-start rounded-md bg-[#F6C050]">
-                <span className="text-xs text-white tracking-wider">Redux</span>
-              </div>
-              <div className="px-3 py-0.5 flex items-center justify-start rounded-md bg-[#6878B1]">
-                <span className="text-xs text-white tracking-wider">
-                  TailwindCSS
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="w-1/2 p-4 shadow-md flex">
-          <div className="p-2 pr-4 flex items-center border-r border-cerulean-400">
-            <NoteIcon
-              fontSize="large"
-              className="w-16 h-16 text-cerulean-500"
-            />
-          </div>
-          <div className="p-2 pl-4 flex flex-col gap-2">
-            <h3 className="font-serif text-sm tracking-widest">FRONT-END</h3>
-            <div className="flex flex-wrap gap-2">
-              <div className="px-3 py-0.5 flex items-center justify-start rounded-md bg-cerulean-400">
-                <span className="text-xs text-white tracking-wider">HTML</span>
-              </div>
-              <div className="px-3 py-0.5 flex items-center justify-start rounded-md bg-[#F3B4BB]">
-                <span className="text-xs text-white tracking-wider">CSS</span>
-              </div>
-              <div className="px-3 py-0.5 flex items-center justify-start rounded-md bg-[#F6C050]">
-                <span className="text-xs text-white tracking-wider">
-                  JavaScript
-                </span>
-              </div>
-              <div className="px-3 py-0.5 flex items-center justify-start rounded-md bg-[#6878B1]">
-                <span className="text-xs text-white tracking-wider">
-                  TypeScript
-                </span>
+              <div className="p-2 pl-4 flex flex-col gap-2">
+                <h3 className="font-serif text-sm tracking-widest">{name}</h3>
+                <div className="flex flex-wrap gap-2">
+                  {stacks.map((stack) => {
+                    return (
+                      <div
+                        key={stack.toString()}
+                        className="px-3 py-0.5 flex items-center justify-start rounded-md cursor-pointer"
+                        style={{ backgroundColor: getBgColor() }}
+                      >
+                        <span className="text-xs text-white tracking-wider">
+                          {stack}
+                        </span>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div className="flex gap-6">
-        <div className="w-1/2 p-4 shadow-md flex">
-          <div className="p-2 pr-4 flex items-center border-r border-cerulean-400">
-            <NoteIcon
-              fontSize="large"
-              className="w-16 h-16 text-cerulean-500"
-            />
-          </div>
-          <div className="p-2 pl-4 flex flex-col gap-2">
-            <h3 className="font-serif text-sm tracking-widest">DATABASE</h3>
-            <div className="flex flex-wrap gap-2">
-              <div className="px-3 py-0.5 flex items-center justify-start rounded-md bg-cerulean-400">
-                <span className="text-xs text-white tracking-wider">
-                  MongoDB
-                </span>
-              </div>
-              <div className="px-3 py-0.5 flex items-center justify-start rounded-md bg-[#F3B4BB]">
-                <span className="text-xs text-white tracking-wider">
-                  GraphQL
-                </span>
-              </div>
-              <div className="px-3 py-0.5 flex items-center justify-start rounded-md bg-[#F6C050]">
-                <span className="text-xs text-white tracking-wider">MySQL</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="w-1/2 p-4 shadow-md flex">
-          <div className="p-2 pr-4 flex items-center border-r border-cerulean-400">
-            <NoteIcon
-              fontSize="large"
-              className="w-16 h-16 text-cerulean-500"
-            />
-          </div>
-          <div className="p-2 pl-4 flex flex-col gap-2">
-            <h3 className="font-serif text-sm tracking-widest">OTHERS</h3>
-            <div className="flex flex-wrap gap-2">
-              <div className="px-3 py-0.5 flex items-center justify-start rounded-md bg-cerulean-400">
-                <span className="text-xs text-white tracking-wider">Git</span>
-              </div>
-              <div className="px-3 py-0.5 flex items-center justify-start rounded-md bg-[#F3B4BB]">
-                <span className="text-xs text-white tracking-wider">
-                  Node.js
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+        );
+      })}
     </div>
   );
 }

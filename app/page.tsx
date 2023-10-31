@@ -4,6 +4,7 @@ import NavTabs from "./components/Tabs/navTabs";
 import DarkModeView from "./components/darkMode";
 import PageTagView from "./components/Tags/pageTag";
 import PortfolioView from "./(core)/portfolio/portfolioView";
+import Link from "next/link";
 // import cx from 'classnames';
 
 export default function Home() {
@@ -11,7 +12,7 @@ export default function Home() {
     <main className="h-screen relative flex flex-col font-sans">
       {/* Navigation bar */}
       <nav className="px-20 w-full py-3 fixed top-0 z-10 flex items-center justify-between bg-white border-b border-neutral-50">
-        <div className="relative flex items-center gap-2">
+        <Link href={"/"} className="relative flex items-center gap-2">
           <Image
             src="yola-brand-avatar.svg"
             alt="brand-avatar"
@@ -19,7 +20,7 @@ export default function Home() {
             height={30}
           />
           <span>Yola&apos;s World</span>
-        </div>
+        </Link>
         <div className="flex items-center gap-10">
           <NavTabs />
           <DarkModeView />

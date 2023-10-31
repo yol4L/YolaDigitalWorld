@@ -1,6 +1,35 @@
-// data: {}[] data:[{}, {}] = [{ name: }]
+import { NoteIcon } from "@/app/components/Icons/svg";
+import { MuiIconType } from "@/app/types";
 
-export const Section_Header_And_Desc_Items: {
+export const BACKGROUND_COLORS = [
+  "#8A87D2",
+  "#A791BF",
+  "#F7C18E",
+  "#758EB7",
+  "#FBA276",
+  "#85CBB3",
+  "#EFBBCC",
+  "#FFBCD9",
+  "#B6ADD8",
+  "#A0D084",
+  "#9CB2E3",
+  "#8DDC86",
+  "#FFAFCC",
+  "#F3B4BB",
+  "#FFA69E",
+  "#E88870",
+  "#CB997E",
+  "#FFCB69",
+  "#F6C050",
+  "#F8961E",
+  "#A8DADC",
+  "#A2D2FF",
+  "#1F9DFF",
+  "#5390D9",
+  "#6878B1",
+];
+
+export const SECTION_HEADER_AND_DESC_ITEMS: {
   id: string;
   name: string;
   headerText: string;
@@ -61,5 +90,152 @@ export const Section_Header_And_Desc_Items: {
     headerText: "WELCOME TO CONTACT ME",
     description:
       " Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+  },
+];
+
+export const PERSONALITIES: {
+  id: string;
+  name: string;
+  desc: string;
+  icon: MuiIconType;
+}[] = [
+  {
+    id: "highly_motivated",
+    name: "Highly Motivated",
+    desc: "Lorem ipsum dolor sit amet consectetur adipi elit. adipisicing elit.",
+    icon: NoteIcon,
+  },
+  {
+    id: "result_oriented",
+    name: "Result Oriented",
+    desc: "Lorem ipsum dolor sit amet consectetur adipi elit. adipisicing elit.",
+    icon: NoteIcon,
+  },
+  {
+    id: "fast_learner",
+    name: "Fast Learner",
+    desc: "Lorem ipsum dolor sit amet consectetur adipi elit. adipisicing elit.",
+    icon: NoteIcon,
+  },
+  {
+    id: "attention_to_details",
+    name: "Attention to Details",
+    desc: "Lorem ipsum dolor sit amet consectetur adipi elit. adipisicing elit.",
+    icon: NoteIcon,
+  },
+];
+
+export const TECH_STACKS: {
+  id: string;
+  name: string;
+  icon: MuiIconType;
+  stacks: string[];
+}[] = [
+  {
+    id: "framework",
+    name: "FRAMEWORK",
+    icon: NoteIcon,
+    stacks: ["React", "Next.js", "Redux", "TailwindCSS"],
+  },
+  {
+    id: "frontend",
+    name: "FRONTEND",
+    icon: NoteIcon,
+    stacks: ["HTML", "CSS", "JavaScript", "TypeScript"],
+  },
+  {
+    id: "database",
+    name: "DATABASE",
+    icon: NoteIcon,
+    stacks: ["MongoDB", "GraphQL", "MySQL"],
+  },
+  {
+    id: "others",
+    name: "OTHERS",
+    icon: NoteIcon,
+    stacks: ["Git", "Node.js"],
+  },
+];
+
+export const CAREER_EXPERIENCES: {
+  id: string;
+  company: string;
+  position_type: string;
+  position: string;
+  period: string;
+  duties: string[];
+}[] = [
+  {
+    id: "mochilabs",
+    company: "MOCHI LABS, CANBERRA",
+    position_type: "Internship",
+    position: "Front-end Developer",
+    period: "July 2023 - Oct 2023",
+    duties: [
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      "Esse deserunt ad nemo natus quasi assumenda et? Repudiandae.",
+      "Velit impedit obcaecati inventore doloremque consequuntur cumque atque maxime quas fugiat ducimus eveniet.",
+      "Consequuntur cumque atque maxime quas fugiat ducimus eveniet.",
+      "Atque maxime quas fugiat ducimus eveniet.",
+    ],
+  },
+  {
+    id: "yelpcamp",
+    company: "YELPCAMP PROJECT",
+    position_type: "Personal Project",
+    position: "Full-stack Developer",
+    period: "Sep 2022 - June 2023",
+    duties: [
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      "Esse deserunt ad nemo natus quasi assumenda et? Repudiandae.",
+      "Velit impedit obcaecati inventore doloremque consequuntur cumque atque maxime quas fugiat ducimus eveniet.",
+      "Consequuntur cumque atque maxime quas fugiat ducimus eveniet.",
+      "Atque maxime quas fugiat ducimus eveniet.",
+    ],
+  },
+];
+
+export const RECENT_WORK: {
+  id: string;
+  title: string;
+  tech_stacks: string;
+  desc: string;
+}[] = [
+  {
+    id: "yelpcamp",
+    title: "YELPCAMP",
+    tech_stacks: "React, Node.js, MongoDB, Express (MERN)",
+    desc: "A full-stack website project where users can create and review campgrounds.",
+  },
+  {
+    id: "newsfeed",
+    title: "NEWSFEED",
+    tech_stacks: "React, Node.js, MongoDB, Express (MERN)",
+    desc: "A full-stack website project where users can create and review campgrounds.",
+  },
+  {
+    id: "zoombies",
+    title: "ZOOMBIES",
+    tech_stacks: "React, Node.js, MongoDB, Express (MERN)",
+    desc: "A full-stack website project where users can create and review campgrounds.",
+  },
+];
+
+export const EDUCATION_DATA: { id: string; title: string; desc: string[] }[] = [
+  {
+    id: "bootcamp",
+    title: "Bootcamp on Udemy",
+    desc: [
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate temporibus tenetur unde officiis minima quos cupiditate mollitia quod sequi sint.",
+      "Voluptatum eum, nulla illum dicta recusandae beatae nihil magnam rem!",
+    ],
+  },
+  {
+    id: "master",
+    title: "master degree of accounting",
+    desc: [
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate temporibus tenetur unde officiis minima quos cupiditate mollitia quod sequi sint.",
+      "Voluptatum eum, nulla illum dicta recusandae beatae nihil magnam rem!",
+    ],
   },
 ];
