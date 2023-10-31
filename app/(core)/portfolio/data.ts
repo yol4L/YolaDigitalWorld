@@ -250,3 +250,40 @@ export const EDUCATION_DATA: { id: string; title: string; desc: string[] }[] = [
     ],
   },
 ];
+
+export const BLOGS: {
+  id: string;
+  title: string;
+  headline: string;
+  date: string;
+  author: string;
+  tag: string;
+}[] = [
+  {
+    id: "01",
+    title: "This is the title main title",
+    headline:
+      "This is the headline for the article, which is very simple but summarised.",
+    date: "April 14, 2023",
+    author: "Yola Liang",
+    tag: "web design",
+  },
+  {
+    id: "02",
+    title: "This is the title main title",
+    headline:
+      "This is the headline for the article, which is very simple but summarised.",
+    date: "August 16, 2023",
+    author: "Yola Liang",
+    tag: "web design",
+  },
+  {
+    id: "03",
+    title: "This is the title main title",
+    headline:
+      "This is the headline for the article, which is very simple but summarised.",
+    date: "October 03, 2023",
+    author: "Yola Liang",
+    tag: "web design",
+  },
+];

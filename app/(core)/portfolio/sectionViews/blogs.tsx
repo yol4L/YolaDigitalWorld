@@ -1,33 +1,9 @@
-const BLOGS: {
-  id: string;
-  title: string;
-  date: string;
-  tag: string;
-}[] = [
-  {
-    id: "01",
-    title: "This is the title main title",
-    date: "April 14, 2023",
-    tag: "web design",
-  },
-  {
-    id: "02",
-    title: "This is the title main title",
-    date: "August 16, 2023",
-    tag: "web design",
-  },
-  {
-    id: "03",
-    title: "This is the title main title",
-    date: "October 03, 2023",
-    tag: "web design",
-  },
-];
+import { BLOGS } from "../data";
 
 export default function BlogsView() {
   return (
     <div className="mx-[-1rem] flex">
-      {BLOGS.map(({ id, title, date, tag }) => {
+      {BLOGS.slice(0, 3).map(({ id, title, date, tag }) => {
         return (
           <div key={id} className="w-1/3 px-4">
             <div className="flex flex-col gap-4">

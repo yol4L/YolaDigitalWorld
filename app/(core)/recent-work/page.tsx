@@ -14,7 +14,7 @@ export default function RecentWorkPage() {
   return (
     <div>
       <TopNavView />
-      <div className="p-36 flex flex-col">
+      <div className="px-36 py-28 flex flex-col">
         <PageTagView tagName={"Projects"} />
         <div className="my-6 flex flex-col gap-4">
           <h1 className="font-serif font-bold text-3xl tracking-widest text-ocean-500">
