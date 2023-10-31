@@ -198,26 +198,37 @@ export const CAREER_EXPERIENCES: {
 export const RECENT_WORK: {
   id: string;
   title: string;
-  tech_stacks: string;
+  tech_stacks: string[];
+  tech_stacks_desc: string;
   desc: string;
+  detailed_desc: string;
 }[] = [
   {
     id: "yelpcamp",
     title: "YELPCAMP",
-    tech_stacks: "React, Node.js, MongoDB, Express (MERN)",
+    tech_stacks: ["React", "Node.js", "MongoDB", "Express"],
+    tech_stacks_desc: "React, Node.js, MongoDB, Express (MERN)",
     desc: "A full-stack website project where users can create and review campgrounds.",
+    detailed_desc:
+      "A full-stack website project where users can create and review campgrounds.A full-stack website project where users can create and review campgrounds.A full-stack website project where users can create and review campgrounds.A full-stack website project where users can create and review campgrounds.",
   },
   {
     id: "newsfeed",
     title: "NEWSFEED",
-    tech_stacks: "React, Node.js, MongoDB, Express (MERN)",
+    tech_stacks: ["React", "Node.js", "MongoDB", "Express"],
+    tech_stacks_desc: "React, Node.js, MongoDB, Express (MERN)",
     desc: "A full-stack website project where users can create and review campgrounds.",
+    detailed_desc:
+      "A full-stack website project where users can create and review campgrounds.A full-stack website project where users can create and review campgrounds.A full-stack website project where users can create and review campgrounds.A full-stack website project where users can create and review campgrounds.",
   },
   {
     id: "zoombies",
     title: "ZOOMBIES",
-    tech_stacks: "React, Node.js, MongoDB, Express (MERN)",
+    tech_stacks: ["React", "Node.js", "MongoDB", "Express"],
+    tech_stacks_desc: "React, Node.js, MongoDB, Express (MERN)",
     desc: "A full-stack website project where users can create and review campgrounds.",
+    detailed_desc:
+      "A full-stack website project where users can create and review campgrounds.A full-stack website project where users can create and review campgrounds.A full-stack website project where users can create and review campgrounds.A full-stack website project where users can create and review campgrounds.",
   },
 ];
 
