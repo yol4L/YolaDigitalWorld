@@ -4,7 +4,7 @@ export default function NavTabs() {
   return (
     <div className="flex items-center gap-10">
       <span>
-        <a href="/">HOME</a>
+        <a href="/portfolio">PORTFOLIO</a>
       </span>
       <span>
         <a href="/recent-work">WORK</a>
