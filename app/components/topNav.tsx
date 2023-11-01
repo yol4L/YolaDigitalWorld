@@ -8,7 +8,7 @@ export default function TopNavView() {
     <nav className="px-20 w-full py-3 fixed top-0 z-10 flex items-center justify-between bg-white border-b border-neutral-50">
       <Link href={"/"} className="relative flex items-center gap-2">
         <Image
-          src="yola-brand-avatar.svg"
+          src="/yola-brand-avatar.svg"
           alt="brand-avatar"
           width={30}
           height={30}

@@ -258,6 +258,8 @@ export const BLOGS: {
   date: string;
   author: string;
   tag: string;
+  quote: string;
+  content: string[];
 }[] = [
   {
     id: "01",
@@ -267,6 +269,19 @@ export const BLOGS: {
     date: "April 14, 2023",
     author: "Yola Liang",
     tag: "web design",
+    quote:
+      "Happiness is when what you think, what you say, and what you do are in harmony",
+    content: [
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quae voluptates labore facilis est aperiam repellat beatae voluptatem facere, itaque voluptas minus cum nulla nisi earum dicta, debitis ducimus impedit.",
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quae voluptates labore facilis est aperiam repellat beatae voluptatem facere, itaque voluptas minus cum nulla nisi earum dicta, debitis ducimus impedit.",
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quae voluptates labore facilis est aperiam repellat beatae voluptatem facere, itaque voluptas minus cum nulla nisi earum dicta, debitis ducimus impedit.",
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quae voluptates labore facilis est aperiam repellat beatae voluptatem facere, itaque voluptas minus cum nulla nisi earum dicta, debitis ducimus impedit.",
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quae voluptates labore facilis est aperiam repellat beatae voluptatem facere, itaque voluptas minus cum nulla nisi earum dicta, debitis ducimus impedit.",
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quae voluptates labore facilis est aperiam repellat beatae voluptatem facere, itaque voluptas minus cum nulla nisi earum dicta, debitis ducimus impedit.",
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quae voluptates labore facilis est aperiam repellat beatae voluptatem facere, itaque voluptas minus cum nulla nisi earum dicta, debitis ducimus impedit.",
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quae voluptates labore facilis est aperiam repellat beatae voluptatem facere, itaque voluptas minus cum nulla nisi earum dicta, debitis ducimus impedit.",
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quae voluptates labore facilis est aperiam repellat beatae voluptatem facere, itaque voluptas minus cum nulla nisi earum dicta, debitis ducimus impedit.",
+    ],
   },
   {
     id: "02",
@@ -276,6 +291,19 @@ export const BLOGS: {
     date: "August 16, 2023",
     author: "Yola Liang",
     tag: "web design",
+    quote:
+      "Happiness is when what you think, what you say, and what you do are in harmony",
+    content: [
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quae voluptates labore facilis est aperiam repellat beatae voluptatem facere, itaque voluptas minus cum nulla nisi earum dicta, debitis ducimus impedit.",
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quae voluptates labore facilis est aperiam repellat beatae voluptatem facere, itaque voluptas minus cum nulla nisi earum dicta, debitis ducimus impedit.",
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quae voluptates labore facilis est aperiam repellat beatae voluptatem facere, itaque voluptas minus cum nulla nisi earum dicta, debitis ducimus impedit.",
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quae voluptates labore facilis est aperiam repellat beatae voluptatem facere, itaque voluptas minus cum nulla nisi earum dicta, debitis ducimus impedit.",
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quae voluptates labore facilis est aperiam repellat beatae voluptatem facere, itaque voluptas minus cum nulla nisi earum dicta, debitis ducimus impedit.",
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quae voluptates labore facilis est aperiam repellat beatae voluptatem facere, itaque voluptas minus cum nulla nisi earum dicta, debitis ducimus impedit.",
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quae voluptates labore facilis est aperiam repellat beatae voluptatem facere, itaque voluptas minus cum nulla nisi earum dicta, debitis ducimus impedit.",
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quae voluptates labore facilis est aperiam repellat beatae voluptatem facere, itaque voluptas minus cum nulla nisi earum dicta, debitis ducimus impedit.",
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quae voluptates labore facilis est aperiam repellat beatae voluptatem facere, itaque voluptas minus cum nulla nisi earum dicta, debitis ducimus impedit.",
+    ],
   },
   {
     id: "03",
@@ -285,5 +313,18 @@ export const BLOGS: {
     date: "October 03, 2023",
     author: "Yola Liang",
     tag: "web design",
+    quote:
+      "Happiness is when what you think, what you say, and what you do are in harmony",
+    content: [
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quae voluptates labore facilis est aperiam repellat beatae voluptatem facere, itaque voluptas minus cum nulla nisi earum dicta, debitis ducimus impedit.",
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quae voluptates labore facilis est aperiam repellat beatae voluptatem facere, itaque voluptas minus cum nulla nisi earum dicta, debitis ducimus impedit.",
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quae voluptates labore facilis est aperiam repellat beatae voluptatem facere, itaque voluptas minus cum nulla nisi earum dicta, debitis ducimus impedit.",
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quae voluptates labore facilis est aperiam repellat beatae voluptatem facere, itaque voluptas minus cum nulla nisi earum dicta, debitis ducimus impedit.",
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quae voluptates labore facilis est aperiam repellat beatae voluptatem facere, itaque voluptas minus cum nulla nisi earum dicta, debitis ducimus impedit.",
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quae voluptates labore facilis est aperiam repellat beatae voluptatem facere, itaque voluptas minus cum nulla nisi earum dicta, debitis ducimus impedit.",
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quae voluptates labore facilis est aperiam repellat beatae voluptatem facere, itaque voluptas minus cum nulla nisi earum dicta, debitis ducimus impedit.",
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quae voluptates labore facilis est aperiam repellat beatae voluptatem facere, itaque voluptas minus cum nulla nisi earum dicta, debitis ducimus impedit.",
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quae voluptates labore facilis est aperiam repellat beatae voluptatem facere, itaque voluptas minus cum nulla nisi earum dicta, debitis ducimus impedit.",
+    ],
   },
 ];
