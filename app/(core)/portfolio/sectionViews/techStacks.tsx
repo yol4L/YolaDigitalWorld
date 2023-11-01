@@ -8,7 +8,7 @@ function getBgColor() {
 
 export default function TechStacksView() {
   return (
-    <div className="mx-[-0.75rem] flex flex-wrap items-stretch">
+    <div className="mx-[-0.75rem] -mb-20 flex flex-wrap items-stretch">
       {TECH_STACKS.map(({ id, name, icon: Icon, stacks }) => {
         return (
           <div key={id} className="w-1/2 p-3">

@@ -14,7 +14,7 @@ export default function SectionHeaderAndDesc({
   description: string;
 }) {
   return (
-    <div className="my-6 flex flex-col gap-6">
+    <div className="mt-28 mb-6 flex flex-col gap-6">
       <h2 className="text-neutral-400 tracking-widest">{name}</h2>
       <h1 className="font-serif font-medium text-xl text-neutral-800 tracking-widest">
         {headerText}

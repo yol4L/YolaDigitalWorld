@@ -13,7 +13,7 @@ import FunFactView from "./sectionViews/funFacts";
 
 export default function PortfolioView() {
   return (
-    <div className="w-full flex gap-10">
+    <div className="pl-20 w-full flex gap-10">
       {/* Sidebar */}
       <div className="w-96 min-w-96 h-screen basis-1/4 sticky top-0 left-0 bg-slate-200">
         <div className="w-full h-full px-10 pt-24 pb-16 flex flex-col gap-8 items-center">
@@ -44,61 +44,69 @@ export default function PortfolioView() {
         </div>
       </div>
       {/* Content */}
-      <div className="py-28 basis-3/4 flex flex-col gap-12">
-        {/* About me */}
-        <section className="flex flex-col gap-4">
-          {/* <SectionHeaderAndDesc index={0} /> */}
-          <SectionHeaderAndDesc {...SECTION_HEADER_AND_DESC_ITEMS[0]} />
-          {/* <SectionHeaderAndDesc name={SECTION_HEADER_AND_DESC_ITEMS[0].name} headerText={.headerText} desc={} /> */}
-          <PersonalityView />
-        </section>
-        <div className="p-6 bg-[#F6C050]">
-          <p className="font-serif text-2xl tracking-widest">
-            I am passionate about the code world, <br />
-            especially the front-end engineering, so appealing.
-          </p>
+      <div
+        className="h-screen basis-3/4 overflow-y-scroll overscroll-contain scroll-smooth snap-y"
+        // style={{ scrollbarWidth: "none" }}
+      >
+        <div className="pr-20 flex flex-col gap-12 ">
+          {/* About me */}
+          <section id="about" className="flex flex-col gap-4 snap-start">
+            {/* <SectionHeaderAndDesc index={0} /> */}
+            <SectionHeaderAndDesc {...SECTION_HEADER_AND_DESC_ITEMS[0]} />
+            {/* <SectionHeaderAndDesc name={SECTION_HEADER_AND_DESC_ITEMS[0].name} headerText={.headerText} desc={} /> */}
+            <PersonalityView />
+          </section>
+          <div className="-mb-20 p-6 bg-[#F6C050]">
+            <p className="font-serif text-2xl tracking-widest">
+              I am passionate about the code world, <br />
+              especially the front-end engineering, so appealing.
+            </p>
+          </div>
+          {/* SKills */}
+          <section id="skills" className="flex flex-col gap-4 snap-start">
+            <SectionHeaderAndDesc {...SECTION_HEADER_AND_DESC_ITEMS[1]} />
+            <TechStacksView />
+          </section>
+          {/* Experience */}
+          <section id="experience" className="flex flex-col gap-4 snap-start">
+            <SectionHeaderAndDesc {...SECTION_HEADER_AND_DESC_ITEMS[2]} />
+            <CareerExperienceView />
+          </section>
+          {/* Project */}
+          <section id="project" className="flex flex-col gap-4 snap-start">
+            <SectionHeaderAndDesc {...SECTION_HEADER_AND_DESC_ITEMS[3]} />
+            <ProjectsView />
+          </section>
+          <div className="p-6 -mb-20 bg-[#F6C050]">
+            <p className="font-serif text-2xl tracking-widest">
+              Keep coding... <br />
+              Keep Reflective...
+            </p>
+          </div>
+          {/* Blog */}
+          <section id="blog" className="flex flex-col gap-4 snap-start">
+            <SectionHeaderAndDesc {...SECTION_HEADER_AND_DESC_ITEMS[4]} />
+            <BlogsView />
+          </section>
+          {/* Education */}
+          <section id="education" className="flex flex-col gap-4 snap-start">
+            <SectionHeaderAndDesc {...SECTION_HEADER_AND_DESC_ITEMS[5]} />
+            <EducationView />
+          </section>
+          {/* Fun points */}
+          <section id="fun_points" className="flex flex-col gap-4 snap-start">
+            <SectionHeaderAndDesc {...SECTION_HEADER_AND_DESC_ITEMS[6]} />
+            <FunFactView />
+          </section>
+          {/* Contact */}
+          <section
+            id="contact"
+            className="pb-20 flex flex-col gap-4 snap-start"
+          >
+            <SectionHeaderAndDesc {...SECTION_HEADER_AND_DESC_ITEMS[7]} />
+            <ContactMeView />
+          </section>
         </div>
-        {/* SKills */}
-        <section className="flex flex-col gap-4">
-          <SectionHeaderAndDesc {...SECTION_HEADER_AND_DESC_ITEMS[1]} />
-          <TechStacksView />
-        </section>
-        {/* Experience */}
-        <section className="flex flex-col gap-4">
-          <SectionHeaderAndDesc {...SECTION_HEADER_AND_DESC_ITEMS[2]} />
-          <CareerExperienceView />
-        </section>
-        {/* Project */}
-        <section className="flex flex-col gap-4">
-          <SectionHeaderAndDesc {...SECTION_HEADER_AND_DESC_ITEMS[3]} />
-          <ProjectsView />
-        </section>
-        <div className="p-6 bg-[#F6C050]">
-          <p className="font-serif text-2xl tracking-widest">
-            Keep coding... <br />
-            Keep Reflective...
-          </p>
-        </div>
-        {/* Blog */}
-        <section className="flex flex-col gap-4">
-          <SectionHeaderAndDesc {...SECTION_HEADER_AND_DESC_ITEMS[4]} />
-          <BlogsView />
-        </section>
-        {/* Education */}
-        <section className="flex flex-col gap-4">
-          <SectionHeaderAndDesc {...SECTION_HEADER_AND_DESC_ITEMS[5]} />
-          <EducationView />
-        </section>
-        {/* Fun points */}
-        <section className="flex flex-col gap-4">
-          <SectionHeaderAndDesc {...SECTION_HEADER_AND_DESC_ITEMS[6]} />
-          <FunFactView />
-        </section>
-        {/* Contact */}
-        <section className="flex flex-col gap-4">
-          <SectionHeaderAndDesc {...SECTION_HEADER_AND_DESC_ITEMS[7]} />
-          <ContactMeView />
-        </section>
       </div>
     </div>
   );

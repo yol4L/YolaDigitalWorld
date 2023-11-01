@@ -2,7 +2,7 @@ import { BLOGS } from "../data";
 
 export default function BlogsView() {
   return (
-    <div className="mx-[-1rem] flex">
+    <div className="mx-[-1rem] -mb-20 flex">
       {BLOGS.slice(0, 3).map(({ id, title, date, tag }) => {
         return (
           <div key={id} className="w-1/3 px-4">

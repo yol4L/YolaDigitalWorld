@@ -1,7 +1,7 @@
 import Image from "next/image";
 export default function FunFactView() {
   return (
-    <div className="w-full aspect-[2/1] flex">
+    <div className="w-full aspect-[2/1] -mb-20 flex">
       <div className="w-1/2 h-full relative overflow-hidden">
         <Image
           src="/yola-funFact01.jpg"

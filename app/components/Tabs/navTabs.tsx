@@ -1,8 +1,8 @@
 "use client";
 
 const NAV_ITEMS: { id: string; name: string; path: string }[] = [
-  { id: "home", name: "home", path: "/" },
-  { id: "profile", name: "profile", path: "/portfolio" },
+  { id: "home", name: "home", path: "/#home" },
+  // { id: "profile", name: "profile", path: "/portfolio" },
   { id: "recent_work", name: "work", path: "/recent-work" },
   { id: "blog", name: "blog", path: "/blog" },
   { id: "contact", name: "contact", path: "/contact" },

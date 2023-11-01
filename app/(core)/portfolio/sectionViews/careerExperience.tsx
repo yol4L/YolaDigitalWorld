@@ -8,7 +8,7 @@ export default function CareerExperienceView() {
       {CAREER_EXPERIENCES.map(
         ({ id, company, position_type, position, period, duties }) => {
           return (
-            <div key={id} className="flex flex-col gap-2">
+            <div key={id} className="flex flex-col gap-2 last:-mb-20">
               {/* Job title, including icon, company, position, period, etc. */}
               <div className="flex items-center gap-4">
                 <div className="w-1/12 shrink-0 flex justify-center items-center">
@@ -25,8 +25,8 @@ export default function CareerExperienceView() {
                 </div>
               </div>
               {/* Job duties */}
-              <div className="h-full flex items-center gap-4">
-                <div className="w-1/12 h-full shrink-0 relative">
+              <div className="h-full flex items-stretch gap-4">
+                <div className="w-1/12 h-inherit shrink-0 relative">
                   <div className="w-1/2 h-full absolute border-r border-neutral-400"></div>
                 </div>
                 <div className="w-11/12 my-2 p-6 rounded-md bg-neutral-100">

@@ -3,7 +3,7 @@ import { EDUCATION_DATA } from "../data";
 
 export default function EducationView() {
   return (
-    <div className="flex flex-col gap-4">
+    <div className="-mb-20 flex flex-col gap-4">
       {EDUCATION_DATA.map(({ id, title, desc }) => {
         return (
           <div key={id} className="flex flex-col">
