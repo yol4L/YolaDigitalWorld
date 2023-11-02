@@ -1,55 +1,111 @@
 import { DocumentIcon } from "@/app/components/Icons/svg";
 import Link from "next/link";
+import cx from "classnames";
+import { MuiIconType } from "@/app/types";
+
+const PERSONAL_INFO_ITEMS: {
+  id: string;
+  icon: MuiIconType;
+  details: string;
+}[] = [
+  { id: "email", icon: DocumentIcon, details: "yolanda.y.liang@gmail.com" },
+  { id: "address", icon: DocumentIcon, details: "BELCONNEN ACT 2617" },
+  { id: "phone", icon: DocumentIcon, details: "+61 0473042891" },
+];
+
+const ELSE_ITEMS: {
+  id: string;
+  icon: MuiIconType;
+  path: string;
+  info: string;
+}[] = [
+  {
+    id: "cv_pdf",
+    icon: DocumentIcon,
+    path: "",
+    info: "Download my CV as PDF format",
+  },
+  {
+    id: "cv_doc",
+    icon: DocumentIcon,
+    path: "",
+    info: "Download my CV as DOC format",
+  },
+  {
+    id: "linkedin",
+    icon: DocumentIcon,
+    path: "",
+    info: "View my portfolio on LinkedIn",
+  },
+  {
+    id: "back_home",
+    icon: DocumentIcon,
+    path: "/",
+    info: "Back to Home Page",
+  },
+];
 
 export default function ContactMeView() {
   return (
     <div className="flex gap-20">
       <div className="w-1/2 flex flex-col gap-10">
+        {/* Personal Info */}
         <div className="flex flex-col gap-8">
-          <h3 className="py-2 border-b border-neutral-200 font-medium text-ocean-500">
+          <span
+            className={cx(
+              "py-2 border-b font-medium text-ocean-500",
+              "border-slate-200 dark:border-slate-500 transition-colors duration-700"
+            )}
+          >
             Personal
-          </h3>
+          </span>
           <div className="flex flex-col gap-4">
-            <div className="flex items-center gap-4">
-              <div className="p-4 rounded-lg flex justify-center items-center bg-neutral-100">
-                <DocumentIcon className="text-ocean-500" />
-              </div>
-              <div>
-                <span className="text-neutral-800">
-                  yolanda.y.liang@gmail.com
-                </span>
-              </div>
-            </div>
-            <div className="flex items-center gap-4">
-              <div className="p-4 rounded-lg flex justify-center items-center bg-neutral-100">
-                <DocumentIcon className="text-ocean-500" />
-              </div>
-              <div>
-                <span className="text-neutral-800">BELCONNEN ACT 2617</span>
-              </div>
-            </div>
-            <div className="flex items-center gap-4">
-              <div className="p-4 rounded-lg flex justify-center items-center bg-neutral-100">
-                <DocumentIcon className="text-ocean-500" />
-              </div>
-              <div>
-                <span className="text-neutral-800">+61 0473042891</span>
-              </div>
-            </div>
+            {PERSONAL_INFO_ITEMS.map(({ id, icon: Icon, details }) => {
+              return (
+                <div key={id} className="flex items-center gap-4">
+                  <div
+                    className={cx(
+                      "p-4 rounded-lg flex justify-center items-center",
+                      "bg-slate-200 dark:bg-slate-900 transition-colors duration-700"
+                    )}
+                  >
+                    <Icon className="text-ocean-500 dark:text-slate-500 transition-colors duration-700" />
+                  </div>
+                  <div>
+                    <span>{details}</span>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
+        {/* Elsewhere */}
         <div className="flex flex-col gap-8">
-          <h3 className="py-2 border-b border-neutral-200 font-medium text-ocean-500">
+          <span
+            className={cx(
+              "py-2 border-b font-medium text-ocean-500",
+              "border-slate-200 dark:border-slate-500 transition-colors duration-700"
+            )}
+          >
             Elsewhere
-          </h3>
-          <div className="flex flex-col gap-4 text-neutral-800">
-            <Link href="/">Download my CV as PDF format</Link>
-            <Link href="/">Download my CV as DOC format</Link>
-            <Link href="/">View my portfolio on LinkedIn</Link>
-            <Link href="/">Back to Home Page</Link>
+          </span>
+          <div className="flex flex-col gap-4">
+            {ELSE_ITEMS.map(({ id, icon: Icon, path, info }) => {
+              return (
+                <Link
+                  key={id}
+                  href={path}
+                  className="py-1 flex items-center hover:text-cerulean-400 dark:hover:text-brick-300"
+                >
+                  <Icon fontSize="small" className="mx-2" />
+                  <span>{info}</span>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </div>
+      {/* Message form */}
       <form className="w-1/2 py-2 flex flex-col gap-8">
         {/* Name */}
         <div className="flex flex-col gap-2">
@@ -60,7 +116,11 @@ export default function ContactMeView() {
             type="text"
             name="name"
             id="name"
-            className="p-2 bg-transparent rounded-md border border-neutral-200 focus:outline-ocean-500"
+            className={cx(
+              "p-2 bg-transparent rounded-md border transition-colors duration-700",
+              "border-slate-200 dark:border-slate-500",
+              "focus:outline-ocean-500"
+            )}
           />
         </div>
         {/* Email */}
@@ -72,7 +132,11 @@ export default function ContactMeView() {
             type="email"
             name="email"
             id="email"
-            className="p-2 bg-transparent rounded-md border border-neutral-200 focus:outline-ocean-500"
+            className={cx(
+              "p-2 bg-transparent rounded-md border transition-colors duration-700",
+              "border-slate-200 dark:border-slate-500",
+              "focus:outline-ocean-500"
+            )}
           />
         </div>
         {/* Message */}
@@ -85,12 +149,20 @@ export default function ContactMeView() {
             id="message"
             cols={30}
             rows={10}
-            className="p-2 bg-transparent rounded-md border border-neutral-200 focus:outline-ocean-500"
+            className={cx(
+              "p-2 bg-transparent rounded-md border transition-colors duration-700",
+              "border-slate-200 dark:border-slate-500",
+              "focus:outline-ocean-500"
+            )}
           ></textarea>
         </div>
         <button
           type="button"
-          className="w-auto px-8 py-4 self-start rounded-full bg-neutral-200 font-medium tracking-widest text-ocean-500"
+          className={cx(
+            "w-auto px-8 py-4 self-start rounded-full font-medium tracking-widest transition-colors duration-700",
+            "bg-slate-300 dark:bg-ocean-500",
+            "text-ocean-500 dark:text-slate-100"
+          )}
         >
           <span>SUBMIT MESSAGE</span>
         </button>

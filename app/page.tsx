@@ -3,6 +3,7 @@ import { DocumentIcon } from "./components/Icons/svg";
 import PageTagView from "./components/Tags/pageTag";
 import PortfolioView from "./(core)/portfolio/portfolioView";
 import TopNavView from "./components/topNav";
+import cx from "classnames";
 
 export default function Home() {
   return (
@@ -16,10 +17,15 @@ export default function Home() {
             <div className="w-1/2 flex flex-col justify-center gap-8">
               <PageTagView tagName={"About"} />
               <div className="flex flex-col gap-4">
-                <h1 className="font-serif font-bold text-6xl text-ocean-500">
+                <h1
+                  className={cx(
+                    "font-bold text-6xl tracking-wider text-ocean-500",
+                    "dark:text-slate-100 transition-colors duration-700"
+                  )}
+                >
                   Hi, I&apos;m Yola
                 </h1>
-                <p className="text-xl text-neutral-900">
+                <p className="text-xl font-light tracking-wider">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                   Ut enim ad minim veniam, quis nostrud exercitation ullamco
@@ -28,12 +34,17 @@ export default function Home() {
               </div>
               <button
                 type="button"
-                className="w-auto px-6 py-4 self-start inline-flex items-center gap-2 rounded-2xl bg-neutral-200"
+                className={cx(
+                  "w-auto px-6 py-4 self-start relative rounded-2xl overflow-hidden",
+                  "bg-neutral-200 dark:bg-slate-900 transition-colors duration-700"
+                )}
               >
-                <DocumentIcon className="text-ocean-500" />
-                <span className="font-semibold text-xl tracking-wide text-ocean-500">
-                  DOWNLOAD MY RESUME
-                </span>
+                <div className="inline-flex items-center gap-2 text-ocean-500 dark:text-slate-100">
+                  <DocumentIcon className=" font-light" />
+                  <span className="font-medium text-xl tracking-widest">
+                    DOWNLOAD MY RESUME
+                  </span>
+                </div>
               </button>
             </div>
             {/* Photo */}

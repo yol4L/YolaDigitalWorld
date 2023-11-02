@@ -11,9 +11,7 @@ export default function BlogsView() {
               <p className="text-sm tracking-widest text-neutral-400">
                 {`${date.toUpperCase()} | ${tag.toUpperCase()}`}
               </p>
-              <p className="text-sm tracking-wider text-neutral-800">
-                {title.toUpperCase()}
-              </p>
+              <p className="text-sm tracking-wider">{title.toUpperCase()}</p>
             </div>
           </div>
         );

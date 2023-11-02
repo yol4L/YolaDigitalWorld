@@ -71,7 +71,7 @@ export const FourPointedStarIcon = createSvgIcon(
   >
     <path
       d="M26.5 0L35.754 17.246L53 26.5L35.754 34.4921L26.5 53L18.0873 34.4921L0 26.5L18.0873 17.246L26.5 0Z"
-      fill="#00214E"
+      fill="currentColor"
     />
   </svg>,
   "FourPointedStar"

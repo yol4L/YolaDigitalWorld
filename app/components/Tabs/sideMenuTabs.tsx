@@ -31,10 +31,12 @@ export default function SideMenuTabs({
           <span
             key={id}
             className={cx(
-              " tracking-wider hover:text-cerulean-500 hover:border-b hover:border-cerulean-500",
+              "tracking-wider hover:border-b transition-colors duration-700",
+              "hover:text-cerulean-500  hover:border-cerulean-500",
+              "dark:hover:text-brick-300 dark:hover:border-brick-300",
               isActive
-                ? "text-cerulean-500 border-b border-cerulean-500"
-                : "text-neutral-600"
+                ? "text-cerulean-500 border-b border-cerulean-500 dark:text-brick-300 dark:border-brick-300"
+                : "text-slate-600 dark:text-slate-400"
             )}
           >
             <a href={path}>{name.toUpperCase()}</a>

@@ -11,10 +11,10 @@ export default function FunFactView() {
         ></Image>
       </div>
       <div className="w-1/2 h-full flex flex-wrap">
-        <div className="w-1/2 bg-blue-50"></div>
-        <div className="w-1/2 bg-blue-200"></div>
-        <div className="w-1/2 bg-blue-300"></div>
-        <div className="w-1/2 bg-blue-500"></div>
+        <div className="w-1/2 bg-blue-50 dark:bg-brick-100 transition-colors duration-700"></div>
+        <div className="w-1/2 bg-blue-200 dark:bg-brick-200 transition-colors duration-700"></div>
+        <div className="w-1/2 bg-blue-300 dark:bg-brick-300 transition-colors duration-700"></div>
+        <div className="w-1/2 bg-blue-500 dark:bg-brick-500 transition-colors duration-700"></div>
       </div>
     </div>
   );

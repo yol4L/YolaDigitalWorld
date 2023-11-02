@@ -1,5 +1,7 @@
 "use client";
 
+import cx from "classnames";
+
 const NAV_ITEMS: { id: string; name: string; path: string }[] = [
   { id: "home", name: "home", path: "/#home" },
   // { id: "profile", name: "profile", path: "/portfolio" },
@@ -15,7 +17,11 @@ export default function NavTabs() {
         return (
           <span
             key={id}
-            className="tracking-wider text-neutral-800 hover:text-cerulean-500 hover:border-b hover:border-cerulean-500"
+            className={cx(
+              "tracking-wider hover:border-b",
+              "hover:text-cerulean-500  hover:border-cerulean-500",
+              "dark:hover:text-brick-300 dark:hover:border-brick-300"
+            )}
           >
             <a href={path}>{name.toUpperCase()}</a>
           </span>
