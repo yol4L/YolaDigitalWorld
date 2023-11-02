@@ -41,7 +41,7 @@ export default function PortfolioView() {
       const sectionInView = sections.find((section) => {
         const element = document.getElementById(section);
         if (element) {
-          const elementTop = element.offsetTop;
+          const elementTop = element.offsetTop - 80;
           const elementHeight = element.offsetHeight;
 
           return scrollY >= elementTop && scrollY < elementTop + elementHeight;
