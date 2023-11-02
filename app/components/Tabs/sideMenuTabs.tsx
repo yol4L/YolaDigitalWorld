@@ -1,5 +1,7 @@
 "use client";
 
+import cx from "classnames";
+
 const SIDE_MENU_ITEMS: {
   id: string;
   name: string;
@@ -15,14 +17,25 @@ const SIDE_MENU_ITEMS: {
   { id: "contact", name: "contact", path: "#contact" },
 ];
 
-export default function SideMenuTabs() {
+export default function SideMenuTabs({
+  activeSection,
+}: {
+  activeSection: string;
+}) {
   return (
     <div className="grow flex flex-col justify-between items-center">
       {SIDE_MENU_ITEMS.map(({ id, name, path }) => {
+        const isActive = id === activeSection;
+
         return (
           <span
             key={id}
-            className="text-neutral-600 tracking-wider hover:text-cerulean-500 hover:border-b hover:border-cerulean-500"
+            className={cx(
+              " tracking-wider hover:text-cerulean-500 hover:border-b hover:border-cerulean-500",
+              isActive
+                ? "text-cerulean-500 border-b border-cerulean-500"
+                : "text-neutral-600"
+            )}
           >
             <a href={path}>{name.toUpperCase()}</a>
           </span>

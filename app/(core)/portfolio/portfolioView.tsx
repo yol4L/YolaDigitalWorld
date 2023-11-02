@@ -1,3 +1,5 @@
+"use client";
+
 import SideMenuTabs from "@/app/components/Tabs/sideMenuTabs";
 import SectionHeaderAndDesc from "@/app/components/sectionHeaderAndDesc";
 import Image from "next/image";
@@ -10,8 +12,118 @@ import EducationView from "./sectionViews/education";
 import { SECTION_HEADER_AND_DESC_ITEMS } from "./data";
 import ContactMeView from "../contact/contact";
 import FunFactView from "./sectionViews/funFacts";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 export default function PortfolioView() {
+  const [activeSection, setActiveSection] = useState<string>("about"); // Default to the first section
+
+  const contentDivRef = useRef<HTMLElement>(null);
+
+  const handleScroll = useCallback(() => {
+    const sections = [
+      "about",
+      "skills",
+      "experience",
+      "project",
+      "blog",
+      "education",
+      "fun_points",
+      "contact",
+    ];
+    const contentDiv = contentDivRef.current;
+
+    if (contentDiv) {
+      // Get the current scroll position within the content div
+      const scrollY = contentDiv.scrollTop;
+
+      // Calculate which section is currently in view
+      const sectionInView = sections.find((section) => {
+        const element = document.getElementById(section);
+        if (element) {
+          const elementTop = element.offsetTop;
+          const elementHeight = element.offsetHeight;
+
+          return scrollY >= elementTop && scrollY < elementTop + elementHeight;
+        }
+        return false;
+      });
+
+      // Update the active section
+      if (sectionInView) {
+        setActiveSection(sectionInView);
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    // Attach the onScroll event handler to the content div
+    const contentDiv = contentDivRef.current;
+    if (contentDiv) {
+      contentDiv.addEventListener("scroll", handleScroll);
+    }
+
+    // Remove the event listener when the component unmounts
+    return () => {
+      if (contentDiv) {
+        contentDiv.removeEventListener("scroll", handleScroll);
+      }
+    };
+  }, [handleScroll]);
+
+  // The following codes works in case of scroll the normal window element.
+  // const handleScroll = useCallback(() => {
+  //   const sections = [
+  //     "about",
+  //     "skills",
+  //     "experience",
+  //     "project",
+  //     "blog",
+  //     "education",
+  //     "fun_points",
+  //     "contact",
+  //   ];
+
+  //   // Get the current scroll position
+  //   const scrollY = window.scrollY;
+
+  //   // Calculate which section is currently in view
+  //   const sectionInView = sections.find((section) => {
+  //     const element = document.getElementById(section);
+  //     if (element) {
+  //       const elementHeight = element.offsetHeight; // or clientHeight
+  //       const elementTop = element.offsetTop;
+  //       const elementBottom = elementTop + elementHeight;
+  //       const elementScrollTop = element.scrollTop;
+  //       const elementScrollBottom = elementScrollTop + elementHeight;
+
+  //       console.log({
+  //         scrollY,
+  //         elementHeight,
+  //         elementTop,
+  //         elementBottom,
+  //         elementScrollTop,
+  //         elementScrollBottom,
+  //       });
+  //       return scrollY >= elementTop && scrollY < elementTop + elementHeight;
+  //     }
+  //     return false;
+  //   });
+
+  //   // Update the active section
+  //   if (sectionInView) {
+  //     setActiveSection(sectionInView);
+  //   }
+  //   console.log("activeSection", activeSection);
+  // }, [activeSection]);
+
+  // Add an event listener to handle scroll events
+  // useEffect(() => {
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, [handleScroll]);
+
   return (
     <div className="pl-20 w-full flex gap-10">
       {/* Sidebar */}
@@ -34,7 +146,7 @@ export default function PortfolioView() {
             </span>
           </div>
           {/* Side menu */}
-          <SideMenuTabs />
+          <SideMenuTabs activeSection={activeSection} />
           {/* Copyright */}
           <div>
             <p className="text-center text-sm text-neutral-400">
@@ -45,10 +157,12 @@ export default function PortfolioView() {
       </div>
       {/* Content */}
       <div
-        className="h-screen basis-3/4 overflow-y-scroll overscroll-contain scroll-smooth snap-y"
+        ref={contentDivRef as React.MutableRefObject<HTMLDivElement>}
+        className="h-screen basis-3/4 relative overflow-y-scroll scroll-smooth snap-y"
+        onScroll={handleScroll}
         // style={{ scrollbarWidth: "none" }}
       >
-        <div className="pr-20 flex flex-col gap-12 ">
+        <div className="pr-20 relative flex flex-col gap-12 ">
           {/* About me */}
           <section id="about" className="flex flex-col gap-4 snap-start">
             {/* <SectionHeaderAndDesc index={0} /> */}
