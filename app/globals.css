@@ -27,5 +27,22 @@
     @apply font-serif 
   }
 
+
+
 }
+
+@layer utilities {
+  .btn-bg-brick {
+    background-image: linear-gradient(to right, #CB997E, #CB997E);
+    background-size: 0 100%;
+    background-repeat: no-repeat;
+  }
+
+  .btn-bg-brick-hover {
+    background-image: linear-gradient(to right, #CB997E, #CB997E);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+
+};
 

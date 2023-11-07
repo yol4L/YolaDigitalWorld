@@ -34,11 +34,17 @@ export default function Home() {
               <button
                 type="button"
                 className={cx(
-                  "w-auto px-6 py-4 self-start relative rounded-2xl overflow-hidden",
+                  "w-auto self-start relative rounded-2xl overflow-hidden",
                   "bg-neutral-200 dark:bg-slate-900 transition-colors duration-700"
                 )}
               >
-                <div className="inline-flex items-center gap-2 text-ocean-500 dark:text-slate-100">
+                <div
+                  className={cx(
+                    "px-6 py-4 relative inline-flex items-center gap-2",
+                    "text-ocean-500 dark:text-slate-100 transition-[background-size_colors] duration-700",
+                    "btn-bg-brick hover:btn-bg-brick-hover hover:text-slate-50"
+                  )}
+                >
                   <DocumentIcon className=" font-light" />
                   <span className="font-medium text-xl tracking-widest">
                     DOWNLOAD MY RESUME
