@@ -4,7 +4,13 @@ import NavTabs from "./Tabs/navTabs";
 import DarkModeView from "./darkMode";
 import cx from "classnames";
 
-export default function TopNavView() {
+export default function TopNavView({
+  darkMode,
+  toggleDarkMode,
+}: {
+  darkMode: boolean;
+  toggleDarkMode: () => void;
+}) {
   return (
     <nav
       className={cx(
@@ -27,7 +33,7 @@ export default function TopNavView() {
       </Link>
       <div className="flex items-center gap-10">
         <NavTabs />
-        <DarkModeView />
+        <DarkModeView darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       </div>
     </nav>
   );

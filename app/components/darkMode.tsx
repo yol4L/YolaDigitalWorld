@@ -1,33 +1,17 @@
 "use client";
-import Image from "next/image";
+
 import { useEffect, useState } from "react";
 import cx from "classnames";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
 
-export default function ToggleDarkModeButton() {
-  const [darkMode, setDarkMode] = useState(false);
-
-  useEffect(() => {
-    // Check if dark mode is set in local storage
-    const isDarkMode = localStorage.getItem("darkMode") === "true";
-    setDarkMode(isDarkMode);
-
-    // Apply dark mode class to the HTML element
-    document.documentElement.classList.toggle("dark", isDarkMode);
-  }, []);
-
-  const toggleDarkMode = () => {
-    const newDarkMode = !darkMode;
-    setDarkMode(newDarkMode);
-
-    // Store the dark mode preference in local storage
-    localStorage.setItem("darkMode", newDarkMode.toString());
-
-    // Toggle the dark mode class on the HTML element
-    document.documentElement.classList.toggle("dark", newDarkMode);
-  };
-
+export default function ToggleDarkModeButton({
+  darkMode,
+  toggleDarkMode,
+}: {
+  darkMode: boolean;
+  toggleDarkMode: () => void;
+}) {
   return (
     <button
       type="button"

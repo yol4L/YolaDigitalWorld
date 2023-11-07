@@ -51,14 +51,14 @@
   .firefly::before {
       background: var(--before-bg);
       opacity: 0.4;
-      animation: drift 100s infinite alternate;
+      animation: drift var(--drift-duration) ease infinite alternate;
   }
 
   .firefly::after {
       background: var(--after-bg);
       opacity: 0;
       box-shadow: 0 0 0vw 0vw var(--after-shadow);
-      animation: drift 100s infinite alternate, flash var(--flash-speed) ease var(--flash-delay) infinite;
+      animation: drift var(--drift-duration) ease infinite alternate, flash var(--flash-duration) ease var(--flash-delay) infinite;
   }
 
   @keyframes drift {
