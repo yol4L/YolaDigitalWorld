@@ -4,6 +4,7 @@ import PageTagView from "./components/Tags/pageTag";
 import PortfolioView from "./(core)/portfolio/portfolioView";
 import TopNavView from "./components/topNav";
 import cx from "classnames";
+import AnimatedBackgroundView from "./components/bgAnimation";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <div className="flex flex-col">
         {/* Home */}
         <div id="home" className="w-full h-screen px-20 flex flex-col">
+          <AnimatedBackgroundView />
           <div className="min-h-0 grow px-20 w-full flex justify-between">
             {/* Welcome info */}
             <div className="w-1/2 flex flex-col justify-center gap-8">

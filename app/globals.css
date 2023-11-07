@@ -27,9 +27,62 @@
     @apply font-serif 
   }
 
-
-
 }
+
+@layer components {
+  /* Background animation */
+  .firefly {
+      width: var(--size);
+      height: var(--size);
+      pointer-events: none;
+      animation: ease 50s alternate infinite;
+  }
+
+  .firefly::before,
+  .firefly::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      transform-origin: -10vw;
+  }
+
+  .firefly::before {
+      background: var(--before-bg);
+      opacity: 0.4;
+      animation: drift 100s infinite alternate;
+  }
+
+  .firefly::after {
+      background: var(--after-bg);
+      opacity: 0;
+      box-shadow: 0 0 0vw 0vw var(--after-shadow);
+      animation: drift 100s infinite alternate, flash var(--flash-speed) ease var(--flash-delay) infinite;
+  }
+
+  @keyframes drift {
+      0% {
+          transform: rotate(0deg);
+      }
+      100% {
+          transform: rotate(360deg);
+      }
+  }
+
+  @keyframes flash {
+      0%, 30%, 100% {
+          opacity: 0;
+          box-shadow: 0 0 0vw 0vw var(--after-shadow);
+      }
+
+      5% {
+          opacity: 1;
+          box-shadow: 0 0 2vw 0.4vw var(--after-shadow);
+      }
+  }
+}
+
 
 @layer utilities {
   .btn-bg-brick {
