@@ -47,7 +47,7 @@ export default function CareerExperienceView() {
                   >
                     {duties.map((duty) => {
                       return (
-                        <li key={duty.slice(0, 2)} className="text-justify">
+                        <li key={duty.slice(0, 8)} className="text-justify">
                           {duty}
                         </li>
                       );

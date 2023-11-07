@@ -91,7 +91,7 @@ export default function SingleBlogPage() {
         {/* Main blog */}
         {contents.map((content) => {
           return (
-            <p key={content.slice(0, 5)} className="mb-4">
+            <p key={content.slice(0, 8)} className="mb-4">
               {content}
             </p>
           );

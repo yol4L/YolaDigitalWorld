@@ -4,7 +4,7 @@ import cx from "classnames";
 export default function ProjectsView() {
   return (
     <div className="mx-[-1rem] flex flex-wrap items-stretch">
-      {RECENT_WORK.slice(0, 3).map(({ id, title, tech_stacks_desc, desc }) => {
+      {RECENT_WORK.slice(0, 8).map(({ id, title, tech_stacks_desc, desc }) => {
         return (
           <div key={id} className="w-1/3 aspect-square px-4">
             <div

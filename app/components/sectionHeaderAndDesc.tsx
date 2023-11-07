@@ -24,7 +24,7 @@ export default function SectionHeaderAndDesc({
           {description.map((paragraph) => {
             return (
               <p
-                key={paragraph.slice(5, 8)}
+                key={paragraph.slice(0, 8)}
                 dangerouslySetInnerHTML={{ __html: paragraph }}
                 className="text-justify"
               ></p>

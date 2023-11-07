@@ -34,7 +34,7 @@ export default function EducationView() {
                 {desc.map((d) => {
                   return (
                     <li
-                      key={d.slice(0, 5)}
+                      key={d.slice(0, 8)}
                       className="text-justify text-slate-800 dark:text-slate-200 transition-colors duration-700"
                     >
                       {d}
