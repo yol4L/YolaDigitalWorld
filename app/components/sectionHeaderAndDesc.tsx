@@ -22,7 +22,13 @@ export default function SectionHeaderAndDesc({
       {description.length !== 0 && (
         <div className="flex flex-col gap-4">
           {description.map((paragraph) => {
-            return <p key={paragraph.slice(5, 8)}>{paragraph}</p>;
+            return (
+              <p
+                key={paragraph.slice(5, 8)}
+                dangerouslySetInnerHTML={{ __html: paragraph }}
+                className="text-justify"
+              ></p>
+            );
           })}
         </div>
       )}

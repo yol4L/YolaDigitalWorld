@@ -20,16 +20,10 @@ const ELSE_ITEMS: {
   info: string;
 }[] = [
   {
-    id: "cv_pdf",
+    id: "resume",
     icon: DocumentIcon,
     path: "",
-    info: "Download my CV as PDF format",
-  },
-  {
-    id: "cv_doc",
-    icon: DocumentIcon,
-    path: "",
-    info: "Download my CV as DOC format",
+    info: "Download my resume",
   },
   {
     id: "linkedin",

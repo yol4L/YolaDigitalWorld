@@ -25,11 +25,10 @@ export default function Home() {
                 >
                   Hi, I&apos;m Yola
                 </h1>
-                <p className="text-xl font-light tracking-wider">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat.
+                <p className="text-xl font-light tracking-wide">
+                  A web developer who continuously strives to create captivating
+                  and user-centric digital experiences while staying at the
+                  forefront of emerging technologies and design trends.
                 </p>
               </div>
               <button

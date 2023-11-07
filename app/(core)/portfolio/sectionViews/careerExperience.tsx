@@ -41,12 +41,16 @@ export default function CareerExperienceView() {
                 >
                   <ul
                     className={cx(
-                      "px-6 list-disc text-sm flex flex-col gap-2",
+                      "px-6 list-disc text-sm flex flex-col gap-3",
                       "text-slate-800 dark:text-slate-200 transition-colors duration-700"
                     )}
                   >
                     {duties.map((duty) => {
-                      return <li key={duty.slice(0, 2)}>{duty}</li>;
+                      return (
+                        <li key={duty.slice(0, 2)} className="text-justify">
+                          {duty}
+                        </li>
+                      );
                     })}
                   </ul>
                 </div>

@@ -8,7 +8,7 @@ const SIDE_MENU_ITEMS: {
   path: string;
 }[] = [
   { id: "about", name: "about", path: "#about" },
-  { id: "skills", name: "skills", path: "#skills" },
+  { id: "skill", name: "skill", path: "#skill" },
   { id: "experience", name: "experience", path: "#experience" },
   { id: "project", name: "project", path: "#project" },
   { id: "blog", name: "blog", path: "#blog" },

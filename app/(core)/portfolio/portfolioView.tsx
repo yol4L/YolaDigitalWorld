@@ -23,7 +23,7 @@ export default function PortfolioView() {
   const handleScroll = useCallback(() => {
     const sections = [
       "about",
-      "skills",
+      "skill",
       "experience",
       "project",
       "blog",
@@ -75,7 +75,7 @@ export default function PortfolioView() {
   // const handleScroll = useCallback(() => {
   //   const sections = [
   //     "about",
-  //     "skills",
+  //     "skill",
   //     "experience",
   //     "project",
   //     "blog",
@@ -177,13 +177,12 @@ export default function PortfolioView() {
             <PersonalityView />
           </section>
           <div className="-mb-20 mt-4 p-6 bg-[#F6C050] dark:bg-[#EF9B2E] transition-colors duration-700">
-            <p className="font-serif text-2xl tracking-widest text-slate-800 dark:text-white transition-colors duration-700">
-              I am passionate about the code world, <br />
-              especially the front-end engineering, so appealing.
+            <p className="font-serif text-2xl tracking-wider leading-9 text-slate-800 dark:text-white transition-colors duration-700">
+              {`I'm absolutely enthralled by the world of code, particularly front-end engineering - it's truly exhilarating!`}
             </p>
           </div>
-          {/* SKills */}
-          <section id="skills" className="flex flex-col gap-4 snap-start">
+          {/* SKill */}
+          <section id="skill" className="flex flex-col gap-4 snap-start">
             <SectionHeaderAndDesc {...SECTION_HEADER_AND_DESC_ITEMS[1]} />
             <TechStacksView />
           </section>
@@ -198,9 +197,9 @@ export default function PortfolioView() {
             <ProjectsView />
           </section>
           <div className="p-6 -mb-20 bg-[#F6C050] dark:bg-[#EF9B2E] transition-colors duration-700">
-            <p className="font-serif text-2xl tracking-widest text-slate-800 dark:text-white transition-colors duration-700">
-              Keep coding... <br />
-              Keep Reflective...
+            <p className="font-serif text-2xl tracking-wider leading-9 text-slate-800 dark:text-white transition-colors duration-700">
+              Keep coding, keep reflecting, <br />
+              The journey is as thrilling as the destination!
             </p>
           </div>
           {/* Blog */}
