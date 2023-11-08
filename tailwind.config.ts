@@ -54,11 +54,16 @@ const config: Config = {
         },
       },
       backgroundImage: {
+        "animated-scroll-light":
+          "linear-gradient(to bottom, rgba(30, 41, 59, 0) 0%, #1e293b 75%, #1e293b 100%);",
+        "animated-scroll-dark":
+          "linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 75%, #ffffff 100%);",
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       animation: {
+        drop: "drop 2s 0s forwards infinite linear",
         lineUp: "lineUp 1.5s ease-in-out",
         slideLeft: "slideLeft 2s ease-in-out",
         slideRight: "slideRight 2s ease-in-out",
@@ -67,6 +72,10 @@ const config: Config = {
         fadeIn: "fadeIn 1.5s linear",
       },
       keyframes: {
+        drop: {
+          "0%": { top: "-50%" },
+          "100%": { top: "110%" },
+        },
         lineUp: {
           "0%": { opacity: "0", transform: "translateY(60%)" },
           "20%": { opacity: "0" },

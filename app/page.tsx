@@ -35,6 +35,15 @@ export default function Home() {
   return (
     <main className="h-screen relative flex flex-col font-sans overflow-y-scroll scrollbar-none">
       <TopNavView darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+      <div
+        id="line"
+        className={cx(
+          "w-[1.5px] h-[40vh] fixed right-12 bottom-8 overflow-hidden",
+          "bg-slate-300 dark:bg-slate-600",
+          "after-[''] after:w-full after:h-1/2 after:block after:relative after:top-[-50%] after:left-0",
+          "after:bg-animated-scroll-light after:dark:bg-animated-scroll-dark after:animate-drop"
+        )}
+      ></div>
       <div className="flex flex-col">
         {/* Home */}
         <div id="home" className="w-full h-screen px-20 flex flex-col">
