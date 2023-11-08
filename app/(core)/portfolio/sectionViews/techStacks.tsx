@@ -27,15 +27,7 @@ export default function TechStacksView({ inView }: { inView: boolean }) {
     <div className="mx-[-0.75rem] -mb-20 flex flex-wrap items-stretch">
       {TECH_STACKS.map(({ id, name, icon: Icon, stacks }, i) => {
         return (
-          <div
-            key={id}
-            className={cx(
-              "w-1/2 p-3",
-              inView &&
-                (i % 2 === 0 ? "animate-slideRight" : "animate-slideLeft")
-            )}
-            style={{ animationDelay: `${i * 0.25 + 0.5}s` }}
-          >
+          <div key={id} className="w-1/2 p-3">
             <div className="w-full h-full p-6 flex shadow-md dark:shadow-slate-900 transition-all duration-700">
               <div className="p-2 pr-4 flex items-center border-r border-cerulean-400 dark:border-brick-400 transition-colors duration-700">
                 <Icon
