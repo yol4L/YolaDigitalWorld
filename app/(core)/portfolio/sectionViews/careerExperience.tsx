@@ -3,22 +3,34 @@ import { Fragment } from "react";
 import { CAREER_EXPERIENCES } from "../data";
 import cx from "classnames";
 
-export default function CareerExperienceView() {
+export default function CareerExperienceView({ inView }: { inView: boolean }) {
   return (
     <Fragment>
       {CAREER_EXPERIENCES.map(
-        ({ id, company, position_type, position, period, duties }) => {
+        ({ id, company, position_type, position, period, duties }, i) => {
           return (
-            <div key={id} className="flex flex-col gap-2 last:-mb-20">
+            <div
+              key={id}
+              className={cx(
+                "flex flex-col gap-2 last:-mb-20",
+                inView &&
+                  (i % 2 === 0 ? "animate-slideRight" : "animate-slideLeft")
+              )}
+              style={{ animationDelay: `${i * 2 + 0.5}s` }}
+            >
               {/* Job title, including icon, company, position, period, etc. */}
               <div className="flex items-center gap-4">
-                <div className="w-1/12 shrink-0 flex justify-center items-center">
+                <div
+                  className={cx(
+                    "w-1/12 shrink-0 flex justify-center items-center"
+                  )}
+                >
                   <FourPointedStarIcon
                     fontSize="large"
                     className="text-slate-800 dark:text-slate-200 transition-colors duration-700"
                   />
                 </div>
-                <div className="w-11/12">
+                <div className={cx("w-11/12")}>
                   <h3 className="tracking-widest">{company}</h3>
                   <p className="text-sm italic">
                     <span className="mr-2">
