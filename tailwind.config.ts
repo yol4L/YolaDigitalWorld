@@ -58,6 +58,50 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      animation: {
+        lineUp: "lineUp 1.5s ease-in-out",
+        slideLeft: "slideLeft 2s ease-in-out",
+        slideRight: "slideRight 2s ease-in-out",
+        slideUp: "slideUp 1.5s ease-in-out",
+        slideDown: "slideDown 1.5s ease-in-out",
+        fadeIn: "fadeIn 1.5s linear",
+      },
+      keyframes: {
+        lineUp: {
+          "0%": { opacity: "0", transform: "translateY(60%)" },
+          "20%": { opacity: "0" },
+          "70%": { opacity: "1", transform: "translateY(0%)" },
+          "100%": { opacity: "1", transform: "translateY(0%)" },
+        },
+        slideLeft: {
+          "0%": { opacity: "0", transform: "translateX(30%)" },
+          "20%": { opacity: "0" },
+          "50%": { opacity: "1", transform: "translateX(0%)" },
+          "100%": { opacity: "1", transform: "translateX(0%)" },
+        },
+        slideRight: {
+          "0%": { opacity: "0", transform: "translateX(-30%)" },
+          "20%": { opacity: "0" },
+          "50%": { opacity: "1", transform: "translateX(0%)" },
+          "100%": { opacity: "1", transform: "translateX(0%)" },
+        },
+        slideUp: {
+          "0%": { opacity: "0", transform: "translateY(60%)" },
+          "20%": { opacity: "0" },
+          "50%": { opacity: "1", transform: "translateY(0%)" },
+          "100%": { opacity: "1", transform: "translateY(0%)" },
+        },
+        slideDown: {
+          "0%": { opacity: "0", transform: "translateY(-60%)" },
+          "20%": { opacity: "0" },
+          "50%": { opacity: "1", transform: "translateY(0%)" },
+          "100%": { opacity: "1", transform: "translateY(0%)" },
+        },
+        fadeIn: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
+      },
     },
   },
   plugins: [require("tailwind-scrollbar")],

@@ -17,6 +17,7 @@ import cx from "classnames";
 
 export default function PortfolioView() {
   const [activeSection, setActiveSection] = useState<string>("about"); // Default to the first section
+  const [comingSection, setComingSection] = useState<string>("about");
 
   const contentDivRef = useRef<HTMLElement>(null);
 
@@ -37,13 +38,14 @@ export default function PortfolioView() {
       // Get the current scroll position within the content div
       const scrollY = contentDiv.scrollTop;
 
-      // Calculate which section is currently in view
+      // Calculate which section is currently in view,
+      // to trigger side menu item alteration accordingly.
       const sectionInView = sections.find((section) => {
         const element = document.getElementById(section);
         if (element) {
           const elementTop = element.offsetTop - 80;
           const elementHeight = element.offsetHeight;
-
+          // console.log({ elementTop, elementHeight, scrollY });
           return scrollY >= elementTop && scrollY < elementTop + elementHeight;
         }
         return false;
@@ -53,8 +55,31 @@ export default function PortfolioView() {
       if (sectionInView) {
         setActiveSection(sectionInView);
       }
+
+      // Calculate which section is coming into view
+      // to trigger section animation
+      const wh = window.innerHeight;
+      const sectionComing = sections.find((section) => {
+        const element = document.getElementById(section);
+        if (element) {
+          // return scrollY <= element.offsetTop + 800 - contentDiv.offsetHeight;
+          const { top, height } = element.getBoundingClientRect();
+          return 0 < top && top < wh;
+        }
+        return false;
+      });
+      // Update the coming section
+      if (sectionComing) {
+        setComingSection(sectionComing);
+      }
+      // console.log("sc:", sectionComing);
     }
   }, []);
+  // console.log("cs", comingSection);
+
+  const checkInView = (sectionId: string) => {
+    return sectionId === comingSection;
+  };
 
   useEffect(() => {
     // Attach the onScroll event handler to the content div
@@ -93,18 +118,6 @@ export default function PortfolioView() {
   //     if (element) {
   //       const elementHeight = element.offsetHeight; // or clientHeight
   //       const elementTop = element.offsetTop;
-  //       const elementBottom = elementTop + elementHeight;
-  //       const elementScrollTop = element.scrollTop;
-  //       const elementScrollBottom = elementScrollTop + elementHeight;
-
-  //       console.log({
-  //         scrollY,
-  //         elementHeight,
-  //         elementTop,
-  //         elementBottom,
-  //         elementScrollTop,
-  //         elementScrollBottom,
-  //       });
   //       return scrollY >= elementTop && scrollY < elementTop + elementHeight;
   //     }
   //     return false;
@@ -164,66 +177,114 @@ export default function PortfolioView() {
       {/* Content */}
       <div
         ref={contentDivRef as React.MutableRefObject<HTMLDivElement>}
-        className="h-screen basis-3/4 relative overflow-y-scroll scroll-smooth snap-y"
+        className="h-screen basis-3/4 relative overflow-y-scroll scroll-smooth"
         onScroll={handleScroll}
         // style={{ scrollbarWidth: "none" }}
       >
         <div className="pr-20 relative flex flex-col gap-12">
           {/* About me */}
-          <section id="about" className="flex flex-col gap-4 snap-start">
+          <section id="about" className={cx("flex flex-col gap-4 snap-start")}>
             {/* <SectionHeaderAndDesc index={0} /> */}
             {/* <SectionHeaderAndDesc name={SECTION_HEADER_AND_DESC_ITEMS[0].name} headerText={.headerText} desc={} /> */}
-            <SectionHeaderAndDesc {...SECTION_HEADER_AND_DESC_ITEMS[0]} />
-            <PersonalityView />
+            <SectionHeaderAndDesc
+              inView={checkInView("about")}
+              {...SECTION_HEADER_AND_DESC_ITEMS[0]}
+            />
+            <PersonalityView inView={checkInView("about")} />
           </section>
-          <div className="-mb-20 mt-4 p-6 bg-[#F6C050] dark:bg-[#EF9B2E] transition-colors duration-700">
-            <p className="font-serif text-2xl tracking-wider leading-9 text-slate-800 dark:text-white transition-colors duration-700">
-              {`I'm absolutely enthralled by the world of code, particularly front-end engineering - it's truly exhilarating!`}
+          {/* Quote 1 */}
+          <div
+            id="quote1"
+            className={cx(
+              "-mb-20 mt-4 p-10 relative bg-fixed bg-cover bg-[url('/bg-1.jpg')]"
+            )}
+          >
+            <div className="w-full h-full absolute top-0 left-0 bg-slate-950 opacity-30"></div>
+            <p
+              className={cx(
+                "relative z-10 font-serif font-bold text-4xl tracking-wider leading-loose",
+                "text-white dark:text-white transition-colors duration-700"
+              )}
+            >
+              {`I'm absolutely enthralled by the world of code - it's truly exhilarating!`}
             </p>
           </div>
           {/* SKill */}
           <section id="skill" className="flex flex-col gap-4 snap-start">
-            <SectionHeaderAndDesc {...SECTION_HEADER_AND_DESC_ITEMS[1]} />
-            <TechStacksView />
+            <SectionHeaderAndDesc
+              inView={checkInView("skill")}
+              {...SECTION_HEADER_AND_DESC_ITEMS[1]}
+            />
+            <TechStacksView inView={checkInView("skill")} />
           </section>
           {/* Experience */}
           <section id="experience" className="flex flex-col gap-4 snap-start">
-            <SectionHeaderAndDesc {...SECTION_HEADER_AND_DESC_ITEMS[2]} />
-            <CareerExperienceView />
+            <SectionHeaderAndDesc
+              inView={checkInView("experience")}
+              {...SECTION_HEADER_AND_DESC_ITEMS[2]}
+            />
+            <CareerExperienceView inView={checkInView("experience")} />
           </section>
           {/* Project */}
           <section id="project" className="flex flex-col gap-4 snap-start">
-            <SectionHeaderAndDesc {...SECTION_HEADER_AND_DESC_ITEMS[3]} />
-            <ProjectsView />
+            <SectionHeaderAndDesc
+              inView={checkInView("project")}
+              {...SECTION_HEADER_AND_DESC_ITEMS[3]}
+            />
+            <ProjectsView inView={checkInView("project")} />
           </section>
-          <div className="p-6 -mb-20 bg-[#F6C050] dark:bg-[#EF9B2E] transition-colors duration-700">
-            <p className="font-serif text-2xl tracking-wider leading-9 text-slate-800 dark:text-white transition-colors duration-700">
-              Keep coding, keep reflecting, <br />
+          {/* Quote 2 */}
+          <div
+            id="quote2"
+            className={cx(
+              "-mb-20 mt-4 p-10 relative bg-fixed bg-cover bg-[url('/bg-1.jpg')]"
+            )}
+          >
+            <div className="w-full h-full absolute top-0 left-0 bg-slate-950 opacity-30"></div>
+            <p
+              className={cx(
+                "relative z-10 font-serif font-bold text-4xl tracking-wider leading-loose",
+                "text-white dark:text-white transition-colors duration-700"
+              )}
+            >
+              Keep coding, keep reflecting. <br />
               The journey is as thrilling as the destination!
             </p>
           </div>
           {/* Blog */}
           <section id="blog" className="flex flex-col gap-4 snap-start">
-            <SectionHeaderAndDesc {...SECTION_HEADER_AND_DESC_ITEMS[4]} />
-            <BlogsView />
+            <SectionHeaderAndDesc
+              inView={checkInView("blog")}
+              {...SECTION_HEADER_AND_DESC_ITEMS[4]}
+            />
+            <BlogsView inView={checkInView("blog")} />
           </section>
           {/* Education */}
           <section id="education" className="flex flex-col gap-4 snap-start">
-            <SectionHeaderAndDesc {...SECTION_HEADER_AND_DESC_ITEMS[5]} />
-            <EducationView />
+            <SectionHeaderAndDesc
+              inView={checkInView("education")}
+              {...SECTION_HEADER_AND_DESC_ITEMS[5]}
+            />
+            <EducationView inView={checkInView("education")} />
           </section>
           {/* Fun points */}
           <section id="fun_points" className="flex flex-col gap-4 snap-start">
-            <SectionHeaderAndDesc {...SECTION_HEADER_AND_DESC_ITEMS[6]} />
-            <FunFactView />
+            <SectionHeaderAndDesc
+              inView={checkInView("fun_points")}
+              {...SECTION_HEADER_AND_DESC_ITEMS[6]}
+            />
+            <FunFactView inView={checkInView("fun_points")} />
           </section>
           {/* Contact */}
           <section
             id="contact"
             className="pb-20 flex flex-col gap-4 snap-start"
           >
-            <SectionHeaderAndDesc {...SECTION_HEADER_AND_DESC_ITEMS[7]} />
-            <ContactMeView />
+            <SectionHeaderAndDesc
+              inView={checkInView("contact")}
+              {...SECTION_HEADER_AND_DESC_ITEMS[7]}
+            />
+            <ContactMeView inView={checkInView("contact")} />
           </section>
         </div>
       </div>

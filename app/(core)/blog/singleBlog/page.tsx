@@ -23,10 +23,16 @@ const SHARE_BUTTONS: { id: string; icon: MuiIconType }[] = [
   { id: "link", icon: NoteIcon },
 ];
 
-export default function SingleBlogPage() {
+export default function SingleBlogPage({
+  darkMode,
+  toggleDarkMode,
+}: {
+  darkMode: boolean;
+  toggleDarkMode: () => void;
+}) {
   return (
     <div className="w-full">
-      <TopNavView />
+      <TopNavView darkMode={darkMode} toggleDarkMode={toggleDarkMode}/>
       {/* Headings */}
       <div className="w-full md:w-4/5 lg:w-5/8 px-20 py-12 mx-auto mt-16 flex flex-col gap-6">
         <div className="flex items-center gap-4">

@@ -1,12 +1,18 @@
 import { PERSONALITIES } from "../data";
 import cx from "classnames";
 
-export default function PersonalityView() {
+export default function PersonalityView({ inView }: { inView: boolean }) {
   return (
     <div className="mx-[-0.75rem] flex flex-wrap items-stretch">
-      {PERSONALITIES.map(({ id, name, desc, icon: Icon }) => {
+      {PERSONALITIES.map(({ id, name, desc, icon: Icon }, i) => {
         return (
-          <div key={id} className="w-1/4 xl:aspect-square p-3">
+          <div
+            key={id}
+            className={cx(
+              "w-1/4 xl:aspect-square p-3",
+              inView && (i % 2 === 0 ? "animate-slideUp" : "animate-slideDown")
+            )}
+          >
             <div
               className={cx(
                 "w-full h-full px-4 py-6 flex flex-col justify-top gap-2 transition-all duration-700",

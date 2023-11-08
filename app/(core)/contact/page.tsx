@@ -2,10 +2,16 @@ import PageTagView from "@/app/components/Tags/pageTag";
 import ContactMeView from "./contact";
 import TopNavView from "@/app/components/topNav";
 
-export default function ContactPage() {
+export default function ContactPage({
+  darkMode,
+  toggleDarkMode,
+}: {
+  darkMode: boolean;
+  toggleDarkMode: () => void;
+}) {
   return (
     <div>
-      <TopNavView />
+      <TopNavView darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       <div className="px-36 py-28">
         <PageTagView tagName={"Contact"} />
         <div className="my-6 flex flex-col gap-4">

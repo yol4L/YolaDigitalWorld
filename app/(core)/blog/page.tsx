@@ -2,10 +2,16 @@ import PageTagView from "@/app/components/Tags/pageTag";
 import TopNavView from "@/app/components/topNav";
 import { BLOGS } from "../portfolio/data";
 
-export default function BlogPage() {
+export default function BlogPage({
+  darkMode,
+  toggleDarkMode,
+}: {
+  darkMode: boolean;
+  toggleDarkMode: () => void;
+}) {
   return (
     <div>
-      <TopNavView />
+      <TopNavView darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       <div className="px-36 py-28">
         <PageTagView tagName={"Blog"} />
         <div className="my-6 flex flex-col gap-4">

@@ -39,12 +39,14 @@ const ELSE_ITEMS: {
   },
 ];
 
-export default function ContactMeView() {
+export default function ContactMeView({ inView }: { inView: boolean }) {
   return (
     <div className="flex gap-20">
       <div className="w-1/2 flex flex-col gap-10">
         {/* Personal Info */}
-        <div className="flex flex-col gap-8">
+        <div
+          className={cx("flex flex-col gap-8", inView && "animate-slideRight")}
+        >
           <span
             className={cx(
               "py-2 border-b font-medium text-ocean-500",
@@ -74,7 +76,10 @@ export default function ContactMeView() {
           </div>
         </div>
         {/* Elsewhere */}
-        <div className="flex flex-col gap-8">
+        <div
+          className={cx("flex flex-col gap-8", inView && "animate-slideRight")}
+          style={{ animationDelay: "0.5s" }}
+        >
           <span
             className={cx(
               "py-2 border-b font-medium text-ocean-500",
@@ -100,7 +105,12 @@ export default function ContactMeView() {
         </div>
       </div>
       {/* Message form */}
-      <form className="w-1/2 py-2 flex flex-col gap-8">
+      <form
+        className={cx(
+          "w-1/2 py-2 flex flex-col gap-8",
+          inView && "animate-slideLeft"
+        )}
+      >
         {/* Name */}
         <div className="flex flex-col gap-2">
           <label htmlFor="name" className="font-medium text-ocean-500">

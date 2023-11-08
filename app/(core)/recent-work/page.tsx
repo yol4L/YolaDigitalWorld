@@ -1,8 +1,11 @@
+"use client";
+
 import PageTagView from "@/app/components/Tags/pageTag";
 import TopNavView from "@/app/components/topNav";
 import { BACKGROUND_COLORS, RECENT_WORK } from "../portfolio/data";
 import Image from "next/image";
 import cx from "classnames";
+import { useEffect, useState } from "react";
 
 function getBgColor() {
   const i = Math.floor(Math.random() * BACKGROUND_COLORS.length);
@@ -10,10 +13,30 @@ function getBgColor() {
   return bgColor;
 }
 
-export default function RecentWorkPage() {
+export default function RecentWorkPage({
+  darkMode,
+  toggleDarkMode,
+}: {
+  darkMode: boolean;
+  toggleDarkMode: () => void;
+}) {
+  const [colors, setColors] = useState<Record<string, string[]>>({});
+
+  useEffect(() => {
+    setColors(
+      RECENT_WORK.reduce<Record<string, string[]>>((prev, curr) => {
+        prev[curr.id] = new Array(curr.tech_stacks.length)
+          .fill(0)
+          .map(() => getBgColor());
+        return prev;
+      }, {})
+    );
+    // { "framework": ["c1", "c2",], "work": ["c3", "c4"], ...}
+  }, [setColors]);
+
   return (
     <div>
-      <TopNavView />
+      <TopNavView darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       <div className="px-36 py-28 flex flex-col">
         <PageTagView tagName={"Projects"} />
         <div className="my-6 flex flex-col gap-4">
@@ -63,12 +86,12 @@ export default function RecentWorkPage() {
                     {detailed_desc}
                   </p>
                   <div className="flex gap-4">
-                    {tech_stacks.map((stack) => {
+                    {tech_stacks.map((stack, i) => {
                       return (
                         <div
                           key={stack.toString()}
                           className="px-3 py-0.5 flex items-center justify-start rounded-md cursor-pointer"
-                          style={{ backgroundColor: getBgColor() }}
+                          style={{ backgroundColor: (colors[id] ?? [])[i] }}
                         >
                           <span className="text-xs text-white tracking-wider">
                             {stack}
