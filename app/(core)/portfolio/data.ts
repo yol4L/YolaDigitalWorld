@@ -269,7 +269,7 @@ export const EDUCATION_DATA: {
   },
 ];
 
-export const BLOGS: {
+export interface BlogData {
   id: string;
   title: string;
   headline: string;
@@ -278,7 +278,9 @@ export const BLOGS: {
   tag: string;
   quote: string;
   content: string[];
-}[] = [
+}
+
+export const BLOGS: BlogData[] = [
   {
     id: "01",
     title: "This is the title main title",
