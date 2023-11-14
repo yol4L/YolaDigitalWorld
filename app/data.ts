@@ -1,5 +1,6 @@
 import { NoteIcon } from "@/app/components/Icons/svg";
-import { MuiIconType } from "@/app/types";
+import { BlogBlock, BlogData, MuiIconType } from "@/app/types";
+import { blocks01, blocks02, blocks03 } from "./(core)/blog/data";
 
 export const BACKGROUND_COLORS = [
   "#8A87D2",
@@ -269,82 +270,41 @@ export const EDUCATION_DATA: {
   },
 ];
 
-export interface BlogData {
-  id: string;
-  title: string;
-  headline: string;
-  date: string;
-  author: string;
-  tag: string;
-  quote: string;
-  content: string[];
-}
-
 export const BLOGS: BlogData[] = [
   {
     id: "01",
-    title: "This is the title main title",
+    title: "Mastering Scroll, Client, and Offset in CSS: A Developer's Guide",
     headline:
-      "This is the headline for the article, which is very simple but summarised.",
-    date: "April 14, 2023",
+      "Understanding the nuances of scroll, client, and offset properties in CSS can make a world of difference in the user experience.",
+    date: "Oct 14, 2023",
     author: "Yola Liang",
     tag: "web design",
-    quote:
-      "Happiness is when what you think, what you say, and what you do are in harmony",
-    content: [
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quae voluptates labore facilis est aperiam repellat beatae voluptatem facere, itaque voluptas minus cum nulla nisi earum dicta, debitis ducimus impedit.",
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quae voluptates labore facilis est aperiam repellat beatae voluptatem facere, itaque voluptas minus cum nulla nisi earum dicta, debitis ducimus impedit.",
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quae voluptates labore facilis est aperiam repellat beatae voluptatem facere, itaque voluptas minus cum nulla nisi earum dicta, debitis ducimus impedit.",
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quae voluptates labore facilis est aperiam repellat beatae voluptatem facere, itaque voluptas minus cum nulla nisi earum dicta, debitis ducimus impedit.",
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quae voluptates labore facilis est aperiam repellat beatae voluptatem facere, itaque voluptas minus cum nulla nisi earum dicta, debitis ducimus impedit.",
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quae voluptates labore facilis est aperiam repellat beatae voluptatem facere, itaque voluptas minus cum nulla nisi earum dicta, debitis ducimus impedit.",
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quae voluptates labore facilis est aperiam repellat beatae voluptatem facere, itaque voluptas minus cum nulla nisi earum dicta, debitis ducimus impedit.",
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quae voluptates labore facilis est aperiam repellat beatae voluptatem facere, itaque voluptas minus cum nulla nisi earum dicta, debitis ducimus impedit.",
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quae voluptates labore facilis est aperiam repellat beatae voluptatem facere, itaque voluptas minus cum nulla nisi earum dicta, debitis ducimus impedit.",
-    ],
+    cover: "/blogs/cover/cover01.jpg",
+    quote: "",
+    contents: blocks01,
   },
   {
     id: "02",
-    title: "This is the title main title",
+    title: "Harnessing the Power of map() and reduce() in JavaScript",
     headline:
-      "This is the headline for the article, which is very simple but summarised.",
-    date: "August 16, 2023",
+      "JavaScript's array methods are not just tools but craftsman's essentials in data manipulation and transformation.",
+    date: "Oct 30, 2023",
     author: "Yola Liang",
-    tag: "web design",
-    quote:
-      "Happiness is when what you think, what you say, and what you do are in harmony",
-    content: [
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quae voluptates labore facilis est aperiam repellat beatae voluptatem facere, itaque voluptas minus cum nulla nisi earum dicta, debitis ducimus impedit.",
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quae voluptates labore facilis est aperiam repellat beatae voluptatem facere, itaque voluptas minus cum nulla nisi earum dicta, debitis ducimus impedit.",
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quae voluptates labore facilis est aperiam repellat beatae voluptatem facere, itaque voluptas minus cum nulla nisi earum dicta, debitis ducimus impedit.",
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quae voluptates labore facilis est aperiam repellat beatae voluptatem facere, itaque voluptas minus cum nulla nisi earum dicta, debitis ducimus impedit.",
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quae voluptates labore facilis est aperiam repellat beatae voluptatem facere, itaque voluptas minus cum nulla nisi earum dicta, debitis ducimus impedit.",
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quae voluptates labore facilis est aperiam repellat beatae voluptatem facere, itaque voluptas minus cum nulla nisi earum dicta, debitis ducimus impedit.",
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quae voluptates labore facilis est aperiam repellat beatae voluptatem facere, itaque voluptas minus cum nulla nisi earum dicta, debitis ducimus impedit.",
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quae voluptates labore facilis est aperiam repellat beatae voluptatem facere, itaque voluptas minus cum nulla nisi earum dicta, debitis ducimus impedit.",
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quae voluptates labore facilis est aperiam repellat beatae voluptatem facere, itaque voluptas minus cum nulla nisi earum dicta, debitis ducimus impedit.",
-    ],
+    tag: "javascript",
+    cover: "/blogs/cover/cover02.jpg",
+    quote: "",
+    contents: blocks02,
   },
   {
     id: "03",
-    title: "This is the title main title",
+    title: "The Art of Motion: Mastering Ease and Cubic-Bezier in CSS",
     headline:
-      "This is the headline for the article, which is very simple but summarised.",
-    date: "October 03, 2023",
+      "In web design, the secret to animating websites with flair hinges on skillfully using timing functions to fine-tune the pace of CSS animations.",
+    date: "Nov 10, 2023",
     author: "Yola Liang",
-    tag: "web design",
-    quote:
-      "Happiness is when what you think, what you say, and what you do are in harmony",
-    content: [
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quae voluptates labore facilis est aperiam repellat beatae voluptatem facere, itaque voluptas minus cum nulla nisi earum dicta, debitis ducimus impedit.",
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quae voluptates labore facilis est aperiam repellat beatae voluptatem facere, itaque voluptas minus cum nulla nisi earum dicta, debitis ducimus impedit.",
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quae voluptates labore facilis est aperiam repellat beatae voluptatem facere, itaque voluptas minus cum nulla nisi earum dicta, debitis ducimus impedit.",
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quae voluptates labore facilis est aperiam repellat beatae voluptatem facere, itaque voluptas minus cum nulla nisi earum dicta, debitis ducimus impedit.",
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quae voluptates labore facilis est aperiam repellat beatae voluptatem facere, itaque voluptas minus cum nulla nisi earum dicta, debitis ducimus impedit.",
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quae voluptates labore facilis est aperiam repellat beatae voluptatem facere, itaque voluptas minus cum nulla nisi earum dicta, debitis ducimus impedit.",
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quae voluptates labore facilis est aperiam repellat beatae voluptatem facere, itaque voluptas minus cum nulla nisi earum dicta, debitis ducimus impedit.",
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quae voluptates labore facilis est aperiam repellat beatae voluptatem facere, itaque voluptas minus cum nulla nisi earum dicta, debitis ducimus impedit.",
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quae voluptates labore facilis est aperiam repellat beatae voluptatem facere, itaque voluptas minus cum nulla nisi earum dicta, debitis ducimus impedit.",
-    ],
+    tag: "css",
+    cover: "/blogs/cover/cover03.jpg",
+    quote: "",
+    contents: blocks03,
   },
 ];

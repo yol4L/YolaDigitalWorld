@@ -1,4 +1,4 @@
-import { RECENT_WORK } from "../data";
+import { RECENT_WORK } from "../../../data";
 import cx from "classnames";
 
 export default function ProjectsView({ inView }: { inView: boolean }) {

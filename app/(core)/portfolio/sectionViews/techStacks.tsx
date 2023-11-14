@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { BACKGROUND_COLORS, TECH_STACKS } from "../data";
+import { BACKGROUND_COLORS, TECH_STACKS } from "../../../data";
 import cx from "classnames";
 
 function getBgColor() {

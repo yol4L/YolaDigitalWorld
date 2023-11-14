@@ -1,4 +1,4 @@
-import { PERSONALITIES } from "../data";
+import { PERSONALITIES } from "../../../data";
 import cx from "classnames";
 
 export default function PersonalityView({ inView }: { inView: boolean }) {

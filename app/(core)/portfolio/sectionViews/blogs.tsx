@@ -1,4 +1,4 @@
-import { BLOGS } from "../data";
+import { BLOGS } from "../../../data";
 import cx from "classnames";
 
 export default function BlogsView({ inView }: { inView: boolean }) {

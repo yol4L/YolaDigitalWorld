@@ -1,5 +1,5 @@
 import { DocumentIcon } from "@/app/components/Icons/svg";
-import { EDUCATION_DATA } from "../data";
+import { EDUCATION_DATA } from "../../../data";
 import cx from "classnames";
 
 export default function EducationView({ inView }: { inView: boolean }) {

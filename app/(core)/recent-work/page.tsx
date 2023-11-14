@@ -2,7 +2,7 @@
 
 import PageTagView from "@/app/components/Tags/pageTag";
 import TopNavView from "@/app/components/topNav";
-import { BACKGROUND_COLORS, RECENT_WORK } from "../portfolio/data";
+import { BACKGROUND_COLORS, RECENT_WORK } from "../../data";
 import Image from "next/image";
 import cx from "classnames";
 import { useEffect, useState } from "react";

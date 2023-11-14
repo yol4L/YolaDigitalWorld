@@ -9,7 +9,7 @@ import CareerExperienceView from "./sectionViews/careerExperience";
 import ProjectsView from "./sectionViews/projects";
 import BlogsView from "./sectionViews/blogs";
 import EducationView from "./sectionViews/education";
-import { SECTION_HEADER_AND_DESC_ITEMS } from "./data";
+import { SECTION_HEADER_AND_DESC_ITEMS } from "../../data";
 import ContactMeView from "../contact/contact";
 import FunFactView from "./sectionViews/funFacts";
 import { useCallback, useEffect, useRef, useState } from "react";
