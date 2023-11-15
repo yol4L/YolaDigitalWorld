@@ -1,16 +1,10 @@
 import PortfolioView from "./portfolioView";
 import TopNavView from "@/app/components/topNav";
 
-export default function PortfolioPage({
-  darkMode,
-  toggleDarkMode,
-}: {
-  darkMode: boolean;
-  toggleDarkMode: () => void;
-}) {
+export default function PortfolioPage() {
   return (
     <div>
-      <TopNavView darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+      <TopNavView />
       <PortfolioView />
     </div>
   );

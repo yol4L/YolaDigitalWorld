@@ -13,13 +13,7 @@ function getBgColor() {
   return bgColor;
 }
 
-export default function RecentWorkPage({
-  darkMode,
-  toggleDarkMode,
-}: {
-  darkMode: boolean;
-  toggleDarkMode: () => void;
-}) {
+export default function RecentWorkPage() {
   const [colors, setColors] = useState<Record<string, string[]>>({});
 
   useEffect(() => {
@@ -36,7 +30,7 @@ export default function RecentWorkPage({
 
   return (
     <div>
-      <TopNavView darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+      <TopNavView />
       <div className="px-36 py-28 flex flex-col">
         <PageTagView tagName={"Projects"} />
         <div className="my-6 flex flex-col gap-4">

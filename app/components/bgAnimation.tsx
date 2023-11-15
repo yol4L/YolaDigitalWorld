@@ -1,17 +1,16 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { useDarkMode } from "./darkModeContext";
 
 const m = (a: number) => {
   return Math.pow(a, 5) / 2500;
 };
 
-export default function AnimatedBackgroundView({
-  darkMode,
-}: {
-  darkMode: boolean;
-}) {
+export default function AnimatedBackgroundView() {
   const containerRef = useRef<HTMLDivElement>(null);
+
+  const { darkMode, toggleDarkMode } = useDarkMode();
 
   useEffect(() => {
     const quantity = 40;

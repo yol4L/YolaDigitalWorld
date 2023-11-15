@@ -4,16 +4,10 @@ import { BLOGS } from "../../data";
 import Link from "next/link";
 import Image from "next/image";
 
-export default function BlogPage({
-  darkMode,
-  toggleDarkMode,
-}: {
-  darkMode: boolean;
-  toggleDarkMode: () => void;
-}) {
+export default function BlogPage() {
   return (
     <div>
-      <TopNavView darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+      <TopNavView />
       <div className="px-36 py-28">
         <PageTagView tagName={"Blog"} />
         <div className="my-6 flex flex-col gap-4">

@@ -131,13 +131,9 @@ const TableStructure: React.FC<{ rows: TableProps }> = ({ rows }) => {
 
 export default async function SingleBlogPage({
   params: { blogId },
-  darkMode,
-  toggleDarkMode,
   ...rest
 }: {
   params: { blogId: string };
-  darkMode: boolean;
-  toggleDarkMode: () => void;
 }) {
   const blog = await getBlog(blogId);
 
@@ -151,7 +147,7 @@ export default async function SingleBlogPage({
 
   return (
     <div className="w-full">
-      <TopNavView darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+      <TopNavView />
       {/* Headings */}
       <div className="w-full md:w-4/5 lg:w-5/8 px-20 mx-auto mt-24 flex flex-col gap-6">
         <div className="flex items-center gap-4">
