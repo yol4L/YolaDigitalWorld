@@ -215,6 +215,8 @@ export const RECENT_WORK: {
   tech_stacks_desc: string;
   desc: string;
   detailed_desc: string;
+  coverUrl: string;
+  linkRef: string;
 }[] = [
   {
     id: "yelpcamp",
@@ -223,23 +225,31 @@ export const RECENT_WORK: {
     tech_stacks_desc: "Node.js, Express, MongoDB, BootStrap, and EJS templates",
     desc: "A full-stack website project where users can create and review campgrounds.",
     detailed_desc:
-      "A full-stack website project where users can create and review campgrounds.A full-stack website project where users can create and review campgrounds.A full-stack website project where users can create and review campgrounds.A full-stack website project where users can create and review campgrounds.",
+      "A full-stack website project where users can create and review campgrounds using Node.js, Express, MongoDB, BootStrap, and EJS templates. Also implemented user authentication and authorization for secure user registration and login here. Developed a data visualization feature using Google Maps API to display campground locations and enable user interactions.",
+    coverUrl: "/projects/yelpCamp.png",
+    linkRef: "http://www.yelpcamp.com.au/",
   },
   {
     id: "newsfeed",
-    title: "NEWSFEED",
-    tech_stacks: ["React", "Next.js", "TailwindCSS", "GraphQL"],
-    tech_stacks_desc: "xxxx",
+    title: "Demo for newsfeed",
+    tech_stacks: ["React", "Next.js", "TailwindCSS", "TypeScript", "GraphQL"],
+    tech_stacks_desc:
+      "A fully functional feature allowing users to create, share, and interact with posts",
     desc: "a description a description a description",
-    detailed_desc: "Description lorem  lrvsdnklfjds,cdflmkk,d",
+    detailed_desc:
+      "This is what I have done in my previous internship. I engineered a fully functional news feed feature from scratch allowing users to create, share, and interact with textual and multimedia posts. Also collaborated with the development team to seamlessly integrate GraphQL and RESTful APIs, enabling real-time updates within the news feed.",
+    coverUrl: "/projects/newsFeed.jpg",
+    linkRef: "",
   },
   {
-    id: "zoombies",
-    title: "ZOOMBIES",
-    tech_stacks: ["HTML", "CSS", "JavaScript"],
-    tech_stacks_desc: "HTML, CSS, JavaScript",
-    desc: "asdfdasdfadf",
-    detailed_desc: "adadfdfsdgfgdfsgfds description description",
+    id: "portfolio",
+    title: "Yola's World",
+    tech_stacks: ["Next.js", "React", "TailwindCSS", "TypeScript", "Node.js"],
+    tech_stacks_desc: "Node.js, Express, MongoDB, BootStrap, and EJS templates",
+    desc: "A dynamic and responsive personal portfolio website",
+    detailed_desc: `This is the website that you are currently watching. I conceptualized, designed, and developed this dynamic and responsive personal portfolio website using cutting-edge technologies like React, Next.js, TailwindCSS, and TypeScript. Also enhanced user experience and accessibility with the implementation of a Dark Mode feature.`,
+    coverUrl: "/projects/portfolio-dark.png",
+    linkRef: "",
   },
 ];
 
