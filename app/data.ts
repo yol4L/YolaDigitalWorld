@@ -231,11 +231,10 @@ export const RECENT_WORK: {
   },
   {
     id: "newsfeed",
-    title: "Demo for newsfeed",
+    title: "Newsfeed",
     tech_stacks: ["React", "Next.js", "TailwindCSS", "TypeScript", "GraphQL"],
-    tech_stacks_desc:
-      "A fully functional feature allowing users to create, share, and interact with posts",
-    desc: "a description a description a description",
+    tech_stacks_desc: "React, Next.js, TailwindCSS, TypeScript and GraphQL",
+    desc: "A fully functional newsfeed feature allowing users to create, share, and interact with posts.",
     detailed_desc:
       "This is what I have done in my previous internship. I engineered a fully functional news feed feature from scratch allowing users to create, share, and interact with textual and multimedia posts. Also collaborated with the development team to seamlessly integrate GraphQL and RESTful APIs, enabling real-time updates within the news feed.",
     coverUrl: "/projects/newsFeed.jpg",
@@ -245,8 +244,8 @@ export const RECENT_WORK: {
     id: "portfolio",
     title: "Yola's World",
     tech_stacks: ["Next.js", "React", "TailwindCSS", "TypeScript", "Node.js"],
-    tech_stacks_desc: "Node.js, Express, MongoDB, BootStrap, and EJS templates",
-    desc: "A dynamic and responsive personal portfolio website",
+    tech_stacks_desc: "React, Next.js, TailwindCSS, TypeScript and Node.js",
+    desc: "A dynamic and responsive personal portfolio website.",
     detailed_desc: `This is the website that you are currently watching. I conceptualized, designed, and developed this dynamic and responsive personal portfolio website using cutting-edge technologies like React, Next.js, TailwindCSS, and TypeScript. Also enhanced user experience and accessibility with the implementation of a Dark Mode feature.`,
     coverUrl: "/projects/portfolio-dark.png",
     linkRef: "",

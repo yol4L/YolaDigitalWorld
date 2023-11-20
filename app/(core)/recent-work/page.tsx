@@ -115,6 +115,7 @@ export default function RecentWorkPage() {
             projects I've undertaken, from web applications and websites to design concepts.`}
           </p>
         </div>
+        {/* Main */}
         <div className="my-6 flex flex-col gap-10">
           {RECENT_WORK.map(
             (
@@ -124,6 +125,7 @@ export default function RecentWorkPage() {
               return (
                 <div
                   key={id}
+                  id={id}
                   className={cx(
                     "flex items-stretch gap-10",
                     i % 2 === 0 ? "flex-row" : "flex-row-reverse"
