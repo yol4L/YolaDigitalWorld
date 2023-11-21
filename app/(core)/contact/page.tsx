@@ -12,8 +12,9 @@ export default function ContactPage() {
           <h1 className="font-serif font-bold text-3xl tracking-widest text-ocean-500">
             DROP ME A LINE
           </h1>
-          <p className="text-neutral-800">
-            To say hello or talk about opportunities.
+          <p className="">
+            Connect with me and start a conversation to say hello or talk about
+            opportunities.
           </p>
         </div>
         <div className="my-6">

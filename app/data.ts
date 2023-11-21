@@ -90,7 +90,7 @@ export const SECTION_HEADER_AND_DESC_ITEMS: {
     name: "FUN POINTS",
     headerText: "OTHER ASPECTS OF ME",
     description: [
-      "Get to know the person behind the screen. Just a glimpse into my interests, hobbies, and other facets of my personality that make me a well-rounded and creative individual.",
+      "Get to know me behind the screen. Just a glimpse into my interests, hobbies, and other facets of my personality that make me a well-rounded and creative individual.",
     ],
   },
   {
@@ -252,33 +252,6 @@ export const RECENT_WORK: {
   },
 ];
 
-export const EDUCATION_DATA: {
-  id: string;
-  title: string;
-  period: string;
-  desc: string[];
-}[] = [
-  {
-    id: "bootcamp",
-    title: "The Web Developer Bootcamp",
-    period: "2022-2023",
-    desc: [
-      "A comprehensive web development course covering HTML, CSS, JavaScript, React, Redux, Node.js, MySQL, and other essential technologies.",
-      "Developed practical skills in creating responsive web designs, building dynamic web applications, and managing databases.",
-      "Gained hands-on experience in using industry-standard tools and frameworks for effective web development.",
-    ],
-  },
-  {
-    id: "master",
-    title: "The University of New South Wales",
-    period: "2019-2021",
-    desc: [
-      "Degree awarded with Excellence (WAM:83.8/100)",
-      "This academic experience in accounting has honed my analytical and problem-solving skills.",
-    ],
-  },
-];
-
 export const BLOGS: BlogData[] = [
   {
     id: "01",
@@ -315,5 +288,66 @@ export const BLOGS: BlogData[] = [
     cover: "/blogs/cover/cover03.jpg",
     quote: "",
     contents: blocks03,
+  },
+];
+
+export const EDUCATION_DATA: {
+  id: string;
+  title: string;
+  period: string;
+  desc: string[];
+}[] = [
+  {
+    id: "bootcamp",
+    title: "The Web Developer Bootcamp",
+    period: "2022-2023",
+    desc: [
+      "A comprehensive web development course covering HTML, CSS, JavaScript, React, Redux, Node.js, MySQL, and other essential technologies.",
+      "Developed practical skills in creating responsive web designs, building dynamic web applications, and managing databases.",
+      "Gained hands-on experience in using industry-standard tools and frameworks for effective web development.",
+    ],
+  },
+  {
+    id: "master",
+    title: "The University of New South Wales",
+    period: "2019-2021",
+    desc: [
+      "Degree awarded with Excellence (WAM:83.8/100)",
+      "This academic experience in accounting has honed my analytical and problem-solving skills.",
+    ],
+  },
+];
+
+export const FUN_FACTS: {
+  id: string;
+  keyword: string;
+  description: string;
+  bgUrl: string;
+}[] = [
+  {
+    id: "cat",
+    keyword: "Cat Whisperer",
+    description: "Deciphering purrs, I'm the ultimate feline communicator.",
+    bgUrl: "/funfacts/cat.jpg",
+  },
+  {
+    id: "road",
+    keyword: "Road Voyager",
+    description: "Charting new paths with tunes and tales on every journey.",
+    bgUrl: "/funfacts/roadtrip.jpg",
+  },
+  {
+    id: "camping",
+    keyword: "Star Gazer",
+    description:
+      "Seeking stars, I find magic in the night sky's sparkling dance.",
+    bgUrl: "/funfacts/star.jpg",
+  },
+  {
+    id: "sunset",
+    keyword: "Sunset Chaser",
+    description:
+      "Chasing sunsets, I collect vibrant skylines as treasured dusk memories.",
+    bgUrl: "/funfacts/sunset.jpg",
   },
 ];

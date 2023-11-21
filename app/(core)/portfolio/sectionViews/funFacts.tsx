@@ -1,4 +1,7 @@
 import Image from "next/image";
+import { FUN_FACTS } from "@/app/data";
+import cx from "classnames";
+
 export default function FunFactView({ inView }: { inView: boolean }) {
   return (
     <div className="w-full aspect-[2/1] -mb-20 flex">
@@ -11,10 +14,38 @@ export default function FunFactView({ inView }: { inView: boolean }) {
         ></Image>
       </div>
       <div className="w-1/2 h-full flex flex-wrap">
-        <div className="w-1/2 bg-blue-50 dark:bg-brick-100 transition-colors duration-700"></div>
-        <div className="w-1/2 bg-blue-200 dark:bg-brick-200 transition-colors duration-700"></div>
-        <div className="w-1/2 bg-blue-300 dark:bg-brick-300 transition-colors duration-700"></div>
-        <div className="w-1/2 bg-blue-500 dark:bg-brick-500 transition-colors duration-700"></div>
+        {FUN_FACTS.map(({ id, keyword, description, bgUrl }) => {
+          return (
+            <div
+              key={id}
+              className={cx(
+                "w-1/2 relative flex justify-center items-center",
+                "transition-colors duration-700"
+              )}
+              style={{
+                backgroundImage: `Url(${bgUrl})`,
+                backgroundSize: "cover",
+              }}
+            >
+              <div
+                className={cx(
+                  "px-6 w-full h-full z-10 relative overflow-hidden",
+                  "flex flex-col items-center justify-center gap-2",
+                  "text-slate-50 group",
+                  "before:content-[''] before:h-full before:absolute before:top-0 before:left-0 before:bg-cerulean-500 before:opacity-70 dark:before:bg-brick-400",
+                  "fun_card"
+                )}
+              >
+                <h3 className="text-center font-semibold group-hover:animate-lineUp">
+                  {keyword}
+                </h3>
+                <p className="hidden group-hover:block text-sm text-center group-hover:animate-lineUp">
+                  {description}
+                </p>
+              </div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
