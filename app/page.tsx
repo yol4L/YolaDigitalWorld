@@ -7,6 +7,7 @@ import PortfolioView from "@/app/(core)/portfolio/portfolioView";
 import TopNavView from "@/app/components/topNav";
 import cx from "classnames";
 import AnimatedBackgroundView from "@/app/components/bgAnimation";
+import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
 
 export default function Home() {
   return (
@@ -53,12 +54,12 @@ export default function Home() {
                 >
                   <div
                     className={cx(
-                      "px-6 py-4 relative inline-flex items-center gap-2",
+                      "px-6 py-4 relative inline-flex items-center gap-2 group",
                       "text-ocean-500 dark:text-slate-100 transition-[background-size_colors] duration-700",
                       "btn-bg-brick hover:btn-bg-brick-hover hover:text-slate-50"
                     )}
                   >
-                    <DocumentIcon className="font-light" />
+                    <DownloadOutlinedIcon className="animate-bounce group-hover:animate-none" />
                     <span className="font-medium text-xl tracking-widest">
                       DOWNLOAD MY RESUME
                     </span>

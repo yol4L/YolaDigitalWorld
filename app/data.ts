@@ -1,6 +1,21 @@
-import { NoteIcon } from "@/app/components/Icons/svg";
-import { BlogBlock, BlogData, MuiIconType } from "@/app/types";
+import { BlogData, MuiIconType } from "@/app/types";
 import { blocks01, blocks02, blocks03 } from "./(core)/blog/data";
+import {
+  InsightsOutlined,
+  EmojiEventsOutlined,
+  LightbulbOutlined,
+  LeaderboardOutlined,
+  AssessmentOutlined,
+  AdsClickOutlined,
+  AllInclusiveOutlined,
+  ScatterPlotOutlined,
+  AlternateEmailOutlined,
+  PhoneOutlined,
+  LocationOnOutlined,
+  ArrowBackOutlined,
+  LinkedIn,
+  AttachFileOutlined,
+} from "@mui/icons-material";
 
 export const BACKGROUND_COLORS = [
   "#8A87D2",
@@ -113,25 +128,25 @@ export const PERSONALITIES: {
     id: "highly_motivated",
     name: "Highly Motivated",
     desc: "Adept at crafting interactive and visually appealing user interfaces.",
-    icon: NoteIcon,
+    icon: InsightsOutlined,
   },
   {
     id: "result_oriented",
     name: "Result Oriented",
     desc: "Always striving for the best outcomes",
-    icon: NoteIcon,
+    icon: EmojiEventsOutlined,
   },
   {
     id: "fast_learner",
     name: "Fast Learner",
     desc: "Continuously seeking growth in the ever-evolving field of front-end development.",
-    icon: NoteIcon,
+    icon: LightbulbOutlined,
   },
   {
     id: "open_to_challenges",
     name: "Open to Challenges",
     desc: "Eager to taking on challenging projects that expand expertise and skill set.",
-    icon: NoteIcon,
+    icon: LeaderboardOutlined,
   },
 ];
 
@@ -144,25 +159,25 @@ export const TECH_STACKS: {
   {
     id: "framework",
     name: "FRAMEWORK",
-    icon: NoteIcon,
+    icon: AssessmentOutlined,
     stacks: ["React", "Next.js", "Redux", "TailwindCSS"],
   },
   {
     id: "frontend",
     name: "FRONTEND",
-    icon: NoteIcon,
+    icon: AdsClickOutlined,
     stacks: ["HTML", "CSS", "JavaScript", "TypeScript"],
   },
   {
     id: "database",
     name: "DATABASE",
-    icon: NoteIcon,
+    icon: AllInclusiveOutlined,
     stacks: ["MongoDB", "GraphQL", "MySQL"],
   },
   {
     id: "others",
     name: "OTHERS",
-    icon: NoteIcon,
+    icon: ScatterPlotOutlined,
     stacks: ["Git", "Node.js", "EJS"],
   },
 ];
@@ -349,5 +364,45 @@ export const FUN_FACTS: {
     description:
       "Chasing sunsets, I collect vibrant skylines as treasured dusk memories.",
     bgUrl: "/funfacts/sunset.jpg",
+  },
+];
+
+export const PERSONAL_INFO_ITEMS: {
+  id: string;
+  icon: MuiIconType;
+  details: string;
+}[] = [
+  {
+    id: "email",
+    icon: AlternateEmailOutlined,
+    details: "yolanda.y.liang@gmail.com",
+  },
+  { id: "address", icon: LocationOnOutlined, details: "BELCONNEN ACT 2617" },
+  { id: "phone", icon: PhoneOutlined, details: "+61 0473042891" },
+];
+
+export const ELSE_ITEMS: {
+  id: string;
+  icon: MuiIconType;
+  path: string;
+  info: string;
+}[] = [
+  {
+    id: "resume",
+    icon: AttachFileOutlined,
+    path: "",
+    info: "Download my resume",
+  },
+  {
+    id: "linkedin",
+    icon: LinkedIn,
+    path: "",
+    info: "View my portfolio on LinkedIn",
+  },
+  {
+    id: "back_home",
+    icon: ArrowBackOutlined,
+    path: "/",
+    info: "Back to Home Page",
   },
 ];

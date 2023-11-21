@@ -1,43 +1,6 @@
-import { DocumentIcon } from "@/app/components/Icons/svg";
 import Link from "next/link";
 import cx from "classnames";
-import { MuiIconType } from "@/app/types";
-
-const PERSONAL_INFO_ITEMS: {
-  id: string;
-  icon: MuiIconType;
-  details: string;
-}[] = [
-  { id: "email", icon: DocumentIcon, details: "yolanda.y.liang@gmail.com" },
-  { id: "address", icon: DocumentIcon, details: "BELCONNEN ACT 2617" },
-  { id: "phone", icon: DocumentIcon, details: "+61 0473042891" },
-];
-
-const ELSE_ITEMS: {
-  id: string;
-  icon: MuiIconType;
-  path: string;
-  info: string;
-}[] = [
-  {
-    id: "resume",
-    icon: DocumentIcon,
-    path: "",
-    info: "Download my resume",
-  },
-  {
-    id: "linkedin",
-    icon: DocumentIcon,
-    path: "",
-    info: "View my portfolio on LinkedIn",
-  },
-  {
-    id: "back_home",
-    icon: DocumentIcon,
-    path: "/",
-    info: "Back to Home Page",
-  },
-];
+import { ELSE_ITEMS, PERSONAL_INFO_ITEMS } from "@/app/data";
 
 export default function ContactMeView({ inView }: { inView: boolean }) {
   return (
