@@ -5,6 +5,7 @@ import Image from "next/image";
 import { CodeBlock } from "./codeBlock";
 import { NoteIcon } from "@/app/components/Icons/svg";
 import Link from "next/link";
+import cx from "classnames";
 
 // const SHARE_BUTTONS: { id: string; icon: MuiIconType }[] = [
 //   { id: "facebook", icon: NoteIcon },
@@ -51,7 +52,11 @@ const TextWithCode: React.FC<{
         return (
           <code
             key={index}
-            className="px-2 rounded-sm font-mono text-sm bg-slate-200"
+            className={cx(
+              "px-2 rounded-sm font-mono text-sm",
+              "text-slate-800 dark:text-slate-100",
+              "bg-slate-200 dark:bg-slate-600 transition-all duration-700"
+            )}
           >
             {part.slice(1, -1)}
           </code>
@@ -77,11 +82,27 @@ const ImageAndGraph: React.FC<{
 
 const renderTableCell = (cell: TableCell) => {
   if (typeof cell.content === "string") {
-    return <td className="p-4 border border-slate-200">{cell.content}</td>;
+    return (
+      <td
+        className={cx(
+          "p-4 border transition-colors duration-700",
+          "text-slate-800 dark:text-slate-100",
+          "border-slate-200 dark:border-slate-700"
+        )}
+      >
+        {cell.content}
+      </td>
+    );
   } else {
     // Render image
     return (
-      <td className="p-4 border border-slate-200">
+      <td
+        className={cx(
+          "p-4 border transition-colors duration-700",
+          "text-slate-800 dark:text-slate-100",
+          "border-slate-200 dark:border-slate-700"
+        )}
+      >
         <div className="w-full aspect-square relative">
           <Image
             src={cell.content.src}
@@ -101,13 +122,22 @@ const TableStructure: React.FC<{ rows: TableProps }> = ({ rows }) => {
 
   return (
     <table className="w-full my-4 table-fixed border-collapse text-center text-sm">
-      <thead className="border border-slate-200 bg-cerulean-500 text-slate-50">
+      <thead
+        className={cx(
+          "border text-slate-50 transition-colors duration-700",
+          "border-slate-200 dark:border-slate-700",
+          "bg-cerulean-500 dark:bg-brick-300 "
+        )}
+      >
         <tr>
           {headers.map((headerText, index) => {
             return (
               <th
                 key={index}
-                className="px-8 py-4 border border-slate-200 font-semibold"
+                className={cx(
+                  "px-8 py-4 border font-semibold transition-colors duration-700",
+                  "border-slate-200 dark:border-slate-700"
+                )}
               >
                 {headerText}
               </th>
@@ -119,7 +149,11 @@ const TableStructure: React.FC<{ rows: TableProps }> = ({ rows }) => {
         {rows.map((row, index) => (
           <tr
             key={index}
-            className="border border-slate-200 bg-transparent even:bg-slate-100"
+            className={cx(
+              "border transition-colors duration-700",
+              "border-slate-200 dark:border-slate-700",
+              "bg-transparent even:bg-slate-100 dark:even:bg-slate-900"
+            )}
           >
             {Object.values(row).map(renderTableCell)}
           </tr>
@@ -149,7 +183,7 @@ export default async function SingleBlogPage({
     <div className="w-full">
       <TopNavView />
       {/* Headings */}
-      <div className="w-full md:w-4/5 lg:w-5/8 px-20 mx-auto mt-24 flex flex-col gap-6">
+      <div className="w-full md:w-4/5 lg:w-5/8 px-20 mx-auto pt-24 flex flex-col gap-6">
         <div className="flex items-center gap-4">
           <div className="w-6 h-0.5 relative top-[-1px] bg-ocean-500"></div>
           <span className="text-xs tracking-widest text-ocean-500">
@@ -159,7 +193,13 @@ export default async function SingleBlogPage({
         <h3 className="text-4xl font-serif font-semibold ">{title}</h3>
         <p className="">
           <span className="text-neutral-400">{`${date.toUpperCase()} - BY `}</span>
-          <span className="text-cerulean-500 hover:text-cerulean-700">
+          <span
+            className={cx(
+              " transition-colors duration-700",
+              "text-cerulean-500 dark:text-brick-300",
+              "hover:text-cerulean-700 dark:hover:text-brick-700"
+            )}
+          >
             <a href="/portfolio">{author.toUpperCase()}</a>
           </span>
         </p>
@@ -240,6 +280,7 @@ export default async function SingleBlogPage({
           }
         })}
         <hr className="mt-10" />
+
         {/* Author */}
         <div className="my-8 flex items-center flex-nowrap gap-8">
           <div className="w-32 h-32 shrink-0 relative rounded-full overflow-hidden">
@@ -251,14 +292,14 @@ export default async function SingleBlogPage({
             />
           </div>
           <div className="flex flex-col gap-1 font-mono">
-            <p className="text-lg font-semibold tracking-wider text-cerulean-500">
+            <p className="text-lg font-semibold tracking-wider text-cerulean-500 dark:text-brick-300 transition-colors duration-700">
               <span>{`Author: `}</span>
               <span>
                 <a href="/portfolio">{author}</a>
               </span>
             </p>
             <p className="text-sm text-slate-400">{`Web Developer | Enthusiast for frontend programming`}</p>
-            <p className="text-sm text-slate-600 text-justify">
+            <p className="text-sm text-justify text-slate-600 dark:text-slate-300 transition-colors duration-700">
               A web developer who continuously strives to create captivating and
               user-centric digital experiences while staying at the forefront of
               emerging technologies and design trends.
@@ -270,13 +311,27 @@ export default async function SingleBlogPage({
       {/* Navigation */}
       <div className="w-full md:w-4/5 lg:w-5/8 px-20 mx-auto mb-20">
         <Link href={"/blog"}>
-          <span className="font-semibold text-cerulean-500 hover:text-cerulean-700">
+          <span
+            className={cx(
+              "font-semibold transition-colors duration-700",
+              "text-cerulean-500 dark:text-brick-300",
+              "hover:text-cerulean-700 dark:hover:text-brick-700"
+            )}
+          >
             ← Back to All Blogs
           </span>
         </Link>
       </div>
+
       {/* Footer */}
-      <footer className="h-16 w-full relative flex items-center justify-center text-xs text-slate-500 bg-slate-100 border border-t-slate-200">
+      <footer
+        className={cx(
+          "h-16 w-full relative flex items-center justify-center text-xs",
+          "text-slate-500 border-0 transition-all duration-700",
+          "bg-slate-100 dark:bg-slate-900",
+          "border-t-slate-200, dark:border-t-slate-600"
+        )}
+      >
         <span>
           Copyright © 2023 Yola LIANG | Australia. All rights reserved.
         </span>

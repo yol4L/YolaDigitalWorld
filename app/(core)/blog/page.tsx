@@ -3,6 +3,7 @@ import TopNavView from "@/app/components/topNav";
 import { BLOGS } from "../../data";
 import Link from "next/link";
 import Image from "next/image";
+import cx from "classnames";
 
 export default function BlogPage() {
   return (
@@ -45,7 +46,13 @@ export default function BlogPage() {
                   <p className="text-sm">{headline}</p>
                   <p className="text-xs">
                     <span className="text-neutral-400">{`${date.toUpperCase()} - BY `}</span>
-                    <span className="text-cerulean-500 hover:text-cerulean-700">
+                    <span
+                      className={cx(
+                        " transition-colors duration-700",
+                        "text-cerulean-500 dark:text-brick-300",
+                        "hover:text-cerulean-700 dark:hover:text-brick-700"
+                      )}
+                    >
                       <a href="/portfolio">{author.toUpperCase()}</a>
                     </span>
                   </p>
