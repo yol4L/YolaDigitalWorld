@@ -3,7 +3,13 @@ import cx from "classnames";
 import Link from "next/link";
 import Image from "next/image";
 
-export default function BlogsView({ inView }: { inView: boolean }) {
+export default function BlogsView({
+  inView,
+  scrollingUp,
+}: {
+  inView: boolean;
+  scrollingUp: boolean;
+}) {
   return (
     <div className="mx-[-1rem] -mb-20 flex">
       {BLOGS.slice(0, 8).map(({ id, title, date, tag, cover }, i) => {
@@ -13,7 +19,9 @@ export default function BlogsView({ inView }: { inView: boolean }) {
             href={`/blog/${id}`}
             className={cx(
               "w-1/3 px-4",
-              inView && (i % 2 === 0 ? "animate-slideUp" : "animate-slideDown")
+              inView &&
+                !scrollingUp &&
+                (i % 2 === 0 ? "animate-slideUp" : "animate-slideDown")
             )}
             style={{ animationDelay: `${i * 0.25}s` }}
           >

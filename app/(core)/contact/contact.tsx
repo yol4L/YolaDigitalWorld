@@ -2,13 +2,22 @@ import Link from "next/link";
 import cx from "classnames";
 import { ELSE_ITEMS, PERSONAL_INFO_ITEMS } from "@/app/data";
 
-export default function ContactMeView({ inView }: { inView: boolean }) {
+export default function ContactMeView({
+  inView,
+  scrollingUp,
+}: {
+  inView: boolean;
+  scrollingUp: boolean;
+}) {
   return (
     <div className="flex gap-20">
       <div className="w-1/2 flex flex-col gap-10">
         {/* Personal Info */}
         <div
-          className={cx("flex flex-col gap-8", inView && "animate-slideRight")}
+          className={cx(
+            "flex flex-col gap-8",
+            inView && !scrollingUp && "animate-slideRight"
+          )}
         >
           <span
             className={cx(
@@ -40,7 +49,10 @@ export default function ContactMeView({ inView }: { inView: boolean }) {
         </div>
         {/* Elsewhere */}
         <div
-          className={cx("flex flex-col gap-8", inView && "animate-slideRight")}
+          className={cx(
+            "flex flex-col gap-8",
+            inView && !scrollingUp && "animate-slideRight"
+          )}
           style={{ animationDelay: "0.5s" }}
         >
           <span
@@ -71,7 +83,7 @@ export default function ContactMeView({ inView }: { inView: boolean }) {
       <form
         className={cx(
           "w-1/2 py-2 flex flex-col gap-8",
-          inView && "animate-slideLeft"
+          inView && !scrollingUp && "animate-slideLeft"
         )}
       >
         {/* Name */}

@@ -3,7 +3,13 @@ import cx from "classnames";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function ProjectsView({ inView }: { inView: boolean }) {
+export default function ProjectsView({
+  inView,
+  scrollingUp,
+}: {
+  inView: boolean;
+  scrollingUp: boolean;
+}) {
   return (
     <div className="mx-[-1rem] flex flex-wrap items-stretch">
       {RECENT_WORK.slice(0, 3).map(
@@ -14,8 +20,8 @@ export default function ProjectsView({ inView }: { inView: boolean }) {
               href={`/recent-work/#${id}`}
               className={cx(
                 "w-1/3 aspect-square px-4",
-                " ",
                 inView &&
+                  !scrollingUp &&
                   (i % 2 === 0 ? "animate-slideUp" : "animate-slideDown")
               )}
               style={{ animationDelay: `${i * 0.25}s` }}

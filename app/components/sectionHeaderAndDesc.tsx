@@ -11,18 +11,20 @@ export default function SectionHeaderAndDesc({
   headerText,
   description,
   inView,
+  scrollingUp,
 }: {
   name: string;
   headerText: string;
   description: string[];
   inView: boolean;
+  scrollingUp: boolean;
 }) {
   return (
     <div className="mt-28 mb-6 flex flex-col gap-6">
       <span
         className={cx(
           "tracking-widest text-slate-400 dark:text-brick-200",
-          inView && "animate-slideLeft"
+          inView && !scrollingUp && "animate-slideLeft"
         )}
       >
         {name}
@@ -30,7 +32,7 @@ export default function SectionHeaderAndDesc({
       <h1
         className={cx(
           "font-semibold text-xl tracking-widest",
-          inView && "animate-slideRight"
+          inView && !scrollingUp && "animate-slideRight"
         )}
       >
         {headerText}
@@ -42,7 +44,10 @@ export default function SectionHeaderAndDesc({
               <p
                 key={paragraph.slice(0, 8)}
                 dangerouslySetInnerHTML={{ __html: paragraph }}
-                className={cx("text-justify", inView && "animate-slideLeft")}
+                className={cx(
+                  "text-justify",
+                  inView && !scrollingUp && "animate-slideLeft"
+                )}
               ></p>
             );
           })}

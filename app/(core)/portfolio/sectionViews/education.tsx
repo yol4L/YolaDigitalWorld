@@ -8,6 +8,7 @@ const EducationItem = ({
   item,
   index,
   inView,
+  scrollingUp,
 }: {
   item: {
     id: string;
@@ -17,13 +18,17 @@ const EducationItem = ({
   };
   index: number;
   inView: boolean;
+  scrollingUp: boolean;
 }) => {
   const { id, title, period, desc } = item;
   const [expanded, setExpanded] = useState<boolean>(index === 0);
 
   return (
     <div
-      className={cx("flex flex-col z-10", inView && "animate-slideUp")}
+      className={cx(
+        "flex flex-col z-10",
+        inView && !scrollingUp && "animate-slideUp"
+      )}
       style={{ animationDelay: `${index * 0.25 + 0.5}s` }}
     >
       <div
@@ -87,12 +92,24 @@ const EducationItem = ({
   );
 };
 
-export default function EducationView({ inView }: { inView: boolean }) {
+export default function EducationView({
+  inView,
+  scrollingUp,
+}: {
+  inView: boolean;
+  scrollingUp: boolean;
+}) {
   return (
     <div className="-mb-20 flex flex-col gap-2">
       {EDUCATION_DATA.map((item, i) => {
         return (
-          <EducationItem key={item.id} item={item} index={i} inView={inView} />
+          <EducationItem
+            key={item.id}
+            item={item}
+            index={i}
+            inView={inView}
+            scrollingUp={scrollingUp}
+          />
         );
       })}
     </div>

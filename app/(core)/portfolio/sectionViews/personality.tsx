@@ -1,7 +1,13 @@
 import { PERSONALITIES } from "../../../data";
 import cx from "classnames";
 
-export default function PersonalityView({ inView }: { inView: boolean }) {
+export default function PersonalityView({
+  inView,
+  scrollingUp,
+}: {
+  inView: boolean;
+  scrollingUp: boolean;
+}) {
   return (
     <div className="mx-[-0.75rem] flex flex-wrap items-stretch">
       {PERSONALITIES.map(({ id, name, desc, icon: Icon }, i) => {
@@ -10,7 +16,9 @@ export default function PersonalityView({ inView }: { inView: boolean }) {
             key={id}
             className={cx(
               "w-1/4 xl:aspect-square p-3",
-              inView && (i % 2 === 0 ? "animate-slideUp" : "animate-slideDown")
+              inView &&
+                !scrollingUp &&
+                (i % 2 === 0 ? "animate-slideUp" : "animate-slideDown")
             )}
           >
             <div

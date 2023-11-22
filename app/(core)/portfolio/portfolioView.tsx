@@ -21,6 +21,10 @@ export default function PortfolioView() {
 
   const contentDivRef = useRef<HTMLElement>(null);
 
+  const [prevY, setPrevY] = useState<number>(0); //
+  const [scrollingUp, setScrollingUp] = useState<boolean>(false);
+  // let lastScrollY = 0;
+
   const handleScroll = useCallback(() => {
     const sections = [
       "about",
@@ -37,6 +41,20 @@ export default function PortfolioView() {
     if (contentDiv) {
       // Get the current scroll position within the content div
       const scrollY = contentDiv.scrollTop;
+
+      // Detect the scroll direction
+      // to disable animation when scrolling up
+      if (scrollY > 0) {
+        setPrevY(scrollY);
+        setScrollingUp(scrollY < prevY);
+        // console.log(scrollingUp);
+      }
+
+      // if (scrollY > 0) {
+      //   setScrollingUp(scrollY < lastScrollY);
+      // }
+      // lastScrollY = scrollY;
+      // console.log(scrollingUp);
 
       // Calculate which section is currently in view,
       // to trigger side menu item alteration accordingly.
@@ -74,7 +92,7 @@ export default function PortfolioView() {
       }
       // console.log("sc:", sectionComing);
     }
-  }, []);
+  }, [prevY]);
   // console.log("cs", comingSection);
 
   const checkInView = (sectionId: string) => {
@@ -188,9 +206,13 @@ export default function PortfolioView() {
             {/* <SectionHeaderAndDesc name={SECTION_HEADER_AND_DESC_ITEMS[0].name} headerText={.headerText} desc={} /> */}
             <SectionHeaderAndDesc
               inView={checkInView("about")}
+              scrollingUp={scrollingUp}
               {...SECTION_HEADER_AND_DESC_ITEMS[0]}
             />
-            <PersonalityView inView={checkInView("about")} />
+            <PersonalityView
+              inView={checkInView("about")}
+              scrollingUp={scrollingUp}
+            />
           </section>
           {/* Quote 1 */}
           <div
@@ -213,14 +235,19 @@ export default function PortfolioView() {
           <section id="skill" className="flex flex-col gap-4 snap-start">
             <SectionHeaderAndDesc
               inView={checkInView("skill")}
+              scrollingUp={scrollingUp}
               {...SECTION_HEADER_AND_DESC_ITEMS[1]}
             />
-            <TechStacksView inView={checkInView("skill")} />
+            <TechStacksView
+              inView={checkInView("skill")}
+              scrollingUp={scrollingUp}
+            />
           </section>
           {/* Experience */}
           <section id="experience" className="flex flex-col gap-4 snap-start">
             <SectionHeaderAndDesc
               inView={checkInView("experience")}
+              scrollingUp={scrollingUp}
               {...SECTION_HEADER_AND_DESC_ITEMS[2]}
             />
             <CareerExperienceView inView={checkInView("experience")} />
@@ -229,9 +256,13 @@ export default function PortfolioView() {
           <section id="project" className="flex flex-col gap-4 snap-start">
             <SectionHeaderAndDesc
               inView={checkInView("project")}
+              scrollingUp={scrollingUp}
               {...SECTION_HEADER_AND_DESC_ITEMS[3]}
             />
-            <ProjectsView inView={checkInView("project")} />
+            <ProjectsView
+              inView={checkInView("project")}
+              scrollingUp={scrollingUp}
+            />
           </section>
           {/* Quote 2 */}
           <div
@@ -255,25 +286,34 @@ export default function PortfolioView() {
           <section id="blog" className="flex flex-col gap-4 snap-start">
             <SectionHeaderAndDesc
               inView={checkInView("blog")}
+              scrollingUp={scrollingUp}
               {...SECTION_HEADER_AND_DESC_ITEMS[4]}
             />
-            <BlogsView inView={checkInView("blog")} />
+            <BlogsView inView={checkInView("blog")} scrollingUp={scrollingUp} />
           </section>
           {/* Education */}
           <section id="education" className="flex flex-col gap-4 snap-start">
             <SectionHeaderAndDesc
               inView={checkInView("education")}
+              scrollingUp={scrollingUp}
               {...SECTION_HEADER_AND_DESC_ITEMS[5]}
             />
-            <EducationView inView={checkInView("education")} />
+            <EducationView
+              inView={checkInView("education")}
+              scrollingUp={scrollingUp}
+            />
           </section>
           {/* Fun points */}
           <section id="fun_points" className="flex flex-col gap-4 snap-start">
             <SectionHeaderAndDesc
               inView={checkInView("fun_points")}
+              scrollingUp={scrollingUp}
               {...SECTION_HEADER_AND_DESC_ITEMS[6]}
             />
-            <FunFactView inView={checkInView("fun_points")} />
+            <FunFactView
+              inView={checkInView("fun_points")}
+              scrollingUp={scrollingUp}
+            />
           </section>
           {/* Contact */}
           <section
@@ -282,9 +322,13 @@ export default function PortfolioView() {
           >
             <SectionHeaderAndDesc
               inView={checkInView("contact")}
+              scrollingUp={scrollingUp}
               {...SECTION_HEADER_AND_DESC_ITEMS[7]}
             />
-            <ContactMeView inView={checkInView("contact")} />
+            <ContactMeView
+              inView={checkInView("contact")}
+              scrollingUp={scrollingUp}
+            />
           </section>
         </div>
       </div>

@@ -2,10 +2,21 @@ import Image from "next/image";
 import { FUN_FACTS } from "@/app/data";
 import cx from "classnames";
 
-export default function FunFactView({ inView }: { inView: boolean }) {
+export default function FunFactView({
+  inView,
+  scrollingUp,
+}: {
+  inView: boolean;
+  scrollingUp: boolean;
+}) {
   return (
     <div className="w-full aspect-[2/1] -mb-20 flex">
-      <div className="w-1/2 h-full relative overflow-hidden">
+      <div
+        className={cx(
+          "w-1/2 h-full relative overflow-hidden",
+          inView && !scrollingUp && "animate-slideRight"
+        )}
+      >
         <Image
           src="/yola-funFact01.jpg"
           alt="brand-avatar"
@@ -14,13 +25,16 @@ export default function FunFactView({ inView }: { inView: boolean }) {
         ></Image>
       </div>
       <div className="w-1/2 h-full flex flex-wrap">
-        {FUN_FACTS.map(({ id, keyword, description, bgUrl }) => {
+        {FUN_FACTS.map(({ id, keyword, description, bgUrl }, i) => {
           return (
             <div
               key={id}
               className={cx(
                 "w-1/2 relative flex justify-center items-center",
-                "transition-colors duration-700"
+                "transition-colors duration-700",
+                inView &&
+                  !scrollingUp &&
+                  (i % 2 === 0 ? "animate-slideUp" : "animate-slideDown")
               )}
               style={{
                 backgroundImage: `Url(${bgUrl})`,
