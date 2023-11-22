@@ -1,6 +1,6 @@
 import PageTagView from "@/app/components/Tags/pageTag";
+import TopNavView from "@/app/components/Tabs/topNav";
 import ContactMeView from "./contact";
-import TopNavView from "@/app/components/topNav";
 
 export default function ContactPage() {
   return (
@@ -18,7 +18,7 @@ export default function ContactPage() {
           </p>
         </div>
         <div className="my-6">
-          <ContactMeView inView={false} />
+          <ContactMeView inView={false} scrollingUp={false} />
         </div>
       </div>
     </div>

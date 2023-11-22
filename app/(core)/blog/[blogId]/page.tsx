@@ -1,12 +1,13 @@
-import TopNavView from "@/app/components/topNav";
-import { BLOGS } from "@/app/data";
-import { BlogBlock, BlogData, MuiIconType, TableCell } from "@/app/types";
 import Image from "next/image";
-import { CodeBlock } from "./codeBlock";
-import { NoteIcon } from "@/app/components/Icons/svg";
 import Link from "next/link";
 import cx from "classnames";
+
+import TopNavView from "@/app/components/Tabs/topNav";
 import BackToTopButton from "@/app/components/backToTopButton";
+import { CodeBlock } from "./codeBlock";
+
+import { BlogBlock, BlogData, MuiIconType, TableCell } from "@/app/types";
+import { BLOGS } from "@/app/data";
 
 // const SHARE_BUTTONS: { id: string; icon: MuiIconType }[] = [
 //   { id: "facebook", icon: NoteIcon },

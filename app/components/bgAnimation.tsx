@@ -1,8 +1,14 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { useDarkMode } from "./darkModeContext";
+import { useDarkMode } from "./DarkMode/darkModeContext";
 
+/**
+ * This function is defined to disperse firefly dots around the window,
+ * with a rough focus on the center.
+ * @param a
+ * @returns
+ */
 const m = (a: number) => {
   return Math.pow(a, 5) / 2500;
 };

@@ -1,4 +1,6 @@
-import { PERSONALITIES } from "../../../data";
+"use client";
+
+import { PERSONALITIES } from "@/app/data";
 import cx from "classnames";
 
 export default function PersonalityView({

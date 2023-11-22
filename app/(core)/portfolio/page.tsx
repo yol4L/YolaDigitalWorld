@@ -1,5 +1,7 @@
+"use client";
+
 import PortfolioView from "./portfolioView";
-import TopNavView from "@/app/components/topNav";
+import TopNavView from "@/app/components/Tabs/topNav";
 
 export default function PortfolioPage() {
   return (

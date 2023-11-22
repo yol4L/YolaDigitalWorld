@@ -4,38 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
-
-const CAROUSEL_CONTENTS: { url: string; description: string }[] = [
-  {
-    url: "/projects/news_feed_demo/01_text_post.gif",
-    description: "Implements a streamlined posting feature in news feed.",
-  },
-  {
-    url: "/projects/news_feed_demo/02_vote_and_edit.gif",
-    description:
-      "Incorporates an effective voting and content editing mechanism.",
-  },
-  {
-    url: "/projects/news_feed_demo/03_hierarchical_structured_comments.gif",
-    description: "Adopts a hierarchical structure for comments.",
-  },
-  {
-    url: "/projects/news_feed_demo/04_comments_vote_edit_delete.gif",
-    description: "Integrates comment options to vote, edit, and delete",
-  },
-  {
-    url: "/projects/news_feed_demo/05_copy_link_to_share.gif",
-    description: "Employs an easy-to-use link copying for sharing",
-  },
-  {
-    url: "/projects/news_feed_demo/06_media_post.gif",
-    description: "Enables intuitive media uploads with Base64.",
-  },
-  {
-    url: "/projects/news_feed_demo/07_drag_and_drop.gif",
-    description: "Introduces user-friendly drag-and-drop interfaces.",
-  },
-];
+import { CAROUSEL_CONTENTS } from "@/app/data";
 
 export default function CarouselView() {
   const [currentIndex, setCurrentIndex] = useState<number>(0);

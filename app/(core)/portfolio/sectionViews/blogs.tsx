@@ -1,7 +1,9 @@
-import { BLOGS } from "../../../data";
-import cx from "classnames";
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import cx from "classnames";
+import { BLOGS } from "@/app/data";
 
 export default function BlogsView({
   inView,

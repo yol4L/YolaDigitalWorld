@@ -1,9 +1,11 @@
-import PageTagView from "@/app/components/Tags/pageTag";
-import TopNavView from "@/app/components/topNav";
-import { BLOGS } from "../../data";
 import Link from "next/link";
 import Image from "next/image";
 import cx from "classnames";
+
+import PageTagView from "@/app/components/Tags/pageTag";
+import TopNavView from "@/app/components/Tabs/topNav";
+
+import { BLOGS } from "../../data";
 
 export default function BlogPage() {
   return (

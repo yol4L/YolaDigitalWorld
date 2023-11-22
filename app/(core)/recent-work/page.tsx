@@ -1,14 +1,16 @@
 "use client";
 
-import PageTagView from "@/app/components/Tags/pageTag";
-import TopNavView from "@/app/components/topNav";
-import { BACKGROUND_COLORS, RECENT_WORK } from "../../data";
-import Image from "next/image";
-import cx from "classnames";
 import React, { useEffect, useState, ReactNode } from "react";
-import CarouselView from "./carousel";
+import Image from "next/image";
 import Link from "next/link";
+import cx from "classnames";
+
+import PageTagView from "@/app/components/Tags/pageTag";
+import TopNavView from "@/app/components/Tabs/topNav";
+import CarouselView from "./carousel";
+
 import CloseIcon from "@mui/icons-material/Close";
+import { BACKGROUND_COLORS, RECENT_WORK } from "@/app/data";
 
 function getBgColor() {
   const i = Math.floor(Math.random() * BACKGROUND_COLORS.length);

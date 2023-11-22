@@ -1,6 +1,8 @@
+"use client";
+
 import Image from "next/image";
-import { FUN_FACTS } from "@/app/data";
 import cx from "classnames";
+import { FUN_FACTS } from "@/app/data";
 
 export default function FunFactView({
   inView,

@@ -7,6 +7,34 @@ export type MuiIconType = OverridableComponent<
   muiName: string;
 };
 
+export type DarkModeContextType = {
+  darkMode: boolean;
+  toggleDarkMode: () => void;
+};
+
+// Define interfaces and types for portfolio view
+export interface SectionBlockData {
+  type: "section";
+  id: string;
+  title: string;
+  headerText: string;
+  description: string[];
+  relatedComponent: React.ComponentType<{
+    inView: boolean;
+    scrollingUp: boolean;
+  }>;
+}
+
+export interface QuoteBlockData {
+  type: "quote";
+  id: string;
+  text: string;
+  bgUrl: string;
+}
+
+export type SectionContentItem = SectionBlockData | QuoteBlockData;
+
+// Define interfaces and types for blog view
 export interface BlogHeadingAttributes {
   content: string;
 }

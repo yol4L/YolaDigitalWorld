@@ -1,7 +1,9 @@
-import { RECENT_WORK } from "../../../data";
-import cx from "classnames";
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import cx from "classnames";
+import { RECENT_WORK } from "@/app/data";
 
 export default function ProjectsView({
   inView,

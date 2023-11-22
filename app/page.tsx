@@ -1,12 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import { DocumentIcon } from "@/app/components/Icons/svg";
-import PageTagView from "@/app/components/Tags/pageTag";
-import PortfolioView from "@/app/(core)/portfolio/portfolioView";
-import TopNavView from "@/app/components/topNav";
 import cx from "classnames";
+
+import PageTagView from "@/app/components/Tags/pageTag";
+import TopNavView from "@/app/components/Tabs/topNav";
 import AnimatedBackgroundView from "@/app/components/bgAnimation";
+import PortfolioView from "@/app/(core)/portfolio/portfolioView";
+
 import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
 
 export default function Home() {

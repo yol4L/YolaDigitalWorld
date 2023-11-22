@@ -1,6 +1,8 @@
+"use client";
+
 import { useEffect, useState } from "react";
-import { BACKGROUND_COLORS, TECH_STACKS } from "../../../data";
 import cx from "classnames";
+import { BACKGROUND_COLORS, TECH_STACKS } from "@/app/data";
 
 function getBgColor() {
   const i = Math.floor(Math.random() * BACKGROUND_COLORS.length);

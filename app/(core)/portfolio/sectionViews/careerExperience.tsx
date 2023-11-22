@@ -1,7 +1,9 @@
-import { FourPointedStarIcon } from "@/app/components/Icons/svg";
+"use client";
+
 import { Fragment } from "react";
-import { CAREER_EXPERIENCES } from "../../../data";
 import cx from "classnames";
+import { FourPointedStarIcon } from "@/app/components/Icons/svg";
+import { CAREER_EXPERIENCES } from "@/app/data";
 
 export default function CareerExperienceView({ inView }: { inView: boolean }) {
   return (

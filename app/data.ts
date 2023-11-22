@@ -1,5 +1,17 @@
-import { BlogData, MuiIconType } from "@/app/types";
+import { BlogData, MuiIconType, SectionContentItem } from "@/app/types";
 import { blocks01, blocks02, blocks03 } from "./(core)/blog/data";
+
+// Import smaller components
+import ContactMeView from "./(core)/contact/contact";
+import BlogsView from "./(core)/portfolio/sectionViews/blogs";
+import CareerExperienceView from "./(core)/portfolio/sectionViews/careerExperience";
+import EducationView from "./(core)/portfolio/sectionViews/education";
+import FunFactView from "./(core)/portfolio/sectionViews/funFacts";
+import PersonalityView from "./(core)/portfolio/sectionViews/personality";
+import ProjectsView from "./(core)/portfolio/sectionViews/projects";
+import TechStacksView from "./(core)/portfolio/sectionViews/techStacks";
+
+// Import icons
 import {
   InsightsOutlined,
   EmojiEventsOutlined,
@@ -43,79 +55,6 @@ export const BACKGROUND_COLORS = [
   "#1F9DFF",
   "#5390D9",
   "#6878B1",
-];
-
-export const SECTION_HEADER_AND_DESC_ITEMS: {
-  id: string;
-  name: string;
-  headerText: string;
-  description: string[];
-}[] = [
-  {
-    id: "about",
-    name: "ABOUT ME",
-    headerText: "WHO AM I",
-    description: [
-      "<b>Hi, I&apos;m Yola Liang,</b> who is passionate about creating visually appealing and user-friendly web interfaces to enhance the digital experiences of users. I aspire to stay at the forefront of emerging web technologies and design trends, collaborating with cross-functional teams to build responsive, accessible, and innovative websites and applications that not only meet but exceed user expectations.",
-      "By continually honing my skills, embracing new challenges, and delivering high-quality code, I aim to contribute to the success of projects and organisations while advancing my own professional growth in the dynamic field of web development.",
-    ],
-  },
-  {
-    id: "skill",
-    name: "MY SKILLS",
-    headerText: "TECH STACKS I'M GOOD AT",
-    description: [
-      "Explore the tools and technologies that power my digital creations. From front-end to back-end, I bring together a versatile array of programming languages, frameworks, and tools to shape the web.",
-    ],
-  },
-  {
-    id: "experience",
-    name: "JOURNEY",
-    headerText: "CAREER EXPERIENCE",
-    description: [
-      "Navigate through my professional journey, from past roles to current endeavors. Learn about the experiences that have shaped my career, the challenges I've tackled, and the achievements I've made in the dynamic world of web development.",
-    ],
-  },
-  {
-    id: "project",
-    name: "PROJECTS",
-    headerText: "SOME OF MY RECENT WORK",
-    description: [
-      "Dive into a visual showcase of my work. Browse through a variety of projects I've undertaken, from web applications and websites to design concepts. ",
-    ],
-  },
-  {
-    id: "blog",
-    name: "BLOG",
-    headerText: "RECENT BLOGS",
-    description: [
-      "Discover my thoughts and insights on web development, design, and industry trends. In this section, I share knowledge, tips, and experiences. Join me in exploring the ever-evolving world of technology and design.",
-    ],
-  },
-  {
-    id: "education",
-    name: "EDUCATION",
-    headerText: "EDUCATION AND COURSES",
-    description: [
-      "Learn about my qualifications and academic journey that have honed my expertise in the field.",
-    ],
-  },
-  {
-    id: "fun_points",
-    name: "FUN POINTS",
-    headerText: "OTHER ASPECTS OF ME",
-    description: [
-      "Get to know me behind the screen. Just a glimpse into my interests, hobbies, and other facets of my personality that make me a well-rounded and creative individual.",
-    ],
-  },
-  {
-    id: "contact",
-    name: "CONTACT",
-    headerText: "DROP ME A LINE",
-    description: [
-      "Connect with me and start a conversation to say hello or talk about opportunities.",
-    ],
-  },
 ];
 
 export const PERSONALITIES: {
@@ -404,5 +343,134 @@ export const ELSE_ITEMS: {
     icon: ArrowBackOutlined,
     path: "/",
     info: "Back to Home Page",
+  },
+];
+
+export const SECTION_CONTENTS: SectionContentItem[] = [
+  {
+    type: "section",
+    id: "about",
+    title: "ABOUT ME",
+    headerText: "WHO AM I",
+    description: [
+      "<b>Hi, I&apos;m Yola Liang,</b> who is passionate about creating visually appealing and user-friendly web interfaces to enhance the digital experiences of users. I aspire to stay at the forefront of emerging web technologies and design trends, collaborating with cross-functional teams to build responsive, accessible, and innovative websites and applications that not only meet but exceed user expectations.",
+      "By continually honing my skills, embracing new challenges, and delivering high-quality code, I aim to contribute to the success of projects and organisations while advancing my own professional growth in the dynamic field of web development.",
+    ],
+    relatedComponent: PersonalityView,
+  },
+  {
+    type: "quote",
+    id: "quote1",
+    text: `I'm absolutely enthralled by the world of code - it's truly exhilarating!`,
+    bgUrl: "/bg-1.jpg",
+  },
+  {
+    type: "section",
+    id: "skill",
+    title: "MY SKILLS",
+    headerText: "TECH STACKS I'M GOOD AT",
+    description: [
+      "Explore the tools and technologies that power my digital creations. From front-end to back-end, I bring together a versatile array of programming languages, frameworks, and tools to shape the web.",
+    ],
+    relatedComponent: TechStacksView,
+  },
+  {
+    type: "section",
+    id: "experience",
+    title: "JOURNEY",
+    headerText: "CAREER EXPERIENCE",
+    description: [
+      "Navigate through my professional journey, from past roles to current endeavors. Learn about the experiences that have shaped my career, the challenges I've tackled, and the achievements I've made in the dynamic world of web development.",
+    ],
+    relatedComponent: CareerExperienceView,
+  },
+  {
+    type: "section",
+    id: "project",
+    title: "PROJECTS",
+    headerText: "SOME OF MY RECENT WORK",
+    description: [
+      "Dive into a visual showcase of my work. Browse through a variety of projects I've undertaken, from web applications and websites to design concepts. ",
+    ],
+    relatedComponent: ProjectsView,
+  },
+  {
+    type: "quote",
+    id: "quote2",
+    text: `Keep coding, keep reflecting. <br />
+    The journey is as thrilling as the destination!`,
+    bgUrl: "/bg-1.jpg",
+  },
+  {
+    type: "section",
+    id: "blog",
+    title: "BLOG",
+    headerText: "RECENT BLOGS",
+    description: [
+      "Discover my thoughts and insights on web development, design, and industry trends. In this section, I share knowledge, tips, and experiences. Join me in exploring the ever-evolving world of technology and design.",
+    ],
+    relatedComponent: BlogsView,
+  },
+  {
+    type: "section",
+    id: "education",
+    title: "EDUCATION",
+    headerText: "EDUCATION AND COURSES",
+    description: [
+      "Learn about my qualifications and academic journey that have honed my expertise in the field.",
+    ],
+    relatedComponent: EducationView,
+  },
+  {
+    type: "section",
+    id: "fun_points",
+    title: "FUN POINTS",
+    headerText: "OTHER ASPECTS OF ME",
+    description: [
+      "Get to know me behind the screen. Just a glimpse into my interests, hobbies, and other facets of my personality that make me a well-rounded and creative individual.",
+    ],
+    relatedComponent: FunFactView,
+  },
+  {
+    type: "section",
+    id: "contact",
+    title: "CONTACT",
+    headerText: "DROP ME A LINE",
+    description: [
+      "Connect with me and start a conversation to say hello or talk about opportunities.",
+    ],
+    relatedComponent: ContactMeView,
+  },
+];
+
+export const CAROUSEL_CONTENTS: { url: string; description: string }[] = [
+  {
+    url: "/projects/news_feed_demo/01_text_post.gif",
+    description: "Implements a streamlined posting feature in news feed.",
+  },
+  {
+    url: "/projects/news_feed_demo/02_vote_and_edit.gif",
+    description:
+      "Incorporates an effective voting and content editing mechanism.",
+  },
+  {
+    url: "/projects/news_feed_demo/03_hierarchical_structured_comments.gif",
+    description: "Adopts a hierarchical structure for comments.",
+  },
+  {
+    url: "/projects/news_feed_demo/04_comments_vote_edit_delete.gif",
+    description: "Integrates comment options to vote, edit, and delete",
+  },
+  {
+    url: "/projects/news_feed_demo/05_copy_link_to_share.gif",
+    description: "Employs an easy-to-use link copying for sharing",
+  },
+  {
+    url: "/projects/news_feed_demo/06_media_post.gif",
+    description: "Enables intuitive media uploads with Base64.",
+  },
+  {
+    url: "/projects/news_feed_demo/07_drag_and_drop.gif",
+    description: "Introduces user-friendly drag-and-drop interfaces.",
   },
 ];

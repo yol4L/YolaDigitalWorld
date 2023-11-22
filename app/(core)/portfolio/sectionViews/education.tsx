@@ -1,8 +1,10 @@
-import { EDUCATION_DATA } from "../../../data";
+"use client";
+
+import { useState } from "react";
+import cx from "classnames";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
-import cx from "classnames";
-import { useState } from "react";
+import { EDUCATION_DATA } from "@/app/data";
 
 const EducationItem = ({
   item,

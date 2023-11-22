@@ -37,7 +37,7 @@ export default function BackToTopButton() {
       type="button"
       onClick={handleClick}
       className={cx(
-        "w-12 h-12 fixed right-12 bottom-8 rounded-full transition-all duration-700",
+        "w-12 h-12 fixed right-12 bottom-8 z-20 rounded-full transition-all duration-700",
         "inline-flex justify-center items-center",
         "bg-cerulean-500 dark:bg-brick-300 text-slate-100 animate-bounce",
         isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
