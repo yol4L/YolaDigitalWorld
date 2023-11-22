@@ -6,6 +6,7 @@ import { CodeBlock } from "./codeBlock";
 import { NoteIcon } from "@/app/components/Icons/svg";
 import Link from "next/link";
 import cx from "classnames";
+import BackToTopButton from "@/app/components/backToTopButton";
 
 // const SHARE_BUTTONS: { id: string; icon: MuiIconType }[] = [
 //   { id: "facebook", icon: NoteIcon },
@@ -182,6 +183,7 @@ export default async function SingleBlogPage({
   return (
     <div className="w-full">
       <TopNavView />
+      <BackToTopButton />
       {/* Headings */}
       <div className="w-full md:w-4/5 lg:w-5/8 px-20 mx-auto pt-24 flex flex-col gap-6">
         <div className="flex items-center gap-4">
@@ -307,7 +309,6 @@ export default async function SingleBlogPage({
           </div>
         </div>
       </article>
-
       {/* Navigation */}
       <div className="w-full md:w-4/5 lg:w-5/8 px-20 mx-auto mb-20">
         <Link href={"/blog"}>
@@ -322,7 +323,6 @@ export default async function SingleBlogPage({
           </span>
         </Link>
       </div>
-
       {/* Footer */}
       <footer
         className={cx(
