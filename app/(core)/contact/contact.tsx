@@ -53,8 +53,8 @@ const ContactForm = ({
   };
 
   // Handles form submission
-  const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault();
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
     setAttemptedSubmit(true); // Indicates that a submit attempt was made
 
     // Validate all fields before submission
@@ -69,6 +69,25 @@ const ContactForm = ({
 
     // Process form submission if all fields are valid
     console.log("Submitted:", formValues);
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formValues),
+    });
+
+    if (res.ok) {
+      // Handle successful submission, like showing a confirmation message
+      alert(
+        `Hey, I've successfully got your message and will reply to you very shortly!`
+      );
+    } else {
+      // Handle errors
+      console.log("error", res);
+      // This will activate the closest `error.js` Error Boundary
+      // throw new Error('Failed to fetch data')
+    }
 
     // Reset form fields and validity state after successful submission
     setFormValues({ name: "", email: "", message: "" });
@@ -113,7 +132,7 @@ const ContactForm = ({
       {/* Email */}
       <div className="flex flex-col">
         <label htmlFor="email" className="font-medium text-ocean-500 mb-2">
-          Email Address
+          Your Email
         </label>
         <input
           type="email"
