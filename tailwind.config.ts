@@ -113,7 +113,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [require("tailwind-scrollbar")],
+  plugins: [require("tailwind-scrollbar"), require("@tailwindcss/forms")],
   darkMode: "class",
 };
 export default config;

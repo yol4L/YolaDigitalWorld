@@ -425,6 +425,13 @@
   dependencies:
     "tslib" "^2.4.0"
 
+"@tailwindcss/forms@^0.5.7":
+  "integrity" "sha512-QE7X69iQI+ZXwldE+rzasvbJiyV/ju1FGHH0Qn2W3FKbuYtqp8LKcy6iSw79fVUT5/Vvf+0XgLCeYVG+UV6hOw=="
+  "resolved" "https://registry.npmjs.org/@tailwindcss/forms/-/forms-0.5.7.tgz"
+  "version" "0.5.7"
+  dependencies:
+    "mini-svg-data-uri" "^1.2.3"
+
 "@types/hast@^2.0.0":
   "integrity" "sha512-aMIqAlFd2wTIDZuvLbhUT+TGvMxrNC8ECUIVtH6xxy0sQLs3iu6NO8Kp/VT5je7i5ufnebXzdV1dNDMnvaH6IQ=="
   "resolved" "https://registry.npmjs.org/@types/hast/-/hast-2.3.8.tgz"
@@ -437,10 +444,17 @@
   "resolved" "https://registry.npmjs.org/@types/json5/-/json5-0.0.29.tgz"
   "version" "0.0.29"
 
-"@types/node@^20":
+"@types/node@*", "@types/node@^20":
   "integrity" "sha512-jxiZQFpb+NlH5kjW49vXxvxTjeeqlbsnTAdBTKpzEdPs9itay7MscYXz3Fo9VYFEsfQ6LJFitHad3faerLAjCw=="
   "resolved" "https://registry.npmjs.org/@types/node/-/node-20.8.3.tgz"
   "version" "20.8.3"
+
+"@types/nodemailer@^6.4.14":
+  "integrity" "sha512-fUWthHO9k9DSdPCSPRqcu6TWhYyxTBg382vlNIttSe9M7XfsT06y0f24KHXtbnijPGGRIcVvdKHTNikOI6qiHA=="
+  "resolved" "https://registry.npmjs.org/@types/nodemailer/-/nodemailer-6.4.14.tgz"
+  "version" "6.4.14"
+  dependencies:
+    "@types/node" "*"
 
 "@types/parse-json@^4.0.0":
   "integrity" "sha512-3YmXzzPAdOTVljVMkTMBdBEvlOLg2cDQaDhnnhT3nT9uDbnJzjWhKlzb+desT12Y7tGqaN6d+AbozcKzyL36Ng=="
@@ -2085,6 +2099,11 @@
     "braces" "^3.0.2"
     "picomatch" "^2.3.1"
 
+"mini-svg-data-uri@^1.2.3":
+  "integrity" "sha512-r9deDe9p5FJUPZAk3A59wGH7Ii9YrjjWw0jmw/liSbHl2CHiyXj6FcDXDu2K3TjVAXqiJdaw3xxwlZZr9E6nHg=="
+  "resolved" "https://registry.npmjs.org/mini-svg-data-uri/-/mini-svg-data-uri-1.4.4.tgz"
+  "version" "1.4.4"
+
 "minimatch@^3.0.4", "minimatch@^3.0.5", "minimatch@^3.1.2":
   "integrity" "sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw=="
   "resolved" "https://registry.npmjs.org/minimatch/-/minimatch-3.1.2.tgz"
@@ -2148,6 +2167,11 @@
   "integrity" "sha512-uYr7J37ae/ORWdZeQ1xxMJe3NtdmqMC/JZK+geofDrkLUApKRHPd18/TxtBOJ4A0/+uUIliorNrfYV6s1b02eQ=="
   "resolved" "https://registry.npmjs.org/node-releases/-/node-releases-2.0.13.tgz"
   "version" "2.0.13"
+
+"nodemailer@^6.9.7":
+  "integrity" "sha512-rUtR77ksqex/eZRLmQ21LKVH5nAAsVicAtAYudK7JgwenEDZ0UIQ1adUGqErz7sMkWYxWTTU1aeP2Jga6WQyJw=="
+  "resolved" "https://registry.npmjs.org/nodemailer/-/nodemailer-6.9.7.tgz"
+  "version" "6.9.7"
 
 "normalize-path@^3.0.0", "normalize-path@~3.0.0":
   "integrity" "sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA=="
@@ -2828,7 +2852,7 @@
   "resolved" "https://registry.npmjs.org/tailwind-scrollbar/-/tailwind-scrollbar-3.0.5.tgz"
   "version" "3.0.5"
 
-"tailwindcss@^3", "tailwindcss@3.x":
+"tailwindcss@^3", "tailwindcss@>=3.0.0 || >= 3.0.0-alpha.1", "tailwindcss@3.x":
   "integrity" "sha512-A0KgSkef7eE4Mf+nKJ83i75TMyq8HqY3qmFIJSWy8bNt0v1lG7jUcpGpoTFxAwYcWOphcTBLPPJg+bDfhDf52w=="
   "resolved" "https://registry.npmjs.org/tailwindcss/-/tailwindcss-3.3.3.tgz"
   "version" "3.3.3"
