@@ -9,11 +9,59 @@ import AnimatedBackgroundView from "@/app/components/bgAnimation";
 import PortfolioView from "@/app/(core)/portfolio/portfolioView";
 
 import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
+import {
+  MutableRefObject,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
+import { smoothScrollTo } from "./utils/smoothScrollTo";
 
 export default function Home() {
+  const mainContainerRef = useRef<HTMLElement>();
+  const [customScrollTriggered, setCustomScrollTriggered] =
+    useState<boolean>(false);
+
+  const handleScroll = useCallback(() => {
+    const mainContainer = mainContainerRef.current;
+
+    if (mainContainer) {
+      const triggerPoint = window.innerHeight / 3;
+      const isAtTop = mainContainer.scrollTop < 10; // Considered 'at the top'
+
+      if (!customScrollTriggered && mainContainer.scrollTop > triggerPoint) {
+        // Trigger smooth scroll to the specific point
+        mainContainer.scrollTo({
+          top: window.innerHeight,
+          behavior: "smooth",
+        });
+        setCustomScrollTriggered(true);
+      } else if (customScrollTriggered && isAtTop) {
+        // Re-enable custom scroll behavior when scrolled back to the top
+        setCustomScrollTriggered(false);
+      }
+    }
+  }, [customScrollTriggered]);
+
+  useEffect(() => {
+    const mainContainer = mainContainerRef.current;
+    if (mainContainer) {
+      mainContainer.addEventListener("scroll", handleScroll);
+    }
+    return () => {
+      if (mainContainer) {
+        mainContainer.removeEventListener("scroll", handleScroll);
+      }
+    };
+  }, [handleScroll]);
+
   return (
-    <main className="h-screen relative flex flex-col font-sans overflow-y-scroll scrollbar-none">
-      <TopNavView />
+    <main
+      ref={mainContainerRef as React.MutableRefObject<HTMLDivElement>}
+      className="h-screen relative flex flex-col font-sans overflow-y-scroll scrollbar-none"
+    >
+      <TopNavView mainContainerRef={mainContainerRef} />
       <div
         id="line"
         className={cx(

@@ -1,6 +1,6 @@
-"use client";
-
 import cx from "classnames";
+import { useRouter } from "next/navigation";
+import { MutableRefObject } from "react";
 
 const NAV_ITEMS: { id: string; name: string; path: string }[] = [
   { id: "home", name: "home", path: "/" },
@@ -10,7 +10,37 @@ const NAV_ITEMS: { id: string; name: string; path: string }[] = [
   { id: "contact", name: "contact", path: "/contact" },
 ];
 
-export default function NavTabs() {
+export default function NavTabs({
+  mainContainerRef,
+}: {
+  mainContainerRef?: MutableRefObject<HTMLElement | undefined>;
+}) {
+  const router = useRouter();
+
+  const handleClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    path: string
+  ) => {
+    // Get current pathname
+    const currentPath = window.location.pathname;
+
+    // Check if the current page is the home page
+    if (
+      path === "/" &&
+      currentPath === "/" &&
+      mainContainerRef &&
+      mainContainerRef.current
+    ) {
+      e.preventDefault();
+      // Smooth scroll to the top
+      mainContainerRef.current.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      // Use the router to navigate for other paths
+      e.preventDefault();
+      router.push(path);
+    }
+  };
+
   return (
     <div className="flex items-center gap-8">
       {NAV_ITEMS.map(({ id, name, path }) => {
@@ -23,7 +53,9 @@ export default function NavTabs() {
               "dark:hover:text-brick-300 dark:hover:border-brick-300"
             )}
           >
-            <a href={path}>{name.toUpperCase()}</a>
+            <a href={path} onClick={(e) => handleClick(e, path)}>
+              {name.toUpperCase()}
+            </a>
           </span>
         );
       })}

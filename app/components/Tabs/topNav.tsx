@@ -5,8 +5,13 @@ import Image from "next/image";
 import cx from "classnames";
 import NavTabs from "./navTabs";
 import DarkModeButton from "../DarkMode/darkModeButton";
+import { MutableRefObject } from "react";
 
-export default function TopNavView() {
+export default function TopNavView({
+  mainContainerRef,
+}: {
+  mainContainerRef?: MutableRefObject<HTMLElement | undefined>;
+}) {
   return (
     <nav
       className={cx(
@@ -28,7 +33,7 @@ export default function TopNavView() {
         <span>Yola&apos;s World</span>
       </Link>
       <div className="flex items-center gap-10">
-        <NavTabs />
+        <NavTabs mainContainerRef={mainContainerRef} />
         <DarkModeButton />
       </div>
     </nav>
