@@ -20,8 +20,13 @@ import { smoothScrollTo } from "./utils/smoothScrollTo";
 
 export default function Home() {
   const mainContainerRef = useRef<HTMLElement>();
+  const portfolioRef = useRef<{ scrollToTop: () => void }>(null);
   const [customScrollTriggered, setCustomScrollTriggered] =
     useState<boolean>(false);
+
+  const scrollToTopOfPortfolio = useCallback(() => {
+    portfolioRef.current?.scrollToTop();
+  }, []);
 
   const handleScroll = useCallback(() => {
     const mainContainer = mainContainerRef.current;
@@ -29,6 +34,10 @@ export default function Home() {
     if (mainContainer) {
       const triggerPoint = window.innerHeight / 3;
       const isAtTop = mainContainer.scrollTop < 10; // Considered 'at the top'
+
+      if (isAtTop) {
+        scrollToTopOfPortfolio();
+      }
 
       if (!customScrollTriggered && mainContainer.scrollTop > triggerPoint) {
         // Trigger smooth scroll to the specific point
@@ -42,7 +51,7 @@ export default function Home() {
         setCustomScrollTriggered(false);
       }
     }
-  }, [customScrollTriggered]);
+  }, [customScrollTriggered, scrollToTopOfPortfolio]);
 
   useEffect(() => {
     const mainContainer = mainContainerRef.current;
@@ -128,7 +137,7 @@ export default function Home() {
           </div>
         </div>
         {/* Portfolio */}
-        <PortfolioView />
+        <PortfolioView ref={portfolioRef} />
       </div>
     </main>
   );

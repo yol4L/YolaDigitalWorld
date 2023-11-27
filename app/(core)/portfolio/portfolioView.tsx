@@ -1,11 +1,19 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import {
+  ForwardedRef,
+  useCallback,
+  useEffect,
+  useImperativeHandle,
+  useRef,
+  useState,
+} from "react";
 import Image from "next/image";
 import cx from "classnames";
 import SideMenuTabs from "@/app/components/Tabs/sideMenuTabs";
 import { SectionContentItem } from "@/app/types";
 import { SECTION_CONTENTS } from "@/app/data";
+import React from "react";
 
 const SectionBlockView = ({
   content,
@@ -89,12 +97,28 @@ const QuoteBlockView = ({
     </div>
   );
 };
+interface PortfolioViewProps {
+  // Define props here if needed (like event handlers, data from the parent component, etc.)
+}
 
-export default function PortfolioView() {
+interface PortfolioViewRef {
+  scrollToTop: () => void;
+}
+
+function PortfolioView(
+  props: PortfolioViewProps,
+  ref: ForwardedRef<PortfolioViewRef>
+) {
   const [activeSection, setActiveSection] = useState<string>("about"); // Default to the first section
   const [comingSection, setComingSection] = useState<string>("about");
 
   const contentDivRef = useRef<HTMLElement>(null);
+
+  useImperativeHandle(ref, () => ({
+    scrollToTop: () => {
+      contentDivRef.current?.scrollTo({ top: 0, behavior: "smooth" });
+    },
+  }));
 
   const [prevY, setPrevY] = useState<number>(0); //
   const [scrollingUp, setScrollingUp] = useState<boolean>(false);
@@ -254,3 +278,7 @@ export default function PortfolioView() {
     </div>
   );
 }
+
+export default React.forwardRef<PortfolioViewRef, PortfolioViewProps>(
+  PortfolioView
+);
