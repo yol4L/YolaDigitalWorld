@@ -6,12 +6,31 @@ import cx from "classnames";
 import NavTabs from "./navTabs";
 import DarkModeButton from "../DarkMode/darkModeButton";
 import { MutableRefObject } from "react";
+import { useRouter } from "next/navigation";
 
 export default function TopNavView({
   mainContainerRef,
 }: {
   mainContainerRef?: MutableRefObject<HTMLElement | undefined>;
 }) {
+  const router = useRouter();
+
+  const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    // Get current pathname
+    const currentPath = window.location.pathname;
+
+    // Check if the current page is the home page
+    if (currentPath === "/" && mainContainerRef && mainContainerRef.current) {
+      e.preventDefault();
+      // Smooth scroll to the top
+      mainContainerRef.current.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      // Use the router to navigate for other paths
+      e.preventDefault();
+      router.push("/");
+    }
+  };
+
   return (
     <nav
       className={cx(
@@ -20,9 +39,9 @@ export default function TopNavView({
         "transition-[background-color] duration-700"
       )}
     >
-      <Link
-        href={"/"}
-        className="relative flex items-center gap-2 transition-none"
+      <div
+        onClick={handleClick}
+        className="relative flex items-center gap-2 transition-none cursor-pointer"
       >
         <Image
           src="/images/home/yola-brand-avatar.svg"
@@ -31,7 +50,7 @@ export default function TopNavView({
           height={30}
         />
         <span>Yola&apos;s World</span>
-      </Link>
+      </div>
       <div className="flex items-center gap-10">
         <NavTabs mainContainerRef={mainContainerRef} />
         <DarkModeButton />
