@@ -96,3 +96,10 @@ export interface BlogData {
   quote: string;
   contents: BlogBlock[];
 }
+
+export type PersonalInfoItem = {
+  id: string;
+  name: string;
+  icon: MuiIconType;
+  details: string;
+};

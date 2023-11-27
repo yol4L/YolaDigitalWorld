@@ -236,7 +236,9 @@ function PortfolioView(
           <div className="flex flex-col justify-center items-center">
             <h1 className="font-semibold text-2xl">Yola Liang</h1>
             <span className="text-cerulean-400 dark:text-brick-400 transition-colors duration-700">
-              <a href="">yolanda.y.liang@gmail.com</a>
+              <a href="mailto:yola.liang.direct@gmail.com">
+                yolanda.y.liang@gmail.com
+              </a>
             </span>
           </div>
           {/* Side menu */}

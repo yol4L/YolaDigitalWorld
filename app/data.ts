@@ -1,4 +1,9 @@
-import { BlogData, MuiIconType, SectionContentItem } from "@/app/types";
+import {
+  BlogData,
+  MuiIconType,
+  PersonalInfoItem,
+  SectionContentItem,
+} from "@/app/types";
 import { blocks01, blocks02, blocks03 } from "./(core)/blog/data";
 
 // Import smaller components
@@ -306,18 +311,25 @@ export const FUN_FACTS: {
   },
 ];
 
-export const PERSONAL_INFO_ITEMS: {
-  id: string;
-  icon: MuiIconType;
-  details: string;
-}[] = [
+export const PERSONAL_INFO_ITEMS: PersonalInfoItem[] = [
   {
     id: "email",
+    name: "Email address",
     icon: AlternateEmailOutlined,
     details: "yolanda.y.liang@gmail.com",
   },
-  { id: "address", icon: LocationOnOutlined, details: "BELCONNEN ACT 2617" },
-  { id: "phone", icon: PhoneOutlined, details: "+61 0473042891" },
+  {
+    id: "address",
+    name: "address",
+    icon: LocationOnOutlined,
+    details: "BELCONNEN ACT 2617",
+  },
+  {
+    id: "phone",
+    name: "phone number",
+    icon: PhoneOutlined,
+    details: "+61 0473042891",
+  },
 ];
 
 export const ELSE_ITEMS: {
