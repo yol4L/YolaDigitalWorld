@@ -235,9 +235,14 @@ function PortfolioView(
           {/* Info */}
           <div className="flex flex-col justify-center items-center">
             <h1 className="font-semibold text-2xl">Yola Liang</h1>
-            <span className="text-cerulean-400 dark:text-brick-400 transition-colors duration-700">
+            <span
+              className={cx(
+                "text-cerulean-400 hover:text-cerulean-700 ",
+                "dark:text-brick-400 hover:dark:text-brick-700 transition-colors duration-700"
+              )}
+            >
               <a href="mailto:yola.liang.direct@gmail.com">
-                yolanda.y.liang@gmail.com
+                yola.liang.direct@gmail.com
               </a>
             </span>
           </div>

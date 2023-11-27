@@ -316,7 +316,7 @@ export const PERSONAL_INFO_ITEMS: PersonalInfoItem[] = [
     id: "email",
     name: "Email address",
     icon: AlternateEmailOutlined,
-    details: "yolanda.y.liang@gmail.com",
+    details: "yola.liang.direct@gmail.com",
   },
   {
     id: "address",
