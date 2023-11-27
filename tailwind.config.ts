@@ -65,6 +65,7 @@ const config: Config = {
       },
       animation: {
         drop: "drop 2s 0s forwards infinite linear",
+        spinner: "spinner 2s infinite linear",
         lineUp: "lineUp 1.5s ease-in-out",
         slideLeft: "slideLeft 2s ease-in-out",
         slideRight: "slideRight 2s ease-in-out",
@@ -76,6 +77,14 @@ const config: Config = {
         drop: {
           "0%": { top: "-50%" },
           "100%": { top: "110%" },
+        },
+        spinner: {
+          "0%": {
+            transform: "rotate(0deg)",
+          },
+          "100%": {
+            transform: "rotate(360deg)",
+          },
         },
         lineUp: {
           "0%": { opacity: "0", transform: "translateY(60%)" },
