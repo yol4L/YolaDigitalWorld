@@ -12,6 +12,7 @@ const config: Config = {
       fontFamily: {
         sans: ["Inter", ...defaultTheme.fontFamily.sans],
         serif: [
+          "Garamond",
           "Merriweather",
           "Noto Serif",
           "Times New Roman",
