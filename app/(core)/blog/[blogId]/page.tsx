@@ -208,7 +208,7 @@ export default async function SingleBlogPage({
         </p>
         <div className="my-2">
           <div className="w-full aspect-[2.35/1] relative bg-neutral-300">
-            <Image src={cover} alt="" fill className="object-cover" />
+            <Image src={cover} alt={title} fill className="object-cover" />
           </div>
           <p className="py-2 italic text-sm text-neutral-400">{headline}</p>
         </div>
@@ -288,7 +288,7 @@ export default async function SingleBlogPage({
         <div className="my-8 flex items-center flex-nowrap gap-8">
           <div className="w-32 h-32 shrink-0 relative rounded-full overflow-hidden">
             <Image
-              src={"/yola-avatar.JPG"}
+              src={"/images/home/yola-avatar.jpg"}
               alt="Yola Liang"
               fill
               className="object-cover"

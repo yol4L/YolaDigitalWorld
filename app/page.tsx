@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import cx from "classnames";
 
 import PageTagView from "@/app/components/Tags/pageTag";
@@ -110,25 +111,28 @@ export default function Home() {
                     "bg-neutral-200 dark:bg-slate-900 transition-colors duration-700"
                   )}
                 >
-                  <div
+                  <Link
+                    href="/Resume_Yola.pdf"
+                    target="_blank"
+                    download
                     className={cx(
                       "px-6 py-4 relative inline-flex items-center gap-2 group",
                       "text-ocean-500 dark:text-slate-100 transition-[background-size_colors] duration-700",
-                      "btn-bg-brick hover:btn-bg-brick-hover hover:text-slate-50"
+                      "btn-bg-ocean hover:btn-bg-ocean-hover dark:btn-bg-brick dark:hover:btn-bg-brick-hover hover:text-slate-50"
                     )}
                   >
                     <DownloadOutlinedIcon className="animate-bounce group-hover:animate-none" />
                     <span className="font-medium text-xl tracking-widest">
                       DOWNLOAD MY RESUME
                     </span>
-                  </div>
+                  </Link>
                 </button>
               </div>
             </div>
             {/* Photo */}
             <div className="relative w-1/3 animate-fadeIn">
               <Image
-                src="/yola-photo.png"
+                src="/images/home/yola-photo.png"
                 alt="yola-photo"
                 fill
                 className="object-cover overflow-visible"

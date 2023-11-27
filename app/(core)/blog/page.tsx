@@ -31,7 +31,7 @@ export default function BlogPage() {
                 <div className="flex flex-col gap-3">
                   <Link href={`/blog/${id}`}>
                     <div className="w-full aspect-video my-6 relative bg-neutral-300">
-                      <Image src={cover} alt="" fill className="object-cover" />
+                      <Image src={cover} alt={title} fill className="object-cover" />
                     </div>
                   </Link>
                   <div className="flex items-center gap-3">

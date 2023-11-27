@@ -29,12 +29,7 @@ export default function BlogsView({
           >
             <div className="flex flex-col gap-4">
               <div className="w-full aspect-video relative bg-neutral-300">
-                <Image
-                  src={cover}
-                  alt={title.toString()}
-                  fill
-                  className="object-cover"
-                />
+                <Image src={cover} alt={title} fill className="object-cover" />
               </div>
               <p className="text-sm tracking-widest text-neutral-400">
                 {`${date.toUpperCase()} | ${tag.toUpperCase()}`}

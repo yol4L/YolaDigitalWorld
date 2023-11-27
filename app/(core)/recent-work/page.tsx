@@ -74,7 +74,7 @@ export function DemoModal({ index }: { index: number }) {
 
 const TryLink = ({ index, linkRef }: { index: number; linkRef: string }) => {
   return (
-    <Link href={linkRef}>
+    <Link href={linkRef} target="_blank">
       <button
         type="button"
         className={cx(
@@ -136,7 +136,7 @@ export default function RecentWorkPage() {
                   <div className="w-1/3 aspect-video flex-none relative overflow-hidden border border-slate-600">
                     <Image
                       src={coverUrl}
-                      alt="brand-avatar"
+                      alt={title}
                       fill
                       className="object-cover"
                     />

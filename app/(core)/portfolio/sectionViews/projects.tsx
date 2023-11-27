@@ -38,7 +38,7 @@ export default function ProjectsView({
                 <div className="w-full aspect-video relative shrink-0 bg-neutral-300">
                   <Image
                     src={coverUrl}
-                    alt="brand-avatar"
+                    alt={title}
                     fill
                     className="object-cover"
                   />

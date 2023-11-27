@@ -180,7 +180,7 @@ export const RECENT_WORK: {
     desc: "A full-stack website project where users can create and review campgrounds.",
     detailed_desc:
       "A full-stack website project where users can create and review campgrounds using Node.js, Express, MongoDB, BootStrap, and EJS templates. Also implemented user authentication and authorization for secure user registration and login here. Developed a data visualization feature using Google Maps API to display campground locations and enable user interactions.",
-    coverUrl: "/projects/yelpCamp.png",
+    coverUrl: "/images/projects/yelpCamp.jpg",
     linkRef: "http://www.yelpcamp.com.au/",
   },
   {
@@ -191,7 +191,7 @@ export const RECENT_WORK: {
     desc: "A fully functional newsfeed feature allowing users to create, share, and interact with posts.",
     detailed_desc:
       "This is what I have done in my previous internship. I engineered a fully functional news feed feature from scratch allowing users to create, share, and interact with textual and multimedia posts. Also collaborated with the development team to seamlessly integrate GraphQL and RESTful APIs, enabling real-time updates within the news feed.",
-    coverUrl: "/projects/newsFeed.jpg",
+    coverUrl: "/images/projects/newsFeed.jpg",
     linkRef: "",
   },
   {
@@ -201,8 +201,8 @@ export const RECENT_WORK: {
     tech_stacks_desc: "React, Next.js, TailwindCSS, TypeScript and Node.js",
     desc: "A dynamic and responsive personal portfolio website.",
     detailed_desc: `This is the website that you are currently watching. I conceptualized, designed, and developed this dynamic and responsive personal portfolio website using cutting-edge technologies like React, Next.js, TailwindCSS, and TypeScript. Also enhanced user experience and accessibility with the implementation of a Dark Mode feature.`,
-    coverUrl: "/projects/portfolio-dark.png",
-    linkRef: "",
+    coverUrl: "/images/projects/portfolio-dark.jpg",
+    linkRef: "/",
   },
 ];
 
@@ -215,7 +215,7 @@ export const BLOGS: BlogData[] = [
     date: "Oct 14, 2023",
     author: "Yola Liang",
     tag: "web design",
-    cover: "/blogs/cover/cover01.jpg",
+    cover: "/images/blogs/cover/cover01.jpg",
     quote: "",
     contents: blocks01,
   },
@@ -227,7 +227,7 @@ export const BLOGS: BlogData[] = [
     date: "Oct 30, 2023",
     author: "Yola Liang",
     tag: "javascript",
-    cover: "/blogs/cover/cover02.jpg",
+    cover: "/images/blogs/cover/cover02.jpg",
     quote: "",
     contents: blocks02,
   },
@@ -239,7 +239,7 @@ export const BLOGS: BlogData[] = [
     date: "Nov 10, 2023",
     author: "Yola Liang",
     tag: "css",
-    cover: "/blogs/cover/cover03.jpg",
+    cover: "/images/blogs/cover/cover03.jpg",
     quote: "",
     contents: blocks03,
   },
@@ -282,27 +282,27 @@ export const FUN_FACTS: {
     id: "cat",
     keyword: "Cat Whisperer",
     description: "Deciphering purrs, I'm the ultimate feline communicator.",
-    bgUrl: "/funfacts/cat.jpg",
+    bgUrl: "/images/funfacts/cat.jpg",
   },
   {
     id: "road",
     keyword: "Road Voyager",
     description: "Charting new paths with tunes and tales on every journey.",
-    bgUrl: "/funfacts/roadtrip.jpg",
+    bgUrl: "/images/funfacts/roadtrip.jpg",
   },
   {
     id: "camping",
     keyword: "Star Gazer",
     description:
       "Seeking stars, I find magic in the night sky's sparkling dance.",
-    bgUrl: "/funfacts/star.jpg",
+    bgUrl: "/images/funfacts/star.jpg",
   },
   {
     id: "sunset",
     keyword: "Sunset Chaser",
     description:
       "Chasing sunsets, I collect vibrant skylines as treasured dusk memories.",
-    bgUrl: "/funfacts/sunset.jpg",
+    bgUrl: "/images/funfacts/sunset.jpg",
   },
 ];
 
@@ -325,24 +325,28 @@ export const ELSE_ITEMS: {
   icon: MuiIconType;
   path: string;
   info: string;
+  isDownloadable: boolean;
 }[] = [
   {
     id: "resume",
     icon: AttachFileOutlined,
-    path: "",
+    path: "/Resume_Yola.pdf",
     info: "Download my resume",
+    isDownloadable: true,
   },
   {
     id: "linkedin",
     icon: LinkedIn,
-    path: "",
+    path: "https://www.linkedin.com/in/yola-liang/",
     info: "View my portfolio on LinkedIn",
+    isDownloadable: false,
   },
   {
     id: "back_home",
     icon: ArrowBackOutlined,
     path: "/",
     info: "Back to Home Page",
+    isDownloadable: false,
   },
 ];
 
@@ -362,7 +366,7 @@ export const SECTION_CONTENTS: SectionContentItem[] = [
     type: "quote",
     id: "quote1",
     text: `I'm absolutely enthralled by the world of code - it's truly exhilarating!`,
-    bgUrl: "/bg-1.jpg",
+    bgUrl: "/images/bg-1.jpg",
   },
   {
     type: "section",
@@ -399,7 +403,7 @@ export const SECTION_CONTENTS: SectionContentItem[] = [
     id: "quote2",
     text: `Keep coding, keep reflecting. <br />
     The journey is as thrilling as the destination!`,
-    bgUrl: "/bg-1.jpg",
+    bgUrl: "/images/bg-1.jpg",
   },
   {
     type: "section",
@@ -445,32 +449,32 @@ export const SECTION_CONTENTS: SectionContentItem[] = [
 
 export const CAROUSEL_CONTENTS: { url: string; description: string }[] = [
   {
-    url: "/projects/news_feed_demo/01_text_post.gif",
+    url: "/images/projects/news_feed_demo/01_text_post.gif",
     description: "Implements a streamlined posting feature in news feed.",
   },
   {
-    url: "/projects/news_feed_demo/02_vote_and_edit.gif",
+    url: "/images/projects/news_feed_demo/02_vote_and_edit.gif",
     description:
       "Incorporates an effective voting and content editing mechanism.",
   },
   {
-    url: "/projects/news_feed_demo/03_hierarchical_structured_comments.gif",
+    url: "/images/projects/news_feed_demo/03_hierarchical_structured_comments.gif",
     description: "Adopts a hierarchical structure for comments.",
   },
   {
-    url: "/projects/news_feed_demo/04_comments_vote_edit_delete.gif",
+    url: "/images/projects/news_feed_demo/04_comments_vote_edit_delete.gif",
     description: "Integrates comment options to vote, edit, and delete",
   },
   {
-    url: "/projects/news_feed_demo/05_copy_link_to_share.gif",
+    url: "/images/projects/news_feed_demo/05_copy_link_to_share.gif",
     description: "Employs an easy-to-use link copying for sharing",
   },
   {
-    url: "/projects/news_feed_demo/06_media_post.gif",
+    url: "/images/projects/news_feed_demo/06_media_post.gif",
     description: "Enables intuitive media uploads with Base64.",
   },
   {
-    url: "/projects/news_feed_demo/07_drag_and_drop.gif",
+    url: "/images/projects/news_feed_demo/07_drag_and_drop.gif",
     description: "Introduces user-friendly drag-and-drop interfaces.",
   },
 ];

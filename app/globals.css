@@ -92,6 +92,18 @@
 
 
 @layer utilities {
+  .btn-bg-ocean {
+    background-image: linear-gradient(to right, #728EB9, #728EB9);
+    background-size: 0 100%;
+    background-repeat: no-repeat;
+  }
+
+  .btn-bg-ocean-hover {
+    background-image: linear-gradient(to right, #728EB9, #728EB9);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+
   .btn-bg-brick {
     background-image: linear-gradient(to right, #CB997E, #CB997E);
     background-size: 0 100%;

@@ -226,7 +226,7 @@ function PortfolioView(
           {/* Avatar */}
           <div className="w-3/4 relative aspect-square rounded-full overflow-hidden">
             <Image
-              src="/yola-avatar.JPG"
+              src="/images/home/yola-avatar.jpg"
               alt="yola-avatar"
               fill
               className="object-cover"

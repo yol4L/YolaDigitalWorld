@@ -186,10 +186,11 @@ const ContactForm = ({
       <button
         type="submit"
         className={cx(
-          "w-auto px-8 py-4 self-start rounded-full font-medium tracking-widest transition-colors duration-700",
+          "w-auto px-8 py-4 self-start rounded-full font-medium tracking-widest",
+          " text-gray-500 transition-all duration-700",
           formValidity.name && formValidity.email && formValidity.message
-            ? "bg-slate-300 dark:bg-ocean-500 text-ocean-500 dark:text-slate-100"
-            : "bg-gray-300 text-gray-500 "
+            ? "bg-ocean-400 text-slate-50 hover:bg-ocean-700"
+            : "bg-slate-200 dark:bg-slate-900 text-slate-50 dark:text-slate-600"
         )}
       >
         <span>SUBMIT MESSAGE</span>
@@ -236,7 +237,7 @@ export default function ContactMeView({
                     <Icon className="text-ocean-500 dark:text-slate-500 transition-colors duration-700" />
                   </div>
                   <div>
-                    <span>{details}</span>
+                    <span className="">{details}</span>
                   </div>
                 </div>
               );
@@ -260,18 +261,36 @@ export default function ContactMeView({
             Elsewhere
           </span>
           <div className="flex flex-col gap-4">
-            {ELSE_ITEMS.map(({ id, icon: Icon, path, info }) => {
-              return (
-                <Link
-                  key={id}
-                  href={path}
-                  className="py-1 flex items-center hover:text-cerulean-400 dark:hover:text-brick-300"
-                >
-                  <Icon fontSize="small" className="mx-2" />
-                  <span>{info}</span>
-                </Link>
-              );
-            })}
+            {ELSE_ITEMS.map(
+              ({ id, icon: Icon, path, info, isDownloadable }) => {
+                if (isDownloadable) {
+                  return (
+                    <Link
+                      key={id}
+                      href={path}
+                      download
+                      target="_blank"
+                      className="py-1 flex items-center hover:text-cerulean-400 dark:hover:text-brick-300"
+                    >
+                      <Icon fontSize="small" className="mx-2" />
+                      <span>{info}</span>
+                    </Link>
+                  );
+                } else {
+                  return (
+                    <Link
+                      key={id}
+                      href={path}
+                      target={id === "back_home" ? "" : "_blank"}
+                      className="py-1 flex items-center hover:text-cerulean-400 dark:hover:text-brick-300"
+                    >
+                      <Icon fontSize="small" className="mx-2" />
+                      <span>{info}</span>
+                    </Link>
+                  );
+                }
+              }
+            )}
           </div>
         </div>
       </div>

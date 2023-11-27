@@ -20,8 +20,8 @@ export default function FunFactView({
         )}
       >
         <Image
-          src="/yola-funFact01.jpg"
-          alt="brand-avatar"
+          src="/images/funfacts/yola-fun.jpg"
+          alt="yola-fun"
           fill
           className="object-cover"
         ></Image>

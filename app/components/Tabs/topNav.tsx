@@ -25,7 +25,7 @@ export default function TopNavView({
         className="relative flex items-center gap-2 transition-none"
       >
         <Image
-          src="/yola-brand-avatar.svg"
+          src="/images/home/yola-brand-avatar.svg"
           alt="brand-avatar"
           width={30}
           height={30}

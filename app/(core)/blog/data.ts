@@ -40,7 +40,7 @@ export const blocks01: BlogData["contents"] = [
   {
     category: "image",
     attributes: {
-      src: "/blogs/scroll_client_offset_size_properties.png",
+      src: "/images/blogs/scroll_client_offset_size_properties.png",
       alt: "scroll_client_offset_size_properties",
     },
   },
@@ -91,7 +91,7 @@ export const blocks01: BlogData["contents"] = [
   {
     category: "image",
     attributes: {
-      src: "/blogs/scroll_client_offset_interaction_properties.png",
+      src: "/images/blogs/scroll_client_offset_interaction_properties.png",
       alt: "scroll_client_offset_interaction_properties",
     },
   },
@@ -600,7 +600,7 @@ export const blocks03: BlogData["contents"] = [
   {
     category: "image",
     attributes: {
-      src: "/blogs/cubic_bezier_function.webp",
+      src: "/images/blogs/cubic_bezier_function.webp",
       alt: "cubic_bezier_function",
     },
   },
@@ -640,7 +640,7 @@ export const blocks03: BlogData["contents"] = [
           "Equivalent to": { content: "cubic-bezier(0, 0, 1, 1)" },
           Illustration: {
             content: {
-              src: "/blogs/cubic_bezier_linear.png",
+              src: "/images/blogs/cubic_bezier_linear.png",
               alt: "cubic_bezier_linear",
             },
           },
@@ -653,7 +653,7 @@ export const blocks03: BlogData["contents"] = [
           "Equivalent to": { content: "cubic-bezier(.25, .1, .25, 1)" },
           Illustration: {
             content: {
-              src: "/blogs/cubic_bezier_ease.png",
+              src: "/images/blogs/cubic_bezier_ease.png",
               alt: "cubic_bezier_ease",
             },
           },
@@ -666,7 +666,7 @@ export const blocks03: BlogData["contents"] = [
           "Equivalent to": { content: "cubic-bezier(.42, 0, 1, 1)" },
           Illustration: {
             content: {
-              src: "/blogs/cubic_bezier_ease_in.png",
+              src: "/images/blogs/cubic_bezier_ease_in.png",
               alt: "cubic_bezier_ease_in",
             },
           },
@@ -679,7 +679,7 @@ export const blocks03: BlogData["contents"] = [
           "Equivalent to": { content: "cubic-bezier(0, 0, .58, 1)" },
           Illustration: {
             content: {
-              src: "/blogs/cubic_bezier_ease_out.png",
+              src: "/images/blogs/cubic_bezier_ease_out.png",
               alt: "cubic_bezier_ease_out",
             },
           },
@@ -692,7 +692,7 @@ export const blocks03: BlogData["contents"] = [
           "Equivalent to": { content: "cubic-bezier(.42, 0, .58, 1)" },
           Illustration: {
             content: {
-              src: "/blogs/cubic_bezier_ease_in_out.png",
+              src: "/images/blogs/cubic_bezier_ease_in_out.png",
               alt: "cubic_bezier_ease_in_out",
             },
           },
