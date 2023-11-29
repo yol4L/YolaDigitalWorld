@@ -342,7 +342,7 @@ export const ELSE_ITEMS: {
   {
     id: "resume",
     icon: AttachFileOutlined,
-    path: "/Resume_Yola.pdf",
+    path: "/Resume_Yola Liang.pdf",
     info: "Download my resume",
     isDownloadable: true,
   },

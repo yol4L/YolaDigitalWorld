@@ -112,7 +112,7 @@ export default function Home() {
                   )}
                 >
                   <Link
-                    href="/Resume_Yola.pdf"
+                    href="/Resume_Yola Liang.pdf"
                     target="_blank"
                     download
                     className={cx(
