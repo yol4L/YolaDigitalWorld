@@ -17,7 +17,7 @@ export default function PersonalityView({
           <div
             key={id}
             className={cx(
-              "w-1/4 xl:aspect-square p-3",
+              "w-1/2 lg:w-1/4 p-2 md:p-3",
               inView &&
                 !scrollingUp &&
                 (i % 2 === 0 ? "animate-slideUp" : "animate-slideDown")
@@ -31,10 +31,10 @@ export default function PersonalityView({
               )}
             >
               <Icon className="text-cerulean-500 dark:text-brick-300" />
-              <h3 className="font-serif text-sm text-slate-800 dark:text-slate-100 transition-colors duration-700">
+              <h3 className="font-serif font-semibold text-sm md:text-base text-slate-800 dark:text-slate-100 transition-colors duration-700">
                 {name}
               </h3>
-              <p className="text-xs text-slate-600 dark:text-slate-400 transition-colors duration-700">
+              <p className="text-xs md:text-sm text-slate-600 dark:text-slate-400 transition-colors duration-700">
                 {desc}
               </p>
             </div>

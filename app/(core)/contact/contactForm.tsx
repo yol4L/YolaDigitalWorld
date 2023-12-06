@@ -107,7 +107,7 @@ export default function ContactForm({
     <form
       onSubmit={handleSubmit}
       className={cx(
-        "w-1/2 py-2 flex flex-col gap-8",
+        "w-full sm:w-1/2 py-2 flex flex-col gap-8",
         inView && !scrollingUp && "animate-slideLeft"
       )}
     >

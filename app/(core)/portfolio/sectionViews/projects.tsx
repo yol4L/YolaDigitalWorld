@@ -21,7 +21,7 @@ export default function ProjectsView({
               key={id}
               href={`/recent-work/#${id}`}
               className={cx(
-                "w-1/3 aspect-square px-4",
+                "w-full sm:w-1/2 lg:w-1/3  p-4",
                 inView &&
                   !scrollingUp &&
                   (i % 2 === 0 ? "animate-slideUp" : "animate-slideDown")

@@ -38,21 +38,21 @@ export default function TechStacksView({
           <div
             key={id}
             className={cx(
-              "w-1/2 p-3",
+              "w-full lg:w-1/2 p-3",
               inView &&
                 !scrollingUp &&
                 (i % 2 === 0 ? "animate-slideRight" : "animate-slideLeft")
             )}
           >
-            <div className="w-full h-full p-6 flex shadow-md dark:shadow-slate-900 transition-all duration-700">
-              <div className="p-2 pr-4 flex items-center border-r border-cerulean-400 dark:border-brick-400 transition-colors duration-700">
+            <div className="w-full h-full p-4 md:p-6 flex shadow-md dark:shadow-slate-900 transition-all duration-700">
+              <div className="p-1 md:p-2 pr-2 md:pr-4 flex items-center border-r border-cerulean-400 dark:border-brick-400 transition-colors duration-700">
                 <Icon
                   fontSize="large"
-                  className="w-16 h-16 font-light text-cerulean-500 dark:text-brick-400 transition-colors duration-700"
+                  className="w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 font-light text-cerulean-500 dark:text-brick-400 transition-colors duration-700"
                 />
               </div>
-              <div className="p-2 pl-4 flex flex-col gap-2">
-                <h3 className="text-sm tracking-widest text-slate-800 dark:text-slate-100 transition-colors duration-700">
+              <div className="p-1 md:p-2 pl-3 md:pl-4 flex flex-col gap-2">
+                <h3 className="text-sm font-semibold tracking-widest text-slate-800 dark:text-slate-100 transition-colors duration-700">
                   {name}
                 </h3>
                 <div className="flex flex-wrap gap-2">
@@ -60,7 +60,7 @@ export default function TechStacksView({
                     return (
                       <div
                         key={stack.toString()}
-                        className="px-3 py-0.5 flex items-center justify-start rounded-md cursor-pointer"
+                        className="px-2 md:px-3 py-0.5 flex items-center justify-start rounded-md cursor-pointer"
                         style={{ backgroundColor: (colors[id] ?? [])[i] }}
                       >
                         <span className="text-xs text-white tracking-wider">

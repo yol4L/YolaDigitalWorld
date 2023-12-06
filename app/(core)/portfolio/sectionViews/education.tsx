@@ -45,7 +45,7 @@ const EducationItem = ({
             : "bg-slate-300 dark:bg-slate-600"
         )}
       >
-        <span className="tracking-wider text-white">
+        <span className="text-sm md:text-base tracking-wider text-white">
           {`${title.toUpperCase()} (${period})`}
         </span>
         <button
@@ -82,7 +82,7 @@ const EducationItem = ({
             return (
               <li
                 key={d.slice(0, 8)}
-                className="text-justify text-slate-800 dark:text-slate-200 transition-colors duration-700"
+                className="text-sm md:text-base text-justify text-slate-800 dark:text-slate-200 transition-colors duration-700"
               >
                 {d}
               </li>

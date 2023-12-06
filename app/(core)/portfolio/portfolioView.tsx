@@ -34,10 +34,10 @@ const SectionBlockView = ({
 
   return (
     <section id={id} className="flex flex-col gap-4 snap-start">
-      <div className="mt-28 mb-6 flex flex-col gap-6">
+      <div className="mt-28 mb-4 md:mb-6 flex flex-col gap-4 md:gap-6">
         <span
           className={cx(
-            "tracking-widest text-slate-400 dark:text-brick-200",
+            "text-sm md:text-base tracking-widest text-slate-400 dark:text-brick-200",
             inView && !scrollingUp && "animate-slideLeft"
           )}
         >
@@ -45,21 +45,21 @@ const SectionBlockView = ({
         </span>
         <h1
           className={cx(
-            "font-semibold text-xl tracking-widest",
+            "text-lg md:text-xl font-semibold tracking-widest",
             inView && !scrollingUp && "animate-slideRight"
           )}
         >
           {headerText}
         </h1>
         {description.length !== 0 && (
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-3 md:gap-4">
             {description.map((paragraph) => {
               return (
                 <p
                   key={paragraph.slice(0, 8)}
                   dangerouslySetInnerHTML={{ __html: paragraph }}
                   className={cx(
-                    "text-justify",
+                    "text-sm sm:text-base text-justify",
                     inView && !scrollingUp && "animate-slideLeft"
                   )}
                 ></p>
@@ -90,7 +90,7 @@ const QuoteBlockView = ({
       <p
         dangerouslySetInnerHTML={{ __html: text }}
         className={cx(
-          "relative z-10 font-serif font-bold text-4xl tracking-wider leading-loose",
+          "relative z-10 font-serif font-bold text-2xl sm:text-3xl md:text-4xl tracking-wider leading-loose",
           "text-white dark:text-white transition-colors duration-700"
         )}
       ></p>
@@ -214,14 +214,14 @@ function PortfolioView(
   }, [handleScroll]);
 
   return (
-    <div className="pl-5 md:pl-20 w-full flex gap-10 transition-[padding] duration-700">
+    <div className="pl-5 md:pl-20 w-full flex gap-5 md:gap-10 transition-[padding] duration-700">
       <SideBarView activeSection={activeSection} />
       <div
         ref={contentDivRef as React.MutableRefObject<HTMLDivElement>}
         className="h-screen relative overflow-x-hidden overflow-y-scroll scroll-smooth"
         onScroll={handleScroll}
       >
-        <div className="pr-20 relative flex flex-col gap-12">
+        <div className="pr-5 md:pr-20 relative flex flex-col gap-12">
           {SECTION_CONTENTS.map((content) => {
             switch (content.type) {
               case "section":

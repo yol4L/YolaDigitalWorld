@@ -33,8 +33,10 @@ export default function CareerExperienceView({ inView }: { inView: boolean }) {
                   />
                 </div>
                 <div className={cx("w-11/12")}>
-                  <h3 className="tracking-widest">{company}</h3>
-                  <p className="text-sm italic">
+                  <h3 className="text-sm md:text-base font-semibold tracking-widest">
+                    {company}
+                  </h3>
+                  <p className="text-xs md:text-sm italic">
                     <span className="mr-2">
                       {`${position_type}, ${position}`}
                     </span>
@@ -49,19 +51,19 @@ export default function CareerExperienceView({ inView }: { inView: boolean }) {
                 </div>
                 <div
                   className={cx(
-                    "w-11/12 my-2 p-6 rounded-md",
+                    "w-11/12 my-2 p-4 md:p-6 rounded-md",
                     "bg-slate-200 dark:bg-slate-900 transition-colors duration-700"
                   )}
                 >
                   <ul
                     className={cx(
-                      "px-6 list-disc text-sm flex flex-col gap-3",
+                      "px-3 md:px-6 list-disc text-xs md:text-sm flex flex-col gap-2 md:gap-3",
                       "text-slate-800 dark:text-slate-200 transition-colors duration-700"
                     )}
                   >
                     {duties.map((duty) => {
                       return (
-                        <li key={duty.slice(0, 8)} className="text-justify">
+                        <li key={duty.slice(0, 8)} className="md:text-justify">
                           {duty}
                         </li>
                       );

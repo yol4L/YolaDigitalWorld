@@ -12,10 +12,10 @@ export default function FunFactView({
   scrollingUp: boolean;
 }) {
   return (
-    <div className="w-full aspect-[2/1] -mb-20 flex">
+    <div className="w-full aspect-[2/3] sm:aspect-[3/4] md:aspect-[2/1] -mb-20 flex flex-col md:flex-row">
       <div
         className={cx(
-          "w-1/2 h-full relative overflow-hidden",
+          "w-full md:w-1/2 h-1/3 md:h-full relative overflow-hidden",
           inView && !scrollingUp && "animate-slideRight"
         )}
       >
@@ -26,7 +26,7 @@ export default function FunFactView({
           className="object-cover"
         ></Image>
       </div>
-      <div className="w-1/2 h-full flex flex-wrap">
+      <div className="w-full md:w-1/2 h-2/3 md:h-full flex flex-wrap">
         {FUN_FACTS.map(({ id, keyword, description, bgUrl }, i) => {
           return (
             <div

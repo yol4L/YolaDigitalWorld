@@ -75,6 +75,7 @@ export default function Home() {
       <div
         id="line"
         className={cx(
+          "hidden md:block",
           "w-[1.5px] h-[40vh] fixed right-12 bottom-8 overflow-hidden",
           "bg-slate-300 dark:bg-slate-600",
           "after-[''] after:w-full after:h-1/2 after:block after:relative after:top-[-50%] after:left-0",

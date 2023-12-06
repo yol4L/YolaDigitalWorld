@@ -69,8 +69,8 @@ export default function ContactMeView({
   const hideModal = () => setCurrentItem(null);
 
   return (
-    <div className="flex gap-20">
-      <div className="w-1/2 flex flex-col gap-10">
+    <div className="flex flex-col-reverse sm:flex-row gap-5 md:gap-20 z-20 text-sm md:text-base">
+      <div className="w-full sm:w-1/2 flex flex-col gap-10">
         {/* Personal Info */}
         <div
           className={cx(
