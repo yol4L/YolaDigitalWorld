@@ -66,7 +66,7 @@ export default function TopNavView({
     <>
       <nav
         className={cx(
-          "px-5 md:px-20 w-full py-3 fixed top-0 z-20 flex items-center justify-between",
+          "px-5 md:px-20 w-full py-3 fixed top-0 z-40 flex items-center justify-between",
           "bg-slate-50 dark:bg-slate-800",
           "transition-topNav"
         )}
@@ -107,7 +107,7 @@ export default function TopNavView({
       <div
         ref={drawerRef}
         className={cx(
-          "w-full px-10 py-5 fixed top-10 z-10 flex flex-col gap-4 transform",
+          "w-full px-10 py-5 fixed top-10 z-30 flex flex-col gap-4 transform",
           "bg-slate-50 bg-opacity-95 dark:bg-slate-800 dark:bg-opacity-95",
           "transition-drawer",
           isMenuOpen ? "translate-y-0" : "-translate-y-full"

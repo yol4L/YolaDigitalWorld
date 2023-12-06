@@ -83,15 +83,18 @@ export default function Home() {
       ></div>
       <div className="flex flex-col">
         {/* Home */}
-        <div id="home" className="w-full h-screen px-20 flex flex-col">
+        <div
+          id="home"
+          className="w-full h-screen md:px-20 flex flex-col transition-[padding] duration-700"
+        >
           <AnimatedBackgroundView />
-          <div className="min-h-0 grow px-20 w-full flex justify-between">
+          <div className="min-h-0 w-full px-10 sm:px-12 md:px-20 grow flex justify-between transition-[padding] duration-700">
             {/* Welcome info */}
             <div className="w-1/2 flex flex-col justify-center gap-8">
               <PageTagView tagName={"About"} />
               <h1
                 className={cx(
-                  "font-bold text-6xl tracking-wider text-ocean-500",
+                  "z-10 text-4xl sm:text-5xl md:text-6xl font-bold tracking-wider text-ocean-500",
                   "dark:text-slate-100 transition-colors duration-700",
                   "animate-lineUp"
                 )}
@@ -99,7 +102,7 @@ export default function Home() {
                 Hi, I&apos;m Yola
               </h1>
               <div className="flex flex-col gap-8 animate-lineUp">
-                <p className="text-xl font-light tracking-wide">
+                <p className="z-10 text-base sm:text-lg md:text-xl font-light tracking-wide">
                   A web developer who continuously strives to create captivating
                   and user-centric digital experiences while staying at the
                   forefront of emerging technologies and design trends.
@@ -116,13 +119,13 @@ export default function Home() {
                     target="_blank"
                     download
                     className={cx(
-                      "px-6 py-4 relative inline-flex items-center gap-2 group",
+                      "px-3 sm:px-5 md:px-6 py-3 md:py-4 relative inline-flex items-center gap-0.5 sm:gap-1 md:gap-2 group",
                       "text-ocean-500 dark:text-slate-100 transition-[background-size_colors] duration-700",
                       "btn-bg-ocean hover:btn-bg-ocean-hover dark:btn-bg-brick dark:hover:btn-bg-brick-hover hover:text-slate-50"
                     )}
                   >
                     <DownloadOutlinedIcon className="animate-bounce group-hover:animate-none" />
-                    <span className="font-medium text-xl tracking-widest">
+                    <span className="text-sm sm:text-lg md:text-xl font-medium tracking-widest">
                       DOWNLOAD MY RESUME
                     </span>
                   </Link>
@@ -130,7 +133,7 @@ export default function Home() {
               </div>
             </div>
             {/* Photo */}
-            <div className="relative w-1/3 animate-fadeIn">
+            <div className="relative w-1/6 sm:w-1/3 animate-fadeIn">
               <Image
                 src="/images/home/yola-photo.png"
                 alt="yola-photo"
