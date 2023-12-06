@@ -12,8 +12,10 @@ const NAV_ITEMS: { id: string; name: string; path: string }[] = [
 
 export default function NavTabs({
   mainContainerRef,
+  setIsMenuOpen,
 }: {
   mainContainerRef?: MutableRefObject<HTMLElement | undefined>;
+  setIsMenuOpen: (isOpen: boolean) => void;
 }) {
   const router = useRouter();
 
@@ -39,16 +41,18 @@ export default function NavTabs({
       e.preventDefault();
       router.push(path);
     }
+
+    setIsMenuOpen(false);
   };
 
   return (
-    <div className="flex items-center gap-8">
+    <div className="flex flex-col items-center gap-3 md:flex-row md:items-center md:gap-8">
       {NAV_ITEMS.map(({ id, name, path }) => {
         return (
           <span
             key={id}
             className={cx(
-              "tracking-wider hover:border-b",
+              "self-center tracking-wider hover:border-b",
               "hover:text-cerulean-500  hover:border-cerulean-500",
               "dark:hover:text-brick-300 dark:hover:border-brick-300"
             )}

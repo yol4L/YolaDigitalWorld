@@ -4,14 +4,21 @@ import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import { useDarkMode } from "../DarkMode/darkModeContext";
 
-export default function DarkModeButton() {
+export default function DarkModeButton({
+  setIsMenuOpen,
+}: {
+  setIsMenuOpen: (isOpen: boolean) => void;
+}) {
   const { darkMode, toggleDarkMode } = useDarkMode();
 
   return (
     <button
       type="button"
-      onClick={toggleDarkMode}
-      className="relative flex justify-center items-center"
+      onClick={() => {
+        toggleDarkMode();
+        setIsMenuOpen(false);
+      }}
+      className="py-2 relative flex justify-center items-center"
     >
       <LightModeIcon
         className={cx(

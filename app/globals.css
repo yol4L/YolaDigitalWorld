@@ -27,12 +27,13 @@
     @apply font-serif 
   }
 
-/* .quote1-p {
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-image: url("/bg-1.jpg");
-  background-attachment: fixed;
-} */
+  /* Custom transition */
+  .transition-bgColor {
+    transition: background-color 700ms;
+  }
+  .transition-drawer {
+    transition: transform 300ms, background-color 700ms;
+  }
 
 }
 
@@ -88,6 +89,14 @@
           box-shadow: 0 0 2vw 0.4vw var(--after-shadow);
       }
   }
+
+  /* .quote1-p {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: url("/bg-1.jpg");
+  background-attachment: fixed;
+} */
+
 }
 
 
