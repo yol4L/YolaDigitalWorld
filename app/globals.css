@@ -34,7 +34,9 @@
   .transition-drawer {
     transition: transform 300ms, background-color 700ms;
   }
-
+.transition-sidebar {
+  transition: width 300ms, background-color 700ms;
+}
 }
 
 @layer components {

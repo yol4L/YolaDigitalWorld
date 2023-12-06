@@ -10,10 +10,10 @@ import {
 } from "react";
 import Image from "next/image";
 import cx from "classnames";
-import SideMenuTabs from "@/app/components/Tabs/sideMenuTabs";
 import { SectionContentItem } from "@/app/types";
 import { SECTION_CONTENTS } from "@/app/data";
 import React from "react";
+import SideBarView from "@/app/components/Tabs/sideBar";
 
 const SectionBlockView = ({
   content,
@@ -214,52 +214,11 @@ function PortfolioView(
   }, [handleScroll]);
 
   return (
-    <div className="pl-20 w-full flex gap-10">
-      {/* Sidebar */}
-      <div
-        className={cx(
-          "w-96 min-w-96 h-screen basis-1/4 sticky top-0 left-0",
-          " bg-slate-200 dark:bg-slate-900 transition-[background-color] duration-700"
-        )}
-      >
-        <div className="w-full h-full px-10 pt-24 pb-16 flex flex-col gap-8 items-center">
-          {/* Avatar */}
-          <div className="w-3/4 relative aspect-square rounded-full overflow-hidden">
-            <Image
-              src="/images/home/yola-avatar.jpg"
-              alt="yola-avatar"
-              fill
-              className="object-cover"
-            ></Image>
-          </div>
-          {/* Info */}
-          <div className="flex flex-col justify-center items-center">
-            <h1 className="font-semibold text-2xl">Yola Liang</h1>
-            <span
-              className={cx(
-                "text-cerulean-400 hover:text-cerulean-700 ",
-                "dark:text-brick-400 hover:dark:text-brick-700 transition-colors duration-700"
-              )}
-            >
-              <a href="mailto:yola.liang.direct@gmail.com">
-                yola.liang.direct@gmail.com
-              </a>
-            </span>
-          </div>
-          {/* Side menu */}
-          <SideMenuTabs activeSection={activeSection} />
-          {/* Copyright */}
-          <div>
-            <p className="text-center text-sm text-slate-400 dark:text-slate-700 transition-colors duration-700">
-              Copyright © 2023 Yola LIANG. All rights reserved.
-            </p>
-          </div>
-        </div>
-      </div>
-      {/* Content */}
+    <div className="pl-5 md:pl-20 w-full flex gap-10 transition-[padding] duration-700">
+      <SideBarView activeSection={activeSection} />
       <div
         ref={contentDivRef as React.MutableRefObject<HTMLDivElement>}
-        className="h-screen basis-3/4 relative overflow-x-hidden overflow-y-scroll scroll-smooth"
+        className="h-screen relative overflow-x-hidden overflow-y-scroll scroll-smooth"
         onScroll={handleScroll}
       >
         <div className="pr-20 relative flex flex-col gap-12">

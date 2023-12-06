@@ -32,6 +32,14 @@ import {
   ArrowBackOutlined,
   LinkedIn,
   AttachFileOutlined,
+  PersonOutlineOutlined,
+  ArchitectureOutlined,
+  ScienceOutlined,
+  AccountTreeOutlined,
+  EmojiObjectsOutlined,
+  SchoolOutlined,
+  InterestsOutlined,
+  CallOutlined,
 } from "@mui/icons-material";
 
 export const BACKGROUND_COLORS = [
@@ -60,6 +68,52 @@ export const BACKGROUND_COLORS = [
   "#1F9DFF",
   "#5390D9",
   "#6878B1",
+];
+
+export const SIDE_MENU_ITEMS: {
+  id: string;
+  name: string;
+  path: string;
+  icon: MuiIconType;
+}[] = [
+  {
+    id: "about",
+    name: "about",
+    path: "#about",
+    icon: PersonOutlineOutlined,
+  },
+  {
+    id: "skill",
+    name: "skill",
+    path: "#skill",
+    icon: ArchitectureOutlined,
+  },
+  {
+    id: "experience",
+    name: "experience",
+    path: "#experience",
+    icon: ScienceOutlined,
+  },
+  {
+    id: "project",
+    name: "project",
+    path: "#project",
+    icon: AccountTreeOutlined,
+  },
+  { id: "blog", name: "blog", path: "#blog", icon: EmojiObjectsOutlined },
+  {
+    id: "education",
+    name: "education",
+    path: "#education",
+    icon: SchoolOutlined,
+  },
+  {
+    id: "fun_points",
+    name: "fun points",
+    path: "#fun_points",
+    icon: InterestsOutlined,
+  },
+  { id: "contact", name: "contact", path: "#contact", icon: CallOutlined },
 ];
 
 export const PERSONALITIES: {
