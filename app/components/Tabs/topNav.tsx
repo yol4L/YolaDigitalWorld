@@ -17,6 +17,7 @@ export default function TopNavView({
 }) {
   const router = useRouter();
   const drawerRef = useRef<HTMLDivElement>(null);
+  const toggleButtonRef = useRef<HTMLButtonElement>(null);
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
   // Resize handler to close the menu on larger screens
@@ -35,8 +36,11 @@ export default function TopNavView({
   }, []);
 
   // Close it when clicking outside the drawer
-  const handleCloseDrawer = (): void => {
-    setIsMenuOpen(false);
+  const handleCloseDrawer = (target: HTMLElement): void => {
+    if (target !== toggleButtonRef.current) {
+      // console.log("t", target, closeButtonRef.current);
+      setIsMenuOpen(false);
+    }
   };
 
   useOutsideClick(drawerRef, handleCloseDrawer);
@@ -64,7 +68,7 @@ export default function TopNavView({
         className={cx(
           "px-5 md:px-20 w-full py-3 fixed top-0 z-20 flex items-center justify-between",
           "bg-slate-50 dark:bg-slate-800",
-          "transition-bgColor"
+          "transition-topNav"
         )}
       >
         {/* Brand Logo and Name */}
@@ -84,9 +88,10 @@ export default function TopNavView({
         {/* Toggle Button for smaller screens */}
         <button
           className="md:hidden"
+          ref={toggleButtonRef}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
-          <MenuOutlinedIcon />
+          <MenuOutlinedIcon className="pointer-events-none" />
         </button>
 
         {/* Navigation links */}
