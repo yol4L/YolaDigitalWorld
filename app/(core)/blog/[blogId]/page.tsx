@@ -42,7 +42,9 @@ type TableProps = Extract<
 
 // Define block styles based on its category
 const Heading: React.FC<{ text: HeadingContentProps }> = ({ text }) => {
-  return <h1 className="text-2xl font-semibold mt-8 mb-4">{text}</h1>;
+  return (
+    <h1 className="text-xl sm:text-2xl font-semibold mt-8 mb-4">{text}</h1>
+  );
 };
 
 const TextWithCode: React.FC<{
@@ -56,7 +58,7 @@ const TextWithCode: React.FC<{
           <code
             key={index}
             className={cx(
-              "px-2 rounded-sm font-mono text-sm",
+              "px-2 rounded-sm font-mono text-xs sm:text-sm",
               "text-slate-800 dark:text-slate-100",
               "bg-slate-200 dark:bg-slate-600 transition-all duration-700"
             )}
@@ -69,7 +71,9 @@ const TextWithCode: React.FC<{
     });
   };
 
-  return <p className="my-4 text-justify">{parseText(text)}</p>;
+  return (
+    <p className="my-4 text-sm sm:text-base text-justify">{parseText(text)}</p>
+  );
 };
 
 const ImageAndGraph: React.FC<{
@@ -88,7 +92,7 @@ const renderTableCell = (cell: TableCell) => {
     return (
       <td
         className={cx(
-          "p-4 border transition-colors duration-700",
+          "p-4 text-sm sm:text-base border transition-colors duration-700",
           "text-slate-800 dark:text-slate-100",
           "border-slate-200 dark:border-slate-700"
         )}
@@ -101,7 +105,7 @@ const renderTableCell = (cell: TableCell) => {
     return (
       <td
         className={cx(
-          "p-4 border transition-colors duration-700",
+          "p-4 text-sm sm:text-base border transition-colors duration-700",
           "text-slate-800 dark:text-slate-100",
           "border-slate-200 dark:border-slate-700"
         )}
@@ -138,7 +142,7 @@ const TableStructure: React.FC<{ rows: TableProps }> = ({ rows }) => {
               <th
                 key={index}
                 className={cx(
-                  "px-8 py-4 border font-semibold transition-colors duration-700",
+                  "px-0 md:px-8 py-3 md:py-4 text-sm sm:text-base border font-semibold transition-colors duration-700",
                   "border-slate-200 dark:border-slate-700"
                 )}
               >
@@ -194,8 +198,10 @@ export default async function SingleBlogPage({
             {tag.toUpperCase()}
           </span>
         </div>
-        <h3 className="text-4xl font-serif font-semibold ">{title}</h3>
-        <p className="">
+        <h3 className="text-2xl sm:text-3xl md:text-4xl font-serif font-semibold ">
+          {title}
+        </h3>
+        <p className="text-sm sm:text-base">
           <span className="text-neutral-400">{`${date.toUpperCase()} - BY `}</span>
           <span
             className={cx(
@@ -296,14 +302,14 @@ export default async function SingleBlogPage({
             />
           </div>
           <div className="flex flex-col gap-1 font-mono">
-            <p className="text-lg font-semibold tracking-wider text-cerulean-500 dark:text-brick-300 transition-colors duration-700">
+            <p className="text-base sm:text-lg font-semibold tracking-wider text-cerulean-500 dark:text-brick-300 transition-colors duration-700">
               <span>{`Author: `}</span>
               <span>
                 <a href="/portfolio">{author}</a>
               </span>
             </p>
-            <p className="text-sm text-slate-400">{`Web Developer | Enthusiast for frontend programming`}</p>
-            <p className="text-sm text-justify text-slate-600 dark:text-slate-300 transition-colors duration-700">
+            <p className="text-xs sm:text-sm text-slate-400">{`Web Developer | Enthusiast for frontend programming`}</p>
+            <p className="text-xs sm:text-sm text-justify text-slate-600 dark:text-slate-300 transition-colors duration-700">
               A web developer who continuously strives to create captivating and
               user-centric digital experiences while staying at the forefront of
               emerging technologies and design trends.

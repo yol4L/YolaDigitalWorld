@@ -110,10 +110,10 @@ export default function RecentWorkPage() {
       <div className="px-5 sm:px-20 md:px-36 pt-28 pb-12 sm:pb-20 flex flex-col">
         <PageTagView tagName={"Projects"} />
         <div className="my-6 flex flex-col gap-4">
-          <h1 className="font-serif font-bold text-3xl tracking-widest text-ocean-500">
+          <h1 className="font-serif font-bold text-2xl sm:text-3xl tracking-widest text-ocean-500">
             RECENT WORK
           </h1>
-          <p className="text-justify">
+          <p className="text-sm sm:text-base">
             {`Here are some of my recent work. You can dive into a visual showcase or browse through a variety of
             projects I've undertaken, from web applications and websites to design concepts.`}
           </p>

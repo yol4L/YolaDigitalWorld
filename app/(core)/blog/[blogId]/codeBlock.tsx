@@ -16,7 +16,7 @@ export const CodeBlock: React.FC<{
   language: CodeProps["language"];
 }> = ({ content, language }) => {
   return (
-    <div className="my-4">
+    <div className="my-4 text-sm sm:text-base">
       <CopyBlock
         text={content}
         language={language}

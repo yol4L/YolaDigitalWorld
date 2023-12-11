@@ -15,10 +15,10 @@ export default function BlogPage() {
       <div className="px-5 sm:px-20 md:px-36 pt-28 pb-12 sm:pb-20">
         <PageTagView tagName={"Blog"} />
         <div className="my-6 flex flex-col gap-4">
-          <h1 className="font-serif font-bold text-3xl tracking-widest text-ocean-500">
+          <h1 className="font-serif font-bold text-2xl sm:text-3xl tracking-widest text-ocean-500">
             MY BLOGS
           </h1>
-          <p className="">
+          <p className="text-sm sm:text-base">
             Discover my thoughts and insights on web development, design, and
             industry trends. In this section, I share knowledge, tips, and
             experiences. Join me in exploring the ever-evolving world of

@@ -89,7 +89,7 @@ export default function Home() {
           className="w-full h-screen md:px-20 flex flex-col transition-[padding] duration-700"
         >
           <AnimatedBackgroundView />
-          <div className="min-h-0 w-full px-10 sm:px-12 md:px-20 grow flex justify-between transition-[padding] duration-700">
+          <div className="min-h-0 w-full px-8 sm:px-12 md:px-20 grow flex justify-between transition-[padding] duration-700">
             {/* Welcome info */}
             <div className="w-1/2 flex flex-col justify-center gap-8">
               <PageTagView tagName={"About"} />
@@ -127,7 +127,7 @@ export default function Home() {
                   >
                     <DownloadOutlinedIcon className="animate-bounce group-hover:animate-none" />
                     <span className="text-sm sm:text-lg md:text-xl font-medium tracking-widest">
-                      DOWNLOAD MY RESUME
+                      GET MY RESUME
                     </span>
                   </Link>
                 </button>
