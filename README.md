@@ -52,4 +52,4 @@ Please note that this portfolio and all of its contents are copyrighted by Yola 
 
 ## Contact
 
-Yola LIANG - [[yola.liang.direct@gmail.com](mailto:your-email@example.com)]
+Yola LIANG, a web developer who continuously strives to create captivating and user-centric digital experiences while staying at the forefront of emerging technologies and design trends. - [[yola.liang.direct@gmail.com](mailto:your-email@example.com)]
