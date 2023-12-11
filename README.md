@@ -1,4 +1,4 @@
-# Yola's World
+# Yola's Digital World
 
 Welcome to the repository of my personal portfolio website. This project is a reflection of my professional journey and skills, built using modern web technologies including Next.js, React, TypeScript, and TailwindCSS.
 
@@ -53,5 +53,3 @@ Please note that this portfolio and all of its contents are copyrighted by Yola 
 ## Contact
 
 Your Name - [[yola.liang.direct@gmail.com](mailto:your-email@example.com)]
-
-Project Link: https://github.com/yol4L/myWorld.git
