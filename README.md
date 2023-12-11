@@ -52,4 +52,4 @@ Please note that this portfolio and all of its contents are copyrighted by Yola 
 
 ## Contact
 
-Your Name - [[yola.liang.direct@gmail.com](mailto:your-email@example.com)]
+Yola LIANG - [[yola.liang.direct@gmail.com](mailto:your-email@example.com)]
