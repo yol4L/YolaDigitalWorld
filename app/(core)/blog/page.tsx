@@ -6,12 +6,13 @@ import PageTagView from "@/app/components/Tags/pageTag";
 import TopNavView from "@/app/components/Tabs/topNav";
 
 import { BLOGS } from "../../data";
+import FooterView from "@/app/components/footer";
 
 export default function BlogPage() {
   return (
     <div>
       <TopNavView />
-      <div className="px-36 py-28">
+      <div className="px-5 sm:px-20 md:px-36 pt-28 pb-12 sm:pb-20">
         <PageTagView tagName={"Blog"} />
         <div className="my-6 flex flex-col gap-4">
           <h1 className="font-serif font-bold text-3xl tracking-widest text-ocean-500">
@@ -27,11 +28,16 @@ export default function BlogPage() {
         <div className="mx-[-1rem] my-6 flex flex-wrap">
           {BLOGS.map(({ id, title, headline, date, author, tag, cover }) => {
             return (
-              <div key={id} className="w-1/3 px-4">
-                <div className="flex flex-col gap-3">
+              <div key={id} className="w-full sm:w-1/2 md:w-1/3 p-4">
+                <div className="flex flex-col gap-1.5 sm:gap-3">
                   <Link href={`/blog/${id}`}>
                     <div className="w-full aspect-video my-6 relative bg-neutral-300">
-                      <Image src={cover} alt={title} fill className="object-cover" />
+                      <Image
+                        src={cover}
+                        alt={title}
+                        fill
+                        className="object-cover"
+                      />
                     </div>
                   </Link>
                   <div className="flex items-center gap-3">
@@ -72,6 +78,7 @@ export default function BlogPage() {
           })}
         </div>
       </div>
+      <FooterView />
     </div>
   );
 }

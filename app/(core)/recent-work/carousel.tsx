@@ -42,7 +42,7 @@ export default function CarouselView() {
         >
           <NavigateBeforeIcon />
         </button>
-        <div className="grow px-2 flex items-center gap-4 text-sm text-slate-50">
+        <div className="grow px-2 flex items-center gap-4 text-xs sm:text-sm text-slate-50">
           <span className="grow italic">
             {CAROUSEL_CONTENTS[currentIndex].description}
           </span>

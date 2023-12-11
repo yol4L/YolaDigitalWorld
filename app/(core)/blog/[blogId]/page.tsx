@@ -8,6 +8,7 @@ import { CodeBlock } from "./codeBlock";
 
 import { BlogBlock, BlogData, MuiIconType, TableCell } from "@/app/types";
 import { BLOGS } from "@/app/data";
+import FooterView from "@/app/components/footer";
 
 // const SHARE_BUTTONS: { id: string; icon: MuiIconType }[] = [
 //   { id: "facebook", icon: NoteIcon },
@@ -41,7 +42,7 @@ type TableProps = Extract<
 
 // Define block styles based on its category
 const Heading: React.FC<{ text: HeadingContentProps }> = ({ text }) => {
-  return <h1 className="text-2xl font-semibold my-4">{text}</h1>;
+  return <h1 className="text-2xl font-semibold mt-8 mb-4">{text}</h1>;
 };
 
 const TextWithCode: React.FC<{
@@ -186,7 +187,7 @@ export default async function SingleBlogPage({
       <TopNavView />
       <BackToTopButton />
       {/* Headings */}
-      <div className="w-full md:w-4/5 lg:w-5/8 px-20 mx-auto pt-24 flex flex-col gap-6">
+      <div className="w-full md:w-4/5 lg:w-5/8 px-5 md:px-20 mx-auto pt-24 flex flex-col gap-6">
         <div className="flex items-center gap-4">
           <div className="w-6 h-0.5 relative top-[-1px] bg-ocean-500"></div>
           <span className="text-xs tracking-widest text-ocean-500">
@@ -228,7 +229,7 @@ export default async function SingleBlogPage({
         </div> */}
       </div>
       {/* Main */}
-      <article className="w-full md:w-4/5 lg:w-5/8 px-20 mx-auto mb-20">
+      <article className="w-full md:w-4/5 lg:w-5/8 px-5 md:px-20 mx-auto mb-20">
         {/* Quote */}
         {/* Please modify the height for the pseudo element ::before to change the quote's vertical position,
           and modify the left inset and margin right value to change its horizontal position. */}
@@ -286,7 +287,7 @@ export default async function SingleBlogPage({
 
         {/* Author */}
         <div className="my-8 flex items-center flex-nowrap gap-8">
-          <div className="w-32 h-32 shrink-0 relative rounded-full overflow-hidden">
+          <div className="w-16 h-16 sm:w-24 sm:h-24 md:w-32 md:h-32 shrink-0 relative rounded-full overflow-hidden">
             <Image
               src={"/images/home/yola-avatar.jpg"}
               alt="Yola Liang"
@@ -311,7 +312,7 @@ export default async function SingleBlogPage({
         </div>
       </article>
       {/* Navigation */}
-      <div className="w-full md:w-4/5 lg:w-5/8 px-20 mx-auto mb-20">
+      <div className="w-full md:w-4/5 lg:w-5/8 px-5 md:px-20 mx-auto mb-20">
         <Link href={"/blog"}>
           <span
             className={cx(
@@ -325,18 +326,7 @@ export default async function SingleBlogPage({
         </Link>
       </div>
       {/* Footer */}
-      <footer
-        className={cx(
-          "h-16 w-full relative flex items-center justify-center text-xs",
-          "text-slate-500 border-0 transition-all duration-700",
-          "bg-slate-100 dark:bg-slate-900",
-          "border-t-slate-200, dark:border-t-slate-600"
-        )}
-      >
-        <span>
-          Copyright © 2023 Yola LIANG | Australia. All rights reserved.
-        </span>
-      </footer>
+      <FooterView />
     </div>
   );
 }

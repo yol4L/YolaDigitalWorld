@@ -267,19 +267,19 @@ export const RECENT_WORK: {
 
 export const BLOGS: BlogData[] = [
   {
-    id: "01",
-    title: "Mastering Scroll, Client, and Offset in CSS: A Developer's Guide",
+    id: "the-art-of-motion",
+    title: "The Art of Motion: Mastering Ease and Cubic-Bezier in CSS",
     headline:
-      "Understanding the nuances of scroll, client, and offset properties in CSS can make a world of difference in the user experience.",
-    date: "Oct 14, 2023",
+      "In web design, the secret to animating websites with flair hinges on skillfully using timing functions to fine-tune the pace of CSS animations.",
+    date: "Nov 10, 2023",
     author: "Yola Liang",
-    tag: "web design",
-    cover: "/images/blogs/cover/cover01.jpg",
+    tag: "css",
+    cover: "/images/blogs/cover/cover03.jpg",
     quote: "",
-    contents: blocks01,
+    contents: blocks03,
   },
   {
-    id: "02",
+    id: "the-power-of-map-and-reduce",
     title: "Harnessing the Power of map() and reduce() in JavaScript",
     headline:
       "JavaScript's array methods are not just tools but craftsman's essentials in data manipulation and transformation.",
@@ -291,16 +291,16 @@ export const BLOGS: BlogData[] = [
     contents: blocks02,
   },
   {
-    id: "03",
-    title: "The Art of Motion: Mastering Ease and Cubic-Bezier in CSS",
+    id: "mastering-scroll-client-and-offset",
+    title: "Mastering Scroll, Client, and Offset in CSS: A Developer's Guide",
     headline:
-      "In web design, the secret to animating websites with flair hinges on skillfully using timing functions to fine-tune the pace of CSS animations.",
-    date: "Nov 10, 2023",
+      "Understanding the nuances of scroll, client, and offset properties in CSS can make a world of difference in the user experience.",
+    date: "Oct 14, 2023",
     author: "Yola Liang",
-    tag: "css",
-    cover: "/images/blogs/cover/cover03.jpg",
+    tag: "web design",
+    cover: "/images/blogs/cover/cover01.jpg",
     quote: "",
-    contents: blocks03,
+    contents: blocks01,
   },
 ];
 

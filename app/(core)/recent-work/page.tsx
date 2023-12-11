@@ -11,6 +11,7 @@ import CarouselView from "./carousel";
 
 import CloseIcon from "@mui/icons-material/Close";
 import { BACKGROUND_COLORS, RECENT_WORK } from "@/app/data";
+import FooterView from "@/app/components/footer";
 
 function getBgColor() {
   const i = Math.floor(Math.random() * BACKGROUND_COLORS.length);
@@ -32,7 +33,7 @@ export function Modal({
   return (
     <div className="fixed inset-0 z-50 overflow-hidden bg-black bg-opacity-50">
       <div className="min-h-screen flex items-center justify-center">
-        <div className="w-2/3 max-w-3xl mx-auto relative rounded-lg shadow-xl bg-slate-50">
+        <div className="w-11/12 sm:w-2/3 max-w-3xl mx-auto relative rounded-lg shadow-xl bg-slate-50">
           {children}
           <button
             className={cx(
@@ -106,7 +107,7 @@ export default function RecentWorkPage() {
   return (
     <div>
       <TopNavView />
-      <div className="px-36 py-28 flex flex-col">
+      <div className="px-5 sm:px-20 md:px-36 pt-28 pb-12 sm:pb-20 flex flex-col">
         <PageTagView tagName={"Projects"} />
         <div className="my-6 flex flex-col gap-4">
           <h1 className="font-serif font-bold text-3xl tracking-widest text-ocean-500">
@@ -129,11 +130,11 @@ export default function RecentWorkPage() {
                   key={id}
                   id={id}
                   className={cx(
-                    "flex items-stretch gap-10",
-                    i % 2 === 0 ? "flex-row" : "flex-row-reverse"
+                    "flex flex-col gap-4 sm:items-stretch sm:gap-10",
+                    i % 2 === 0 ? "sm:flex-row" : "sm:flex-row-reverse"
                   )}
                 >
-                  <div className="w-1/3 aspect-video flex-none relative overflow-hidden border border-slate-600">
+                  <div className="w-full sm:w-1/3 aspect-video flex-none relative overflow-hidden border border-slate-600">
                     <Image
                       src={coverUrl}
                       alt={title}
@@ -192,6 +193,7 @@ export default function RecentWorkPage() {
           )}
         </div>
       </div>
+      <FooterView />
     </div>
   );
 }
