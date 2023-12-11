@@ -19,7 +19,7 @@ function getBgColor() {
   return bgColor;
 }
 
-export function Modal({
+const Modal = ({
   isOpen,
   onClose,
   children,
@@ -27,7 +27,7 @@ export function Modal({
   isOpen: boolean;
   onClose: () => void;
   children: ReactNode;
-}) {
+}) => {
   if (!isOpen) return null;
 
   return (
@@ -48,9 +48,9 @@ export function Modal({
       </div>
     </div>
   );
-}
+};
 
-export function DemoModal({ index }: { index: number }) {
+const DemoModal = ({ index }: { index: number }) => {
   const [isModalOpen, setModalOpen] = useState(false);
 
   return (
@@ -71,7 +71,7 @@ export function DemoModal({ index }: { index: number }) {
       </Modal>
     </div>
   );
-}
+};
 
 const TryLink = ({ index, linkRef }: { index: number; linkRef: string }) => {
   return (
