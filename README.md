@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Yola's World
 
-## Getting Started
+Welcome to the repository of my personal portfolio website. This project is a reflection of my professional journey and skills, built using modern web technologies including Next.js, React, TypeScript, and TailwindCSS.
 
-First, run the development server:
+## Live Demo
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Experience the live version of my portfolio website hosted on Vercel: [Live Demo](https://yolaliang.me/)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Key Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Responsive Design**: Ensures a smooth and consistent user experience across various devices and screen sizes.
+- **Dark Mode**: A toggle feature allowing users to switch to a visually comfortable dark theme.
+- **Interactive Portfolio Gallery**: Showcases my work with rich visuals and detailed descriptions, including my skills, projects, career timeline, blogs, etc.
+- **Contact Form with Email Receipt**: A user-friendly form that sends confirmation emails upon successful submission.
+- **SEO Optimised**: Structured for better visibility and ranking on search engines.
+- **Performance Optimised**: Fast load times and smooth interactions thanks to modern web performance techniques.
+- **Accessibility Compliant**: Ensures the website is usable by people with various disabilities.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Usage
 
-## Learn More
+This section provides guidance on how to navigate and utilize the features of my portfolio website.
 
-To learn more about Next.js, take a look at the following resources:
+### Exploring the Portfolio
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Homepage**: Start your journey on the homepage, where you'll find a brief introduction and links to the main sections of the site.
+- **Portfolio Section**: Simply scroll down from the homepage to access my portfolio, where you'll find a comprehensive collection featuring my introduction, skills, career experiences, projects, and blog posts. Each project is presented with a detailed description, an overview of the relevant technologies used, and includes links to live demos or the source code.
+- **Interactive Elements**: Some projects in the portfolio may have interactive elements. Hover over or click on project images to reveal more details or to access additional features.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Reading and Engaging with the Blog
 
-## Deploy on Vercel
+- **Blog Access**: Navigate to the blog section from the main menu.
+- **Reading Posts**: Click on any blog post to read it in full. Posts may include images, code snippets, or embedded videos.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Using the Contact Form
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- **Sending a Message**: Find the contact form in the 'Contact Me' section. Fill in your name, email address, and your message.
+- **Submission Confirmation**: Upon successful submission, a confirmation message will appear, and you will receive an email confirmation at the provided email address.
+
+### Switching Themes
+
+- **Dark Mode Toggle**: Use the dark mode switch, located in the top menu, to toggle between light and dark themes for a comfortable viewing experience, regardless of the time of day or lighting conditions.
+
+### Downloading the Resume
+
+- **Resume Download**: In the 'About Me' section, there is an option to download my resume. Click the 'Download Resume' button to save a copy in PDF format to your device.
+
+Remember, the website is designed to be intuitive and user-friendly, but should you encounter any issues or have any queries, do not hesitate to reach out through the contact form.
+
+## Copyright and Use
+
+Please note that this portfolio and all of its contents are copyrighted by Yola Liang © 2023. This work is not open source and is provided for viewing and demonstration purposes only. Any reproduction, distribution, or creation of derivative works is not permitted without explicit permission from the author.
+
+## Contact
+
+Your Name - [[yola.liang.direct@gmail.com](mailto:your-email@example.com)]
+
+Project Link: https://github.com/yol4L/myWorld.git
