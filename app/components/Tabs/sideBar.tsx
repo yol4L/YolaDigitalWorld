@@ -61,7 +61,9 @@ const SideBar = ({
         {/* Info */}
         {isSidebarOpen ? (
           <div className="flex flex-col justify-center items-center">
-            <h1 className="font-semibold text-2xl">Yola Liang</h1>
+            <h1 className="font-semibold text-2xl text-slate-800 dark:text-slate-100 transition-colors duration-700">
+              Yola Liang
+            </h1>
             <a
               href="mailto:yola.liang.direct@gmail.com"
               className="text-cerulean-400 hover:text-cerulean-700 dark:text-brick-400 hover:dark:text-brick-700 transition-colors duration-700"

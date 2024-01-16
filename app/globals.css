@@ -29,7 +29,7 @@
 
   /* Custom transition */
   .transition-topNav {
-    transition: padding 700ms, background-color 700ms;
+    transition: padding 700ms;
   }
   .transition-drawer {
     transition: transform 300ms, background-color 700ms;

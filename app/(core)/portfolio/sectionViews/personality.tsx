@@ -30,7 +30,7 @@ export default function PersonalityView({
                 "shadow-xl dark:shadow-slate-900"
               )}
             >
-              <Icon className="text-cerulean-500 dark:text-brick-300" />
+              <Icon className="text-cerulean-500 dark:text-brick-300 transition-colors duration-700" />
               <h3 className="font-serif font-semibold text-sm md:text-base text-slate-800 dark:text-slate-100 transition-colors duration-700">
                 {name}
               </h3>

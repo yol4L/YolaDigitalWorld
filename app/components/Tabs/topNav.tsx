@@ -68,7 +68,7 @@ export default function TopNavView({
         className={cx(
           "px-5 md:px-20 w-full py-3 fixed top-0 z-40 flex items-center justify-between",
           "bg-slate-50 dark:bg-slate-800",
-          "transition-topNav"
+          "transition-topNav transition-[background-color] duration-700"
         )}
       >
         {/* Brand Logo and Name */}
