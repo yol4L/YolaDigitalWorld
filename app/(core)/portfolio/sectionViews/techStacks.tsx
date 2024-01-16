@@ -52,7 +52,7 @@ export default function TechStacksView({
                 />
               </div>
               <div className="p-1 md:p-2 pl-3 md:pl-4 flex flex-col gap-2">
-                <h3 className="text-sm font-semibold tracking-widest text-slate-800 dark:text-slate-100 transition-colors duration-700">
+                <h3 className="text-sm md:text-base font-semibold tracking-widest text-slate-800 dark:text-slate-100 transition-colors duration-700">
                   {name}
                 </h3>
                 <div className="flex flex-wrap gap-2">
@@ -63,7 +63,7 @@ export default function TechStacksView({
                         className="px-2 md:px-3 py-0.5 flex items-center justify-start rounded-md cursor-pointer"
                         style={{ backgroundColor: (colors[id] ?? [])[i] }}
                       >
-                        <span className="text-xs text-white tracking-wider">
+                        <span className="text-xs md:text-sm text-white tracking-wider">
                           {stack}
                         </span>
                       </div>

@@ -164,7 +164,7 @@ export const TECH_STACKS: {
     id: "frontend",
     name: "FRONTEND",
     icon: AdsClickOutlined,
-    stacks: ["HTML", "CSS", "JavaScript", "TypeScript"],
+    stacks: ["HTML", "CSS", "JavaScript", "TypeScript", "EJS"],
   },
   {
     id: "database",
@@ -176,7 +176,7 @@ export const TECH_STACKS: {
     id: "others",
     name: "OTHERS",
     icon: ScatterPlotOutlined,
-    stacks: ["Git", "Node.js", "EJS"],
+    stacks: ["Git", "CI/CD", "Docker", "Node.js", "CMS-Drupal"],
   },
 ];
 
